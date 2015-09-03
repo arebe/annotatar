@@ -4,7 +4,7 @@
  <title>annotatAR</title>
  <link href="http://arebe.github.io/annotatar//annotatar/atom.xml" rel="self"/>
  <link href="http://arebe.github.io/annotatar//annotatar/"/>
- <updated>2015-09-03T15:52:13-04:00</updated>
+ <updated>2015-09-03T16:03:25-04:00</updated>
  <id>http://arebe.github.io/annotatar/</id>
  <author>
    <name>RB</name>
@@ -17,37 +17,37 @@
    <link href="http://arebe.github.io/annotatar//annotatar/2015/09/03/grading/"/>
    <updated>2015-09-03T00:00:00-04:00</updated>
    <id>http://arebe.github.io/annotatar//2015/09/03/grading</id>
-   <content type="html">&lt;p&gt;As part of this week’s assignments, I have developed a grading rubric for annotatAR, for the scope of this fall’s Capstone Design Studio. This rubric has six dimensions, with three criteria each. The dimensions are categorized in two sub-sections: &lt;em&gt;mobile&lt;/em&gt; and &lt;em&gt;desktop&lt;/em&gt;.&lt;/p&gt;
+   <content type="html">&lt;p&gt;As part of this week’s assignments, I have developed a grading rubric for annotatAR, for the scope of this fall’s Capstone Design Studio. This rubric has six dimensions, with three criteria each. The dimensions are categorized in two sub-sections: &lt;em&gt;Mobile Site&lt;/em&gt; and &lt;em&gt;Desktop Site&lt;/em&gt;. The grades are weighted to emphasize the &lt;em&gt;Mobile Site&lt;/em&gt;.&lt;/p&gt;
 
 &lt;hr /&gt;
 
 &lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th&gt;&lt;em&gt;Mobile Site (75%)&lt;/em&gt;&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Excellent&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Competent&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Needs Work&lt;/th&gt;
+      &lt;th&gt;&lt;em&gt;Mobile Site (18pts total)&lt;/em&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Excellent (6pts)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Competent (4pts)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Needs Work (1pt)&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;strong&gt;Functionality&lt;/strong&gt; :: Users can overlay tweets on a video stream; Device compatibility;  Geolocative;  Users can take screenshot&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Meets all requirements&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Meets 3/4 requirements&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Meets &amp;lt;= 3 requirements&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;strong&gt;Aesthetics&lt;/strong&gt; :: Tweet metadata is visually encoded; Tweet position changes with device motion; Appealing visual design;&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Aesthetics&lt;/strong&gt; :: Tweet metadata is visually encoded; Tweet position changes with device motion; Appealing visual design&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Meets all requirements&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Meets 2/3 requirements&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Meets &amp;lt;= 2 requirements&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;strong&gt;Scalability&lt;/strong&gt; :: Deployable at a variety of events; Github repo + documentation for further development&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Meets all requirements&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Meets 1/2 requirements&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Meets &amp;lt; 1 requirement&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
@@ -55,30 +55,30 @@
 &lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
-      &lt;th&gt;&lt;em&gt;Desktop Site (25%)&lt;/em&gt;&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Excellent&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Competent&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Needs Work&lt;/th&gt;
+      &lt;th&gt;&lt;em&gt;Desktop Site (9pts total)&lt;/em&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Excellent (3pts)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Competent (2pts)&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Needs Work (1pt)&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;strong&gt;Functionality&lt;/strong&gt; :: Users can view event-specific video with tweet overlay; Cross-browser compatibility&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Meets all requirements&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Meets 1/2 requirements&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Meets &amp;lt; 1 requirement&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;strong&gt;Aesthetics&lt;/strong&gt; :: Tweet metadata is visually encoded; Timeline of event is expressed visually&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Meets all requirements&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Meets 1/2 requirements&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Meets &amp;lt; 1 requirement&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;strong&gt;Scalability&lt;/strong&gt; :: Deployable for multiple events; Integrates with other social media feeds&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt; &lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Meets all requirements&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Meets 1/2 requirements&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;Meets &amp;lt; 1 requirement&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
