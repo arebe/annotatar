@@ -63,7 +63,7 @@ if (Meteor.isClient) {
       }
       tweets.map(function(data){
         globalAlpha = data.createdAt %255;
-        context.fillText(data.text, Math.random()*(800-10)+5, Math.random()*(500-10)+5);
+        context.fillText(data.text, data.xPos, data.yPos);
       });
     }
   });
@@ -117,7 +117,9 @@ Meteor.methods({
   addTweet: function(text){
     Tweets.insert({
       text: text,
-      createdAt: new Date()
+      createdAt: new Date(),
+      xPos: Math.random()*(800-10)+5, 
+      yPos: Math.random()*(800-10)+5,
     });
   }
 });
