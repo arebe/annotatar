@@ -4,7 +4,7 @@
  <title>annotatAR</title>
  <link href="http://arebe.github.io/annotatar//annotatar/atom.xml" rel="self"/>
  <link href="http://arebe.github.io/annotatar//annotatar/"/>
- <updated>2015-09-03T16:03:25-04:00</updated>
+ <updated>2015-09-03T17:09:02-04:00</updated>
  <id>http://arebe.github.io/annotatar/</id>
  <author>
    <name>RB</name>
@@ -17,7 +17,7 @@
    <link href="http://arebe.github.io/annotatar//annotatar/2015/09/03/grading/"/>
    <updated>2015-09-03T00:00:00-04:00</updated>
    <id>http://arebe.github.io/annotatar//2015/09/03/grading</id>
-   <content type="html">&lt;p&gt;As part of this week’s assignments, I have developed a grading rubric for annotatAR, for the scope of this fall’s Capstone Design Studio. This rubric has six dimensions, with three criteria each. The dimensions are categorized in two sub-sections: &lt;em&gt;Mobile Site&lt;/em&gt; and &lt;em&gt;Desktop Site&lt;/em&gt;. The grades are weighted to emphasize the &lt;em&gt;Mobile Site&lt;/em&gt;.&lt;/p&gt;
+   <content type="html">&lt;p&gt;As part of this week’s assignments, I have developed a grading rubric for annotatAR, for the scope of this fall’s Capstone Design Studio. This rubric has six dimensions, with three criteria each. The dimensions are categorized in two sub-sections: &lt;em&gt;Mobile Site&lt;/em&gt; and &lt;em&gt;Desktop Site&lt;/em&gt;. The points are weighted to emphasize the &lt;em&gt;Mobile Site&lt;/em&gt;, with a total possible score of 27 points.&lt;/p&gt;
 
 &lt;hr /&gt;
 
@@ -82,6 +82,77 @@
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Capstone Project Milestones</title>
+   <link href="http://arebe.github.io/annotatar//annotatar/2015/09/02/milestones/"/>
+   <updated>2015-09-02T00:00:00-04:00</updated>
+   <id>http://arebe.github.io/annotatar//2015/09/02/milestones</id>
+   <content type="html">&lt;p&gt;As part of this week’s set of assignments, I have revisited the project milestones for annotatAR this fall. &lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;beta-test-at-the-nyc-internet-yami-ichi&quot;&gt;Beta-test at the NYC Internet Yami-Ichi&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;12 Sept 2015&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Mobile site deployed on a live server&lt;/li&gt;
+  &lt;li&gt;Displays tweet stream overlaid on &lt;code&gt;getUserMedia&lt;/code&gt; element&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;device-sensing&quot;&gt;Device sensing&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Geolocation-aware&lt;/li&gt;
+  &lt;li&gt;Access device accelerometer data&lt;/li&gt;
+  &lt;li&gt;Map tweet position to 3D model&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;aesthetic-refinements-on-mobile&quot;&gt;Aesthetic refinements on mobile&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Style tweets based on timestamp&lt;/li&gt;
+  &lt;li&gt;Screenshot functionality&lt;/li&gt;
+  &lt;li&gt;User testing of mobile&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;desktop-site-mvp&quot;&gt;Desktop site MVP&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Display video from event with tweets overlaid&lt;/li&gt;
+  &lt;li&gt;User testing of desktop&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;desktop-site&quot;&gt;Desktop site&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Text analysis
+** Sentiment analysis
+** Keyword parsing
+** Spatial and/or color encoding&lt;/li&gt;
+  &lt;li&gt;Scrub / navigate on time dimension&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;scalability&quot;&gt;Scalability&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Github repo with description and instructions for deployment&lt;/li&gt;
+  &lt;li&gt;Integrate with existing social media (share buttons)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Bonus&lt;/strong&gt; Interface for deploying new app for an event&lt;/li&gt;
+&lt;/ul&gt;
+
 </content>
  </entry>
  
