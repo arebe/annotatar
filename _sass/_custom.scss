@@ -1,0 +1,15 @@
+// Customization
+//
+// Styles developed for annotatAR's blog
+
+$hover-color: #54adff;
+
+.right {
+	float: right;
+}
+
+a:hover{
+	color: #ff1;
+	background-color: $hover-color;
+	text-decoration: none;
+}

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>annotatAR</title>
- <link href="http://arebe.github.io/annotatar/atom.xml" rel="self"/>
- <link href="http://arebe.github.io/annotatar/"/>
- <updated>2015-09-01T01:01:29-04:00</updated>
- <id>http://arebe.github.io/annotatar</id>
+ <link href="http://arebe.github.io/annotatar//annotatar/atom.xml" rel="self"/>
+ <link href="http://arebe.github.io/annotatar//annotatar/"/>
+ <updated>2015-09-03T13:27:19-04:00</updated>
+ <id>http://arebe.github.io/annotatar/</id>
  <author>
    <name>RB</name>
    <email>rfboyce+annotatar@gmail.com</email>
@@ -14,10 +14,10 @@
  
  <entry>
    <title>Welcome to annotatAR's Blog</title>
-   <link href="http://arebe.github.io/annotatar/2015/08/31/welcome/"/>
+   <link href="http://arebe.github.io/annotatar//annotatar/2015/08/31/welcome/"/>
    <updated>2015-08-31T00:00:00-04:00</updated>
-   <id>http://arebe.github.io/annotatar/2015/08/31/welcome</id>
-   <content type="html">&lt;p&gt;This blog will track my progress on my ALM capstone project, annotatAR. I’ve written a bunch about it already, which you can read &lt;a href=&quot;#&quot;&gt;here&lt;/a&gt; - link to my proposal coming soon!&lt;/p&gt;
+   <id>http://arebe.github.io/annotatar//2015/08/31/welcome</id>
+   <content type="html">&lt;p&gt;This blog will track my progress on my ALM capstone project, annotatAR. Details about the motivation, design, and prospective schedule are part of &lt;a href=&quot;assets/files/ALM_Capstone_Proposal_RBoyce_v3.2.pdf&quot;&gt;the project proposal&lt;/a&gt;.&lt;/p&gt;
 
 &lt;hr /&gt;
 
