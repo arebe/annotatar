@@ -1,1 +1,0 @@
-{"version":3,"file":"/packages/mrt:twit.js","sources":["mrt:twit/main.js"],"names":[],"mappings":";;;;;;;;;;;;;;;;;AACA,gC","sourcesContent":["\nTwitMaker = Npm.require('twit');\n"]}
