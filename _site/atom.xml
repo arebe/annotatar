@@ -4,7 +4,7 @@
  <title>annotatAR</title>
  <link href="http://arebe.github.io/annotatar//annotatar/atom.xml" rel="self"/>
  <link href="http://arebe.github.io/annotatar//annotatar/"/>
- <updated>2015-09-03T17:09:02-04:00</updated>
+ <updated>2015-09-04T12:22:06-04:00</updated>
  <id>http://arebe.github.io/annotatar/</id>
  <author>
    <name>RB</name>
@@ -105,16 +105,19 @@
 &lt;hr /&gt;
 
 &lt;h4 id=&quot;device-sensing&quot;&gt;Device sensing&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;30 Sept 2015&lt;/em&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Geolocation-aware&lt;/li&gt;
   &lt;li&gt;Access device accelerometer data&lt;/li&gt;
   &lt;li&gt;Map tweet position to 3D model&lt;/li&gt;
+  &lt;li&gt;Determine whether or not to compile to native app(s)&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
 
 &lt;h4 id=&quot;aesthetic-refinements-on-mobile&quot;&gt;Aesthetic refinements on mobile&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;16 Oct 2015&lt;/em&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Style tweets based on timestamp&lt;/li&gt;
@@ -124,7 +127,8 @@
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;desktop-site-mvp&quot;&gt;Desktop site MVP&lt;/h4&gt;
+&lt;h4 id=&quot;desktop-site-minimum-viable-product&quot;&gt;Desktop site minimum viable product&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;30 Oct 2015&lt;/em&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Display video from event with tweets overlaid&lt;/li&gt;
@@ -133,24 +137,44 @@
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;desktop-site&quot;&gt;Desktop site&lt;/h4&gt;
+&lt;h4 id=&quot;desktop-site-refinements&quot;&gt;Desktop site refinements&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;20 Nov 2015&lt;/em&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Text analysis
-** Sentiment analysis
-** Keyword parsing
-** Spatial and/or color encoding&lt;/li&gt;
+  &lt;li&gt;Text analysis (some or all of the following):
+    &lt;ul&gt;
+      &lt;li&gt;Sentiment analysis&lt;/li&gt;
+      &lt;li&gt;Keyword parsing&lt;/li&gt;
+      &lt;li&gt;Spatial and/or color encoding&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
   &lt;li&gt;Scrub / navigate on time dimension&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;scalability&quot;&gt;Scalability&lt;/h4&gt;
+&lt;h4 id=&quot;platform-scalability&quot;&gt;Platform scalability&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;04 Dec 2015&lt;/em&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Github repo with description and instructions for deployment&lt;/li&gt;
   &lt;li&gt;Integrate with existing social media (share buttons)&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Bonus&lt;/strong&gt; Interface for deploying new app for an event&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;bonus-features&quot;&gt;Bonus features&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;11 Dec 2015&lt;/em&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;User interface for deploying new app for an event&lt;/li&gt;
+  &lt;li&gt;Compile to native Android app (if necessary)&lt;/li&gt;
+  &lt;li&gt;Multiple views of augmented reality:
+    &lt;ul&gt;
+      &lt;li&gt;Tweet text becomes lexograph of video stream&lt;/li&gt;
+      &lt;li&gt;Select variety of encoding for sentiments or keywords&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
 </content>
