@@ -4,13 +4,62 @@
  <title>annotatAR</title>
  <link href="http://arebe.github.io/annotatar//annotatar/atom.xml" rel="self"/>
  <link href="http://arebe.github.io/annotatar//annotatar/"/>
- <updated>2015-09-04T12:27:38-04:00</updated>
+ <updated>2015-09-04T18:15:10-04:00</updated>
  <id>http://arebe.github.io/annotatar/</id>
  <author>
    <name>RB</name>
    <email>rfboyce+annotatar@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Week 1 Summer Progress</title>
+   <link href="http://arebe.github.io/annotatar//annotatar/2015/09/04/week1/"/>
+   <updated>2015-09-04T00:00:00-04:00</updated>
+   <id>http://arebe.github.io/annotatar//2015/09/04/week1</id>
+   <content type="html">&lt;p&gt;In which our hero recounts the details of this summer’s work….&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;user-interaction&quot;&gt;User interaction&lt;/h4&gt;
+
+&lt;p&gt;annotatAR was inspired by a project I worked on in Fall 2014, &lt;a href=&quot;http://docshop0.tumblr.com/&quot;&gt;Notes from El Saniyya&lt;/a&gt;. As part of &lt;a href=&quot;http://docshop.space/&quot;&gt;DocShop at metaLab&lt;/a&gt;, I worked with Egyptian artist Lara Baladi to create a prototype of a living timeline of the Arab Spring. The &lt;em&gt;Notes…&lt;/em&gt; event was highly participatory and we wondered what the next steps for engaging with a multi-media archive might be like.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;You walk into a gallery space, with a curved wall with a huge timeline, each point on the timeline is an event in the Arab Spring / Tahrir Square 21 days. you want to add your own comment to the timeline, reacting to something on the timeline that triggered a memory or emotion - given any possible technology or material, how would you leave a message?&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This is moativation for utilizing an augmented reality platform, and Twitter as a common social interface.&lt;/p&gt;
+
+&lt;h4 id=&quot;meteor&quot;&gt;Meteor&lt;/h4&gt;
+
+&lt;p&gt;The major accomplishment achieved this summer was getting started with &lt;a href=&quot;http://docs.meteor.com/#/full/&quot;&gt;Meteor.js&lt;/a&gt;. After reading docs and going through an example project tutorial, I was convinced that this was the technology on which I should build annotatAR. What first drew me to Meteor is the ability to code everything in Javascript, the active community, and the well-designed forward-looking codebase. I sat with a friend for an informational session to learn about how to utilize &lt;a href=&quot;https://www.eventedmind.com/feed/meteor-what-is-meteor-bindenvironment&quot;&gt;asynchronous external requests&lt;/a&gt; in Meteor, through &lt;a href=&quot;https://meteorhacks.com/fibers-eventloop-and-meteor&quot;&gt;fibers&lt;/a&gt; and &lt;code&gt;Meteor.bindEnvironment&lt;/code&gt;. I’m starting to see even more value in how Meteor encourages code modularization, which may be quite helpful as the project develops.&lt;/p&gt;
+
+&lt;h4 id=&quot;alpha-site&quot;&gt;Alpha site&lt;/h4&gt;
+
+&lt;p&gt;With my newly acquired knowledge of Meteor, I built a test application called &lt;em&gt;truthtweets&lt;/em&gt;, which connects to the &lt;a href=&quot;https://dev.twitter.com/streaming/public&quot;&gt;Twitter Firehose API&lt;/a&gt; and overlays tweet texts that utilize the hashtag &lt;em&gt;#truth&lt;/em&gt; onto a video stream from &lt;code&gt;getUserMedia&lt;/code&gt; element. Voilà!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/screencap_20150904.png&quot; alt=&quot;truthtweets app&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;next-directions&quot;&gt;Next directions&lt;/h4&gt;
+
+&lt;p&gt;In the short term, the mobile application has a number of refinements to be achieved:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;twitter api config file - untracked (not shared on github)&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;resize navigator to fit device screen&lt;/li&gt;
+  &lt;li&gt;use accelerometer data to detect motion and update tweet position&lt;/li&gt;
+  &lt;li&gt;turn the stream on and display new tweets&lt;/li&gt;
+  &lt;li&gt;change alpha based on tweet createdAt&lt;/li&gt;
+  &lt;li&gt;deploy to meteor cloud or other web server&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;what if tweets became colored to reflect the background video feed? - lexigraph&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;looking-ahead-this-month&quot;&gt;Looking ahead this month&lt;/h4&gt;
+
+&lt;p&gt;My first &lt;a href=&quot;/annotatar/2015/09/02/milestones&quot;&gt;project milestone&lt;/a&gt; will be next week, when I deploy a beta version of the application on a live server and test it at the &lt;a href=&quot;http://yami-ichi.biz/nyc/&quot;&gt;New York City Internet Yami-Ichi&lt;/a&gt; event by giving the URL out to a (small) number of attendees. This early-stage test will be crucial in refining the user interactions and aesthetics. In addition to the application itself, I will design a brief Google forms survey to collect UX feedback.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Capstone Project Grading Rubric</title>
@@ -94,7 +143,7 @@
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;beta-test-at-the-nyc-internet-yami-ichi&quot;&gt;Beta-test at the NYC Internet Yami-Ichi&lt;/h4&gt;
+&lt;h4 id=&quot;beta-test-at-the-nyc-internet-yami-ichihttpyami-ichibiznyc&quot;&gt;Beta-test at the &lt;a href=&quot;http://yami-ichi.biz/nyc/&quot;&gt;NYC Internet Yami-Ichi&lt;/a&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;em&gt;12 Sept 2015&lt;/em&gt;&lt;/p&gt;
 
 &lt;ul&gt;
