@@ -4,7 +4,7 @@
  <title>annotatAR</title>
  <link href="http://arebe.github.io/annotatar//annotatar/atom.xml" rel="self"/>
  <link href="http://arebe.github.io/annotatar//annotatar/"/>
- <updated>2015-09-04T12:22:06-04:00</updated>
+ <updated>2015-09-04T12:27:38-04:00</updated>
  <id>http://arebe.github.io/annotatar/</id>
  <author>
    <name>RB</name>
@@ -185,7 +185,7 @@
    <link href="http://arebe.github.io/annotatar//annotatar/2015/08/31/welcome/"/>
    <updated>2015-08-31T00:00:00-04:00</updated>
    <id>http://arebe.github.io/annotatar//2015/08/31/welcome</id>
-   <content type="html">&lt;p&gt;This blog will track my progress on my ALM capstone project, annotatAR. Details about the motivation, design, and prospective schedule are part of &lt;a href=&quot;assets/files/ALM_Capstone_Proposal_RBoyce_v3.2.pdf&quot;&gt;the project proposal&lt;/a&gt;.&lt;/p&gt;
+   <content type="html">&lt;p&gt;This blog will track my progress on my ALM capstone project, annotatAR. Details about the motivation, design, and prospective schedule are part of &lt;a href=&quot;/annotatar/assets/files/ALM_Capstone_Proposal_RBoyce_v3.2.pdf&quot;&gt;the project proposal&lt;/a&gt;.&lt;/p&gt;
 
 &lt;hr /&gt;
 
