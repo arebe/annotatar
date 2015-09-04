@@ -7,7 +7,7 @@ As part of this week's set of assignments, I have revisited the project mileston
 
 -----
 
-#### Beta-test at the NYC Internet Yami-Ichi
+#### Beta-test at the [NYC Internet Yami-Ichi](http://yami-ichi.biz/nyc/)
 _12 Sept 2015_
 
 * Mobile site deployed on a live server
