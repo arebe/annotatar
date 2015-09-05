@@ -71,12 +71,14 @@ if (Meteor.isClient) {
 
 if (Meteor.isServer) {
   Meteor.startup(function () {
+    // config_twit = Npm.require('./config_twit');
+
     Twit = new TwitMaker({
-      consumer_key:         'VroUuKrEelXeAzaD7C7pj1Jjd'
-      , consumer_secret:      'F6cejULcJGP28tpPk9nPPW02SHEPQPKncER6aOXbR9G70GYzI5'
-      , access_token:         '11008862-Bb7p7VQRHCbzqviAX4nAdBOCEoWSj6Qy7z57wR3QN'
-      , access_token_secret:  'R4bHwhPLsCOdimkhMdPQSaD34GsR8eCWYkKpIGiO6FdTk'
-    });
+    consumer_key:         Meteor.settings.twitter.consumer_key
+  , consumer_secret:      Meteor.settings.twitter.consumer_secret
+  , access_token:         Meteor.settings.twitter.access_token
+  , access_token_secret:  Meteor.settings.twitter.access_token_secret
+});
 
     var handleTweets = Meteor.bindEnvironment(function(err, data, response) {
       console.log(data);
@@ -105,7 +107,7 @@ if (Meteor.isServer) {
     // );
 
 // uncomment to turn the stream on:
-    // stream.on('tweet', handleStream);
+    stream.on('tweet', handleStream);
   });
 
 Meteor.publish("tweets", function () {
