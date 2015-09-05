@@ -4,7 +4,7 @@
  <title>annotatAR</title>
  <link href="http://arebe.github.io/annotatar//annotatar/atom.xml" rel="self"/>
  <link href="http://arebe.github.io/annotatar//annotatar/"/>
- <updated>2015-09-04T18:15:10-04:00</updated>
+ <updated>2015-09-04T21:30:40-04:00</updated>
  <id>http://arebe.github.io/annotatar/</id>
  <author>
    <name>RB</name>
@@ -21,7 +21,7 @@
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;user-interaction&quot;&gt;User interaction&lt;/h4&gt;
+&lt;h4 id=&quot;user-interaction-paradigm&quot;&gt;User interaction paradigm&lt;/h4&gt;
 
 &lt;p&gt;annotatAR was inspired by a project I worked on in Fall 2014, &lt;a href=&quot;http://docshop0.tumblr.com/&quot;&gt;Notes from El Saniyya&lt;/a&gt;. As part of &lt;a href=&quot;http://docshop.space/&quot;&gt;DocShop at metaLab&lt;/a&gt;, I worked with Egyptian artist Lara Baladi to create a prototype of a living timeline of the Arab Spring. The &lt;em&gt;Notes…&lt;/em&gt; event was highly participatory and we wondered what the next steps for engaging with a multi-media archive might be like.&lt;/p&gt;
 
@@ -29,7 +29,7 @@
   &lt;p&gt;You walk into a gallery space, with a curved wall with a huge timeline, each point on the timeline is an event in the Arab Spring / Tahrir Square 21 days. you want to add your own comment to the timeline, reacting to something on the timeline that triggered a memory or emotion - given any possible technology or material, how would you leave a message?&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;This is moativation for utilizing an augmented reality platform, and Twitter as a common social interface.&lt;/p&gt;
+&lt;p&gt;This is motivation for utilizing an augmented reality platform, and Twitter as a common social interface.&lt;/p&gt;
 
 &lt;h4 id=&quot;meteor&quot;&gt;Meteor&lt;/h4&gt;
 
@@ -46,7 +46,10 @@
 &lt;p&gt;In the short term, the mobile application has a number of refinements to be achieved:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;twitter api config file - untracked (not shared on github)&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;strike&gt;twitter api config file - untracked (not shared on github)&lt;/strike&gt;
+    &lt;p&gt;done! - now using settings.json&lt;/p&gt;
+  &lt;/li&gt;
   &lt;li&gt;resize navigator to fit device screen&lt;/li&gt;
   &lt;li&gt;use accelerometer data to detect motion and update tweet position&lt;/li&gt;
   &lt;li&gt;turn the stream on and display new tweets&lt;/li&gt;
