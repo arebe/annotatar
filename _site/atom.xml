@@ -4,13 +4,88 @@
  <title>annotatAR</title>
  <link href="http://arebe.github.io/annotatar//annotatar/atom.xml" rel="self"/>
  <link href="http://arebe.github.io/annotatar//annotatar/"/>
- <updated>2015-09-14T01:22:10-04:00</updated>
+ <updated>2015-09-14T15:21:25-04:00</updated>
  <id>http://arebe.github.io/annotatar/</id>
  <author>
    <name>RB</name>
    <email>rfboyce+annotatar@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Week 3 Beta Testing at NYC Internet Yami-Ichi</title>
+   <link href="http://arebe.github.io/annotatar//annotatar/2015/09/14/week3a/"/>
+   <updated>2015-09-14T00:00:00-04:00</updated>
+   <id>http://arebe.github.io/annotatar//2015/09/14/week3a</id>
+   <content type="html">&lt;p&gt;In which we visit the internet black market and take some screenshots.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20150912_yaminyc/brian_esser_yaminyc.jpg&quot; alt=&quot;NYC Internet Yami-Ichi (photo credit to Brian Esser)&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;preparation&quot;&gt;Preparation&lt;/h4&gt;
+
+&lt;p&gt;I was tipped off to the existence of the &lt;a href=&quot;http://yami-ichi.biz/nyc/&quot;&gt;NYC Internet Yami-Ichi&lt;/a&gt; by some colleagues from &lt;a href=&quot;http://itp.nyu.edu/camp2015/&quot;&gt;ITP Camp at NYU&lt;/a&gt;. The event began in Japan and is devoted to the extrapolation of everything “internet-ish” into the real world. Due to my interest in net art and utilizing online interactions as an artistic medium, I was immediately interested in participating. It also seemed like an excellent place for the first test of annotatAR in the wild.&lt;/p&gt;
+
+&lt;p&gt;I set the bar for the beta-test fairly low - the key here would be to see how and if people utilized the core functionality of tweets displayed on a real-time &lt;code&gt;getUserMedia&lt;/code&gt; video feed. I deployed a test version of the app on Meteor’s test server. The Meteor platform proved itself useful in this regard: it was quite easy to deploy multiple versions from the same code base by simply changing the URL in the &lt;code&gt;meteor deploy&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;p&gt;annotatAR achieved the minimal viable test build plus a few extra features:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;geolocation (coordinates and accuracy) was displayed below the video feed - for testing purposes only&lt;/li&gt;
+  &lt;li&gt;tweet data was displayed in decresing font size - the age of the tweet was linearly mapped to the font scale - tweets appeared as 50px in size and decreased down to 5px over the course of 8 hours&lt;/li&gt;
+  &lt;li&gt;the databse stores the hashtag for the search that generates each the tweet&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;survey&quot;&gt;Survey&lt;/h4&gt;
+
+&lt;p&gt;I also designed a brief user feedback survey and posted it on Google Forms. I also made a paper version (which is what I ended up utiliting in situ).&lt;/p&gt;
+
+&lt;p&gt;The survey captures whether or not the video and tweet functions work, information about th edevice &amp;amp; browser, and some open-ended questions.&lt;/p&gt;
+
+&lt;h4 id=&quot;internet-yami-ichi-deployment&quot;&gt;Internet Yami-Ichi Deployment&lt;/h4&gt;
+
+&lt;p&gt;The &lt;a href=&quot;http://annotatar_yaminyc.meteor.com&quot;&gt;#yaminyc app&lt;/a&gt; was deployed the night before the event, and targeted at the Twitter hashtag “#yaminyc” where a couple of folks had already begun to interact. &lt;/p&gt;
+
+&lt;p&gt;I acheived two separate user tests during the event. One was successful and generated some great feedback regarding next directions for the UI: a “selfie” mode, screencapture interface button, and an animated GIF generator. The second test was not as successful - it was an iPhone and it seemed that the phone did not ask the user for permission to connect to the &lt;code&gt;getUserMedia&lt;/code&gt; device at all. This may be a significant issue going forward, if iPhone defaults interfere with this browser funcitonality.&lt;/p&gt;
+
+&lt;p&gt;I also took a number of screenshots at the event. It is quite an expressive way of documenting this type of gathering - one gets a sense of a crowd of virtual eavesdropping entities. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_00.png&quot; alt=&quot;annotatAR at NYC Internet Yami-Ichi&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_01.png&quot; alt=&quot;annotatAR at NYC Internet Yami-Ichi&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_02.png&quot; alt=&quot;annotatAR at NYC Internet Yami-Ichi&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_03.png&quot; alt=&quot;annotatAR at NYC Internet Yami-Ichi&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_04.png&quot; alt=&quot;annotatAR at NYC Internet Yami-Ichi&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_05.png&quot; alt=&quot;annotatAR at NYC Internet Yami-Ichi&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_06.png&quot; alt=&quot;annotatAR at NYC Internet Yami-Ichi&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_07.png&quot; alt=&quot;annotatAR at NYC Internet Yami-Ichi&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_08.png&quot; alt=&quot;annotatAR at NYC Internet Yami-Ichi&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_09.png&quot; alt=&quot;annotatAR at NYC Internet Yami-Ichi&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_10.png&quot; alt=&quot;annotatAR at NYC Internet Yami-Ichi&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_11.png&quot; alt=&quot;annotatAR at NYC Internet Yami-Ichi&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;lessons&quot;&gt;Lessons&lt;/h4&gt;
+
+&lt;p&gt;I think that annotatAR was quite effective in achieving the union of virtual and real space in an expressive way. &lt;/p&gt;
+
+&lt;p&gt;I was a bit frustrated with the quality of the web camera picture, I wonder if anything can be done to improve it.&lt;/p&gt;
+
+&lt;p&gt;I’m also brainstorming about the next level of the project: the desktop site. Perhaps it should be a focal point for sharing screenshots, or perhaps the screenshots could be utilized in a larger work of some kind. I now have a databse of tweets from an event to experiment with, as a corpus for text analysis.&lt;/p&gt;
+
+&lt;p&gt;I’m a bit concerned about the &lt;a href=&quot;http://iswebrtcreadyyet.com/&quot;&gt;failure of iOS&lt;/a&gt; to connect to the WebRTC protocol, which I was not expecting since it is supported by the versions of Firefox and Chrome that are on the iPhone device thtat was tested. I will address this in my upcoming post on scoping for compatibility and audience. &lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Week 2 Feedback and Learning</title>
