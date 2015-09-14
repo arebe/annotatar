@@ -4,13 +4,52 @@
  <title>annotatAR</title>
  <link href="http://arebe.github.io/annotatar//annotatar/atom.xml" rel="self"/>
  <link href="http://arebe.github.io/annotatar//annotatar/"/>
- <updated>2015-09-04T21:30:40-04:00</updated>
+ <updated>2015-09-14T01:22:10-04:00</updated>
  <id>http://arebe.github.io/annotatar/</id>
  <author>
    <name>RB</name>
    <email>rfboyce+annotatar@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Week 2 Feedback and Learning</title>
+   <link href="http://arebe.github.io/annotatar//annotatar/2015/09/13/week2/"/>
+   <updated>2015-09-13T00:00:00-04:00</updated>
+   <id>http://arebe.github.io/annotatar//2015/09/13/week2</id>
+   <content type="html">&lt;p&gt;In which annotatAR undergoes critique by two fellow capstone students, RB converses with Jen Kramer, and preparation is underway for the first beta deployment.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;check-in-with-jen&quot;&gt;Check-in with Jen&lt;/h4&gt;
+
+&lt;p&gt;Call with Jen K was super helpful in thinking about next steps for the design and how to justify decisions with demographics and user personas. It was great to have a chat about high-level project goals, and it was super helpful start to think about deliverables in terms of the December presentations. &lt;/p&gt;
+
+&lt;p&gt;We reviewed the rubric and I’m going to revisit it in light of our conversation; the main advice was to try to define the criteria as specifically as possible so we are on the same page about the final deliverables. I will spend s bit of time thinking through the aesthetic qualities that are most important. Similarly, I will work to define a specific use-case for device compatibility and narrow the scope to what makes the most sense for the target audience demographic.&lt;/p&gt;
+
+&lt;h4 id=&quot;feedback-from-pat--peg&quot;&gt;Feedback from Pat &amp;amp; Peg&lt;/h4&gt;
+
+&lt;p&gt;My group members provided copius and helpful feedback - I think it really helped that I asked a couple of specific but somewhat open-ended questions in my video :) The main areas where I hoped to receive suggestions were user experience and scaling the project down the road. Overall, I’m hearing that a simple interface for the mobile site is preferable - the tweets should be obvious and contrasting. Scaling could go in various directions - Pat had some suggestions about devices which I will consider when I revisit my grading rubric. I look forward to incorporating the thoughtful ideas that Peg and Pat have shared with me.&lt;/p&gt;
+
+&lt;h4 id=&quot;learning-meteor&quot;&gt;Learning Meteor&lt;/h4&gt;
+
+&lt;p&gt;I went to a Meteor meet-up in New York and met some awesome Meteor folks. I learned about &lt;a href=&quot;https://www.discovermeteor.com/&quot;&gt;Discover Meteor&lt;/a&gt;, the guide to getting started. I also learned about how Meteor handles authorization and authentication, why you might want to render views on the server (which is functionality that will part of the next release of Meteor), and also heard about the Meteor package &lt;a href=&quot;https://atmospherejs.com/houston/admin&quot;&gt;houston&lt;/a&gt; for implementing a database UI. &lt;/p&gt;
+
+&lt;p&gt;In preparing for the beta deployment at the &lt;a href=&quot;http://yami-ichi.biz/nyc/&quot;&gt;Internet Yami-Ichi NYC&lt;/a&gt;, I realized that an HTML5 game engine might be a suitable platform for displaying the tweet database. Such a mobile framework wold handle the canvas on the mobile app - something as simple as resizing the video to fit the screen seems needlessly complex to code from scratch. So I’m seeking a mobile-first render engine. Some candidates:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.pixijs.com/&quot;&gt;Pixi.js&lt;/a&gt; - a 2D webgl renderer&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://phaser.io&quot;&gt;Phaser&lt;/a&gt; - HTML 5 game framework that’s (previously) based on Pixi&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://famous.org/&quot;&gt;Famous&lt;/a&gt; - js library for animations &amp;amp; interfaces (not as much doc)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;looking-ahead-this-week&quot;&gt;Looking ahead this week&lt;/h4&gt;
+
+&lt;p&gt;The upcoming week, I will develop a user persona based on the demographics of twitter users, sketch out the app database design, and mock up the UI for the mobile site.&lt;/p&gt;
+
+&lt;p&gt;I’ll also be posting a recap of this weekend’s beta test as its own post.&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Week 1 Summer Progress</title>
