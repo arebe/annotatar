@@ -4,13 +4,67 @@
  <title>annotatAR</title>
  <link href="http://arebe.github.io/annotatar//annotatar/atom.xml" rel="self"/>
  <link href="http://arebe.github.io/annotatar//annotatar/"/>
- <updated>2015-09-14T15:21:25-04:00</updated>
+ <updated>2015-09-23T23:00:36-04:00</updated>
  <id>http://arebe.github.io/annotatar/</id>
  <author>
    <name>RB</name>
    <email>rfboyce+annotatar@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Week 4 Scope and Usability</title>
+   <link href="http://arebe.github.io/annotatar//annotatar/2015/09/23/week4/"/>
+   <updated>2015-09-23T00:00:00-04:00</updated>
+   <id>http://arebe.github.io/annotatar//2015/09/23/week4</id>
+   <content type="html">&lt;p&gt;Revisiting the project goals, scope, and affordances.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;reorienting&quot;&gt;Reorienting&lt;/h4&gt;
+
+&lt;p&gt;Last Fall, I has the opportunity to work with the talented &lt;a href=&quot;http://docshop.space&quot;&gt;DocShop&lt;/a&gt; team on an experimental event called &lt;a href=&quot;http://docshop0.tumblr.com/&quot;&gt;Notes from El Saniyaa&lt;/a&gt; in which we worked with artist Lara Baladi to prototype her ongoing &lt;a href=&quot;http://www.tahrirarchives.com/&quot;&gt;Vox Populi&lt;/a&gt; project. This ambitious work is an interactive multimedia archive of the Arab Spring, specifically the Egyptian Revolution of 2011. The experience of working with archival material in a socially-aware setting has been a deep inspiration for annotatAR and its design goals.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/notes_poster.jpg&quot; alt=&quot;Notes from El Saniyya poster&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;It was with great excitement that I received an email from Lara last week, with news of the next iteration of the project: a picnic in Dewey Square to commemorate the anniversary of &lt;a href=&quot;http://www.occupyboston.org/&quot;&gt;Occupy Boston&lt;/a&gt;, a collective protest and re-settlement of public space that occurred from September 30 - December 10, 2011 in solidarity with &lt;a href=&quot;http://occupywallst.org/&quot;&gt;Occupy Wall Street&lt;/a&gt; and other &lt;a href=&quot;https://en.wikipedia.org/wiki/Occupy_movement&quot;&gt;Occupy movements&lt;/a&gt; around the world.&lt;/p&gt;
+
+&lt;p&gt;Lara is excited to utilized annotatAR as part of the commemorative picnic, and we are in the process of hashing out the details for incorporating my software. However, the overall goals and aesthetic of her event require some re-thinking of how to best to incorporate annotatAR as a digital tool. We’ve agreed that at this point it would be best to use annotatAR as a documentation tool rather than deploying it as a full-fledged augmented reality experience. &lt;/p&gt;
+
+&lt;h4 id=&quot;goals-for-the-picnic&quot;&gt;Goals for the picnic&lt;/h4&gt;
+
+&lt;p&gt;September 30 is approaching rapidly, and I’d really like to be able to utilize annotatAR to the fullest extent. My experience at the Internet Yami-Ichi was that, while the mechanics worked, there are many aesthetic improvements to be made.&lt;/p&gt;
+
+&lt;p&gt;New focal points include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Legibility of the tweet text through typography and color palette&lt;/li&gt;
+  &lt;li&gt;Resolution of video&lt;/li&gt;
+  &lt;li&gt;Screen capture &lt;/li&gt;
+  &lt;li&gt;Switching between several hashtags &lt;/li&gt;
+  &lt;li&gt;Displaying tweets from 2011 to capture the historicity of the current event&lt;/li&gt;
+  &lt;li&gt;Filtering out URLs that clutter the image with illegible content&lt;/li&gt;
+  &lt;li&gt;Locating the tweets in a 3D space to further spread them out and increase legibility&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;post-picnic-content&quot;&gt;Post-picnic content&lt;/h4&gt;
+
+&lt;p&gt;Once we have screenshots created with annotatAR the next step is to generate an expressive media object using these images. Perhaps this takes the form of a multi-media collage. &lt;/p&gt;
+
+&lt;p&gt;I’d like to incorporate text visualization from the tweets for a multi-modal presentation, as an interactive website along with static images and video. The end-user has become the archival artist (such as myself and Lara) and ultimately the general public. In this case success can be assessed by determining reactions of the audience, if the work elicits a sense of historicity and participation, and an emotive reaction. I believe this work also helps me process my experience of participating in Occupy, and commemorating it in an official capacity is an opportunity to orient my own experiences within a global context. My goal for this project is to do the same for other participants in Occupy - as well as provide a touchstone for folks who are interested in contemporary protest movements.&lt;/p&gt;
+
+&lt;h4 id=&quot;usability-and-scope&quot;&gt;Usability and scope&lt;/h4&gt;
+
+&lt;p&gt;This new orientation for annotatAR focuses more on the output of screenshots than usability in the sense of affordances to a naive end-user. Geolocation is unnecessary for this iteration and cross-browser and -platform compatibility become irrelevant.&lt;/p&gt;
+
+&lt;p&gt;Narrowing the scope of the project to a known and tested platform (Firefox on a Galaxy 4G smart phone) makes the project more manageable and provides a clear direction for design decisions. Geolocative and “on-boarding” affordances of the UI are features that can wait until the visual design has been refined.&lt;/p&gt;
+
+&lt;h4 id=&quot;further-planning&quot;&gt;Further planning&lt;/h4&gt;
+
+&lt;p&gt;As I continue to work with Lara and the DocShop team to prepare for the event, I believe more design ideas will surface. I expect that the next week will be full of challenges, brainstorming, and new ideas.&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Week 3 Beta Testing at NYC Internet Yami-Ichi</title>
