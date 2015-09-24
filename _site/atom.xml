@@ -4,7 +4,7 @@
  <title>annotatAR</title>
  <link href="http://arebe.github.io/annotatar//annotatar/atom.xml" rel="self"/>
  <link href="http://arebe.github.io/annotatar//annotatar/"/>
- <updated>2015-09-23T23:02:37-04:00</updated>
+ <updated>2015-09-23T23:24:32-04:00</updated>
  <id>http://arebe.github.io/annotatar/</id>
  <author>
    <name>RB</name>
@@ -25,7 +25,8 @@
 
 &lt;p&gt;Last Fall, I has the opportunity to work with the talented &lt;a href=&quot;http://docshop.space&quot;&gt;DocShop&lt;/a&gt; team on an experimental event called &lt;a href=&quot;http://docshop0.tumblr.com/&quot;&gt;Notes from El Saniyya&lt;/a&gt; in which we worked with artist Lara Baladi to prototype her ongoing &lt;a href=&quot;http://www.tahrirarchives.com/&quot;&gt;Vox Populi&lt;/a&gt; project. This ambitious work is an interactive multimedia archive of the Arab Spring, specifically the Egyptian Revolution of 2011. The experience of working with archival material in a socially-aware setting has been a deep inspiration for annotatAR and its design goals.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/notes_poster.jpg&quot; alt=&quot;Notes from El Saniyya poster&quot; /&gt;&lt;/p&gt;
+&lt;iframe src=&quot;https://player.vimeo.com/video/132129973?title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; width=&quot;600&quot; height=&quot;337&quot; frameborder=&quot;0&quot; webkitallowfullscreen=&quot;&quot; mozallowfullscreen=&quot;&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href=&quot;https://vimeo.com/132129973&quot;&gt;Vox Populi, Archiving a Revolution in the Digital Age&lt;/a&gt; from &lt;a href=&quot;https://vimeo.com/user41572927&quot;&gt;Lara Baladi&lt;/a&gt; on &lt;a href=&quot;https://vimeo.com&quot;&gt;Vimeo&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;It was with great excitement that I received an email from Lara last week, with news of the next iteration of the project: a picnic in Dewey Square to commemorate the anniversary of &lt;a href=&quot;http://www.occupyboston.org/&quot;&gt;Occupy Boston&lt;/a&gt;, a collective protest and re-settlement of public space that occurred from September 30 - December 10, 2011 in solidarity with &lt;a href=&quot;http://occupywallst.org/&quot;&gt;Occupy Wall Street&lt;/a&gt; and other &lt;a href=&quot;https://en.wikipedia.org/wiki/Occupy_movement&quot;&gt;Occupy movements&lt;/a&gt; around the world.&lt;/p&gt;
 
