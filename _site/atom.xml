@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
  <title>annotatAR</title>
- <link href="http://arebe.github.io/annotatar//annotatar/atom.xml" rel="self"/>
- <link href="http://arebe.github.io/annotatar//annotatar/"/>
- <updated>2015-09-23T23:24:32-04:00</updated>
- <id>http://arebe.github.io/annotatar/</id>
+ <link href="http://arebe.github.io/annotatar/atom.xml" rel="self"/>
+ <link href="http://arebe.github.io/annotatar/"/>
+ <updated>2015-10-02T19:17:17-04:00</updated>
+ <id>http://arebe.github.io</id>
  <author>
    <name>RB</name>
    <email>rfboyce+annotatar@gmail.com</email>
@@ -13,10 +13,91 @@
 
  
  <entry>
+   <title>Week 5 Invisible Monument</title>
+   <link href="http://arebe.github.io/annotatar/2015/10/02/week5/"/>
+   <updated>2015-10-02T00:00:00-04:00</updated>
+   <id>http://arebe.github.io/2015/10/02/week5</id>
+   <content type="html">&lt;p&gt;Outcomes from deployement at Invisible Monument launch event in Boston.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;lead-up-to-deployment&quot;&gt;Lead up to deployment&lt;/h4&gt;
+
+&lt;p&gt;In the past week, I had a development push to meet the development goals that were most important to be able to demonstrate annotatAR’s utility as a docmentation tool. I met those goals for the most part. I was able to implement:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Typography and color changes for better legibilty&lt;/li&gt;
+  &lt;li&gt;Stripping the tweet text of URLs&lt;/li&gt;
+  &lt;li&gt;Screen capture button to save an image of the &lt;code&gt;canvas&lt;/code&gt; element&lt;/li&gt;
+  &lt;li&gt;Panning with accelerometer data - incomplete implementation&lt;/li&gt;
+  &lt;li&gt;Integrating stream and REST Twitter API data&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ideally, I want to use accelerometer data from the device to allow the end user to pan around - to change the position of the tweets to create the illusion that they are positioned in three dimensional space. While I wasn’t able to achieve a reliable 3D effect, I started to experiment with the &lt;code&gt;ondevicemotion&lt;/code&gt; JavaScript event, and &lt;code&gt;accellerationIncludingGravity&lt;/code&gt; on the X and Y axes. While I was able to achieve somewhat fluid UX on my laptop, the calibration did not translate properly to my Galaxy 4G device.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_00.png&quot; alt=&quot;annotatAR at #LuncheonOnTheGrass&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;invisible-monument&quot;&gt;Invisible Monument&lt;/h4&gt;
+
+&lt;p&gt;The Invisible Monument launch event, #LuncheonOnTheGrass took place on 30 Sept 2015, in Dewey Square, Boston. &lt;a href=&quot;http://invisiblemonument.com/&quot;&gt;Invisible Monument&lt;/a&gt; is a locative sound installation created by Halsey Burgund and Lara Baladi, that cn be experienced using an iOS application. Various sond elements are triggered by geolocations around Dewey Square. &lt;/p&gt;
+
+&lt;p&gt;I met the team on site for the launch event and started taking screen captures with annotatAR. I used three different Twitter tags: #occupy, #the99, and #luncheononthegrass. I adjusted the “die-off” rate for each of the tweets according to how often the tag was used. As the tweets get older, they become smaller and more transparent. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_01.png&quot; alt=&quot;annotatAR at #LuncheonOnTheGrass&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_02.png&quot; alt=&quot;annotatAR at #LuncheonOnTheGrass&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_03.png&quot; alt=&quot;annotatAR at #LuncheonOnTheGrass&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_04.png&quot; alt=&quot;annotatAR at #LuncheonOnTheGrass&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_05.png&quot; alt=&quot;annotatAR at #LuncheonOnTheGrass&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_06.png&quot; alt=&quot;annotatAR at #LuncheonOnTheGrass&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_07.png&quot; alt=&quot;annotatAR at #LuncheonOnTheGrass&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_08.png&quot; alt=&quot;annotatAR at #LuncheonOnTheGrass&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;historic-tweets&quot;&gt;Historic tweets&lt;/h4&gt;
+
+&lt;p&gt;I would like to be able to overlay historic tweet data as well as current tweets. However, the &lt;a href=&quot;https://dev.twitter.com/rest/public/search&quot;&gt;Twitter REST API&lt;/a&gt; allows access to tweets created within the past couple of weeks only.&lt;/p&gt;
+
+&lt;p&gt;Third-party services such as &lt;a href=&quot;https://gnip.com/&quot;&gt;GNIP&lt;/a&gt; are social media brokers from which you can purchase historic data. The base rate for historic tweet data starts at $1.1k and increased depending on length of time and number of tweets returned by the query. &lt;/p&gt;
+
+&lt;p&gt;While this is cost-prohibitive for the time being, it does add a layer of utility to annotatAR. I have already implemented the ability to download the database of tweets as a CSV file, which could be quite useful in capturing an independent record of a hashtag.&lt;/p&gt;
+
+&lt;p&gt;Additionally, I spoke to one of the participants in #LuncheonOnTheGrass who directed me to an archive of tweets from the Occupy movement, available at &lt;a href=&quot;http://occupyresearch.net/&quot;&gt;Occupy Research&lt;/a&gt; and &lt;a href=&quot;http://r-shief.org/&quot;&gt;R-Shief&lt;/a&gt;. These might be a useful corpus to draw on in future iterations. &lt;/p&gt;
+
+&lt;h4 id=&quot;future-of-invisible-monument&quot;&gt;Future of Invisible Monument&lt;/h4&gt;
+
+&lt;p&gt;Lara and team were quite excited by the output from annotatAR, and will use my documentation of #LuncheonOnTheGrass as part of the ongoing archive for Invisible Monument / Vox Populi. &lt;/p&gt;
+
+&lt;p&gt;We began to discuss how annotatAR might be integrated with Halsey’s &lt;a href=&quot;http://www.roundware.org/&quot;&gt;Roundware&lt;/a&gt; platform, to provide an integrated experience with the audioscape. Future directions for Invisible Monument are quite exciting, and I hope to continue to work with them. However, I think this will only be possible of Halsey ports Roundware to Android or the mobile web.&lt;/p&gt;
+
+&lt;h4 id=&quot;near-term-goals&quot;&gt;Near term goals&lt;/h4&gt;
+
+&lt;p&gt;More immediate goals for annotatAR include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bug fixing - hashtags on the stream seemed not to work on the website (though the stream worked on the local version)&lt;/li&gt;
+  &lt;li&gt;Bug fixing - houston doesn’t seem to work, maybe due to special characters?&lt;/li&gt;
+  &lt;li&gt;Fluid accelerometer use&lt;/li&gt;
+  &lt;li&gt;URL routing for hashtag display&lt;/li&gt;
+  &lt;li&gt;Automation or parameterization of annotatAR UX elements (ie age til die-off)&lt;/li&gt;
+  &lt;li&gt;Capturing additional tweet data (ie user, associated photos) for posterity&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Once these goals are achieved it may be time to turn to text analysis and a desktop site.&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
    <title>Week 4 Scope and Usability</title>
-   <link href="http://arebe.github.io/annotatar//annotatar/2015/09/23/week4/"/>
+   <link href="http://arebe.github.io/annotatar/2015/09/23/week4/"/>
    <updated>2015-09-23T00:00:00-04:00</updated>
-   <id>http://arebe.github.io/annotatar//2015/09/23/week4</id>
+   <id>http://arebe.github.io/2015/09/23/week4</id>
    <content type="html">&lt;p&gt;Revisiting the project goals, scope, and affordances.&lt;/p&gt;
 
 &lt;hr /&gt;
@@ -69,9 +150,9 @@
  
  <entry>
    <title>Week 3 Beta Testing at NYC Internet Yami-Ichi</title>
-   <link href="http://arebe.github.io/annotatar//annotatar/2015/09/14/week3a/"/>
+   <link href="http://arebe.github.io/annotatar/2015/09/14/week3a/"/>
    <updated>2015-09-14T00:00:00-04:00</updated>
-   <id>http://arebe.github.io/annotatar//2015/09/14/week3a</id>
+   <id>http://arebe.github.io/2015/09/14/week3a</id>
    <content type="html">&lt;p&gt;In which we visit the internet black market and take some screenshots.&lt;/p&gt;
 
 &lt;hr /&gt;
@@ -144,9 +225,9 @@
  
  <entry>
    <title>Week 2 Feedback and Learning</title>
-   <link href="http://arebe.github.io/annotatar//annotatar/2015/09/13/week2/"/>
+   <link href="http://arebe.github.io/annotatar/2015/09/13/week2/"/>
    <updated>2015-09-13T00:00:00-04:00</updated>
-   <id>http://arebe.github.io/annotatar//2015/09/13/week2</id>
+   <id>http://arebe.github.io/2015/09/13/week2</id>
    <content type="html">&lt;p&gt;In which annotatAR undergoes critique by two fellow capstone students, RB converses with Jen Kramer, and preparation is underway for the first beta deployment.&lt;/p&gt;
 
 &lt;hr /&gt;
@@ -183,9 +264,9 @@
  
  <entry>
    <title>Week 1 Summer Progress</title>
-   <link href="http://arebe.github.io/annotatar//annotatar/2015/09/04/week1/"/>
+   <link href="http://arebe.github.io/annotatar/2015/09/04/week1/"/>
    <updated>2015-09-04T00:00:00-04:00</updated>
-   <id>http://arebe.github.io/annotatar//2015/09/04/week1</id>
+   <id>http://arebe.github.io/2015/09/04/week1</id>
    <content type="html">&lt;p&gt;In which our hero recounts the details of this summer’s work….&lt;/p&gt;
 
 &lt;hr /&gt;
@@ -235,9 +316,9 @@
  
  <entry>
    <title>Capstone Project Grading Rubric</title>
-   <link href="http://arebe.github.io/annotatar//annotatar/2015/09/03/grading/"/>
+   <link href="http://arebe.github.io/annotatar/2015/09/03/grading/"/>
    <updated>2015-09-03T00:00:00-04:00</updated>
-   <id>http://arebe.github.io/annotatar//2015/09/03/grading</id>
+   <id>http://arebe.github.io/2015/09/03/grading</id>
    <content type="html">&lt;p&gt;As part of this week’s assignments, I have developed a grading rubric for annotatAR, for the scope of this fall’s Capstone Design Studio. This rubric has six dimensions, with three criteria each. The dimensions are categorized in two sub-sections: &lt;em&gt;Mobile Site&lt;/em&gt; and &lt;em&gt;Desktop Site&lt;/em&gt;. The points are weighted to emphasize the &lt;em&gt;Mobile Site&lt;/em&gt;, with a total possible score of 27 points.&lt;/p&gt;
 
 &lt;hr /&gt;
@@ -308,9 +389,9 @@
  
  <entry>
    <title>Capstone Project Milestones</title>
-   <link href="http://arebe.github.io/annotatar//annotatar/2015/09/02/milestones/"/>
+   <link href="http://arebe.github.io/annotatar/2015/09/02/milestones/"/>
    <updated>2015-09-02T00:00:00-04:00</updated>
-   <id>http://arebe.github.io/annotatar//2015/09/02/milestones</id>
+   <id>http://arebe.github.io/2015/09/02/milestones</id>
    <content type="html">&lt;p&gt;As part of this week’s set of assignments, I have revisited the project milestones for annotatAR this fall. &lt;/p&gt;
 
 &lt;hr /&gt;
@@ -403,9 +484,9 @@
  
  <entry>
    <title>Welcome to annotatAR's Blog</title>
-   <link href="http://arebe.github.io/annotatar//annotatar/2015/08/31/welcome/"/>
+   <link href="http://arebe.github.io/annotatar/2015/08/31/welcome/"/>
    <updated>2015-08-31T00:00:00-04:00</updated>
-   <id>http://arebe.github.io/annotatar//2015/08/31/welcome</id>
+   <id>http://arebe.github.io/2015/08/31/welcome</id>
    <content type="html">&lt;p&gt;This blog will track my progress on my ALM capstone project, annotatAR. Details about the motivation, design, and prospective schedule are part of &lt;a href=&quot;/annotatar/assets/files/ALM_Capstone_Proposal_RBoyce_v3.2.pdf&quot;&gt;the project proposal&lt;/a&gt;.&lt;/p&gt;
 
 &lt;hr /&gt;

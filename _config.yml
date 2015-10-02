@@ -7,7 +7,7 @@ relative_permalinks: true
 # Setup
 title:               annotatAR
 tagline:             lo-fi augmented reality for the mobile web
-url:                 http://arebe.github.io/annotatar/
+url:                 http://arebe.github.io
 paginate:            1
 baseurl:             "/annotatar"
 

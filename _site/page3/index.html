@@ -41,44 +41,80 @@
   
   <article class="post">
     <h1 class="post-title">
-      <a href="/annotatar/2015/09/13/week2/">
-        Week 2 Feedback and Learning
+      <a href="/annotatar/2015/09/14/week3a/">
+        Week 3 Beta Testing at NYC Internet Yami-Ichi
       </a>
     </h1>
 
-    <time datetime="2015-09-13T00:00:00-04:00" class="post-date">13 Sep 2015</time>
+    <time datetime="2015-09-14T00:00:00-04:00" class="post-date">14 Sep 2015</time>
 
-    <p>In which annotatAR undergoes critique by two fellow capstone students, RB converses with Jen Kramer, and preparation is underway for the first beta deployment.</p>
+    <p>In which we visit the internet black market and take some screenshots.</p>
 
 <hr />
 
-<h4 id="check-in-with-jen">Check-in with Jen</h4>
+<p><img src="/annotatar/assets/images/20150912_yaminyc/brian_esser_yaminyc.jpg" alt="NYC Internet Yami-Ichi (photo credit to Brian Esser)" /></p>
 
-<p>Call with Jen K was super helpful in thinking about next steps for the design and how to justify decisions with demographics and user personas. It was great to have a chat about high-level project goals, and it was super helpful start to think about deliverables in terms of the December presentations. </p>
+<h4 id="preparation">Preparation</h4>
 
-<p>We reviewed the rubric and I’m going to revisit it in light of our conversation; the main advice was to try to define the criteria as specifically as possible so we are on the same page about the final deliverables. I will spend s bit of time thinking through the aesthetic qualities that are most important. Similarly, I will work to define a specific use-case for device compatibility and narrow the scope to what makes the most sense for the target audience demographic.</p>
+<p>I was tipped off to the existence of the <a href="http://yami-ichi.biz/nyc/">NYC Internet Yami-Ichi</a> by some colleagues from <a href="http://itp.nyu.edu/camp2015/">ITP Camp at NYU</a>. The event began in Japan and is devoted to the extrapolation of everything “internet-ish” into the real world. Due to my interest in net art and utilizing online interactions as an artistic medium, I was immediately interested in participating. It also seemed like an excellent place for the first test of annotatAR in the wild.</p>
 
-<h4 id="feedback-from-pat--peg">Feedback from Pat &amp; Peg</h4>
+<p>I set the bar for the beta-test fairly low - the key here would be to see how and if people utilized the core functionality of tweets displayed on a real-time <code>getUserMedia</code> video feed. I deployed a test version of the app on Meteor’s test server. The Meteor platform proved itself useful in this regard: it was quite easy to deploy multiple versions from the same code base by simply changing the URL in the <code>meteor deploy</code> command.</p>
 
-<p>My group members provided copius and helpful feedback - I think it really helped that I asked a couple of specific but somewhat open-ended questions in my video :) The main areas where I hoped to receive suggestions were user experience and scaling the project down the road. Overall, I’m hearing that a simple interface for the mobile site is preferable - the tweets should be obvious and contrasting. Scaling could go in various directions - Pat had some suggestions about devices which I will consider when I revisit my grading rubric. I look forward to incorporating the thoughtful ideas that Peg and Pat have shared with me.</p>
-
-<h4 id="learning-meteor">Learning Meteor</h4>
-
-<p>I went to a Meteor meet-up in New York and met some awesome Meteor folks. I learned about <a href="https://www.discovermeteor.com/">Discover Meteor</a>, the guide to getting started. I also learned about how Meteor handles authorization and authentication, why you might want to render views on the server (which is functionality that will part of the next release of Meteor), and also heard about the Meteor package <a href="https://atmospherejs.com/houston/admin">houston</a> for implementing a database UI. </p>
-
-<p>In preparing for the beta deployment at the <a href="http://yami-ichi.biz/nyc/">Internet Yami-Ichi NYC</a>, I realized that an HTML5 game engine might be a suitable platform for displaying the tweet database. Such a mobile framework wold handle the canvas on the mobile app - something as simple as resizing the video to fit the screen seems needlessly complex to code from scratch. So I’m seeking a mobile-first render engine. Some candidates:</p>
+<p>annotatAR achieved the minimal viable test build plus a few extra features:</p>
 
 <ul>
-  <li><a href="http://www.pixijs.com/">Pixi.js</a> - a 2D webgl renderer</li>
-  <li><a href="http://phaser.io">Phaser</a> - HTML 5 game framework that’s (previously) based on Pixi</li>
-  <li><a href="http://famous.org/">Famous</a> - js library for animations &amp; interfaces (not as much doc)</li>
+  <li>geolocation (coordinates and accuracy) was displayed below the video feed - for testing purposes only</li>
+  <li>tweet data was displayed in decresing font size - the age of the tweet was linearly mapped to the font scale - tweets appeared as 50px in size and decreased down to 5px over the course of 8 hours</li>
+  <li>the databse stores the hashtag for the search that generates each the tweet</li>
 </ul>
 
-<h4 id="looking-ahead-this-week">Looking ahead this week</h4>
+<h4 id="survey">Survey</h4>
 
-<p>The upcoming week, I will develop a user persona based on the demographics of twitter users, sketch out the app database design, and mock up the UI for the mobile site.</p>
+<p>I also designed a brief user feedback survey and posted it on Google Forms. I also made a paper version (which is what I ended up utiliting in situ).</p>
 
-<p>I’ll also be posting a recap of this weekend’s beta test as its own post.</p>
+<p>The survey captures whether or not the video and tweet functions work, information about th edevice &amp; browser, and some open-ended questions.</p>
+
+<h4 id="internet-yami-ichi-deployment">Internet Yami-Ichi Deployment</h4>
+
+<p>The <a href="http://annotatar_yaminyc.meteor.com">#yaminyc app</a> was deployed the night before the event, and targeted at the Twitter hashtag “#yaminyc” where a couple of folks had already begun to interact. </p>
+
+<p>I acheived two separate user tests during the event. One was successful and generated some great feedback regarding next directions for the UI: a “selfie” mode, screencapture interface button, and an animated GIF generator. The second test was not as successful - it was an iPhone and it seemed that the phone did not ask the user for permission to connect to the <code>getUserMedia</code> device at all. This may be a significant issue going forward, if iPhone defaults interfere with this browser funcitonality.</p>
+
+<p>I also took a number of screenshots at the event. It is quite an expressive way of documenting this type of gathering - one gets a sense of a crowd of virtual eavesdropping entities. </p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_00.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_01.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_02.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_03.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_04.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_05.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_06.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_07.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_08.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_09.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_10.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_11.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<h4 id="lessons">Lessons</h4>
+
+<p>I think that annotatAR was quite effective in achieving the union of virtual and real space in an expressive way. </p>
+
+<p>I was a bit frustrated with the quality of the web camera picture, I wonder if anything can be done to improve it.</p>
+
+<p>I’m also brainstorming about the next level of the project: the desktop site. Perhaps it should be a focal point for sharing screenshots, or perhaps the screenshots could be utilized in a larger work of some kind. I now have a databse of tweets from an event to experiment with, as a corpus for text analysis.</p>
+
+<p>I’m a bit concerned about the <a href="http://iswebrtcreadyyet.com/">failure of iOS</a> to connect to the WebRTC protocol, which I was not expecting since it is supported by the versions of Firefox and Chrome that are on the iPhone device thtat was tested. I will address this in my upcoming post on scoping for compatibility and audience. </p>
 
   </article>
   
@@ -97,7 +133,7 @@
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2015-09-23T23:24:32-04:00">2015</time>. All rights reserved.
+          &copy; <time datetime="2015-10-02T19:17:17-04:00">2015</time>. All rights reserved.
           <span class="right"><a href="/annotatar/archive" title="Archive">Archive</a></span>
         </small>
       </footer>
