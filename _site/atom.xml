@@ -4,13 +4,110 @@
  <title>annotatAR</title>
  <link href="http://arebe.github.io/annotatar/atom.xml" rel="self"/>
  <link href="http://arebe.github.io/annotatar/"/>
- <updated>2015-10-02T19:17:17-04:00</updated>
+ <updated>2015-11-02T18:12:24-05:00</updated>
  <id>http://arebe.github.io</id>
  <author>
    <name>RB</name>
    <email>rfboyce+annotatar@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Week 9 Delinquncy</title>
+   <link href="http://arebe.github.io/annotatar/2015/11/02/week9/"/>
+   <updated>2015-11-02T00:00:00-05:00</updated>
+   <id>http://arebe.github.io/2015/11/02/week9</id>
+   <content type="html">&lt;p&gt;Overthinking and under-doing in October. Next steps.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;how-i-spent-october&quot;&gt;How I spent October&lt;/h4&gt;
+
+&lt;p&gt;I’ve had a very fruitful October. Unfortunately, this activity has not been focused on my own projects and thus annotatAR has been left on the wayside for far too long.&lt;/p&gt;
+
+&lt;p&gt;While I’ve been a bit delinquent in updating both this project blog and working on the project itself, I have accomplished much rumination on the final outcome for this project. &lt;/p&gt;
+
+&lt;p&gt;I somewhat switched focus at the begining of October, and began to think of the project as a sort of meta-documentation tool whose primary end-user would be me. This focus hasn’t sat well with me though, as the spirit of the project has been to build experientially what has already been ongoing virtually.&lt;/p&gt;
+
+&lt;p&gt;Particular questions remain to be answered:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Who is the audience for the mobile site? &lt;/li&gt;
+  &lt;li&gt;In what context will they discover it?&lt;/li&gt;
+  &lt;li&gt;Will the site display current or historic tweets?&lt;/li&gt;
+  &lt;li&gt;What controls will the end user have over the tweets being display?&lt;/li&gt;
+  &lt;li&gt;Will the website generate a database of tweet data?&lt;/li&gt;
+  &lt;li&gt;Will multiple hashtags be available at a particular location?&lt;/li&gt;
+  &lt;li&gt;Will the end user be able to change tweets?&lt;/li&gt;
+  &lt;li&gt;Will there be an administrative site where an admin can set up a new database entry for a geolocation / hashtag pairing?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;audience&quot;&gt;Audience&lt;/h4&gt;
+
+&lt;p&gt;My current thinking on the purpose of annotatAR is to fully embrace the art project aspect. Rather than thinking that this project is a tool to make other works, I would like to present it as a work in itself, a generative social media artwork. &lt;/p&gt;
+
+&lt;p&gt;In this case, the audience / end user becomes those interested in radical use of digital spaces, Twitter and social media, and contemporary activist movements.&lt;/p&gt;
+
+&lt;p&gt;The limitations of this direction are that the promary purpose is no longer documentation of an event in process. The Twitter stream API will likely not be useful - it will be necessary to utilize historic tweet data, such as has been gathered by Occupy Research.&lt;/p&gt;
+
+&lt;h4 id=&quot;context&quot;&gt;Context&lt;/h4&gt;
+
+&lt;p&gt;The working context for annotatAR will be a digital exhibition of some kind, where the audience finds out about the work through some third party - much like the Invisible Monument project. The artwork will be available for a specified timeframe during which someone can go to the appropriate location and experience the augmented reality app on their Android mobile device. &lt;/p&gt;
+
+&lt;p&gt;This work might be highlighted in a launch event or tour of some kind. Once annotatAR has a first version, I can begin to look at fellowships and opportunities to take the project further and share it with communities.&lt;/p&gt;
+
+&lt;h4 id=&quot;stream-vs-rest-vs-historic&quot;&gt;Stream vs REST vs Historic&lt;/h4&gt;
+
+&lt;p&gt;The Twitter API has two versions: the stream which affords access to real-time data as it is posted - and the REST version that allows queries based on various parameters.&lt;/p&gt;
+
+&lt;p&gt;For the conceptual purposes of this project, the stream is ideal, as it expresses the contemporality of dual sites:  online and in the “juice” of physical space. However, the stream depends highly the volume of tweets being generated in a given timeframe; if the event is generating a low level of interest on Twitter, than annotatAR will have sparse data to work with and be less effective as a visual presentation. &lt;/p&gt;
+
+&lt;p&gt;My deployment at the Invisible Monument launch utilized a blend of REST and stream in order to overcome the limitations of the stream API. &lt;/p&gt;
+
+&lt;p&gt;As the purpose of annotatAR has solidified around an experiential artwork, it becomes imperative to use Twitter API in a way that best expresses concept of the piece. The idea of synesthesia becomes an important concept - as we walk through the juice, the ideas and social sites of Twitter are invisible but present. annotatAR interacts with the visual sense to encode the virtual component of a multi-sited co-occurring event.&lt;/p&gt;
+
+&lt;p&gt;The use of historic data, where it exists, affords a slightly different expression of this co-occurrence. Instead of expressing contemporality, the visual metaphor would be more archeological in tone - that of unearthing and re-experiencing an event in the past, like an historical marker expressed in virtuality.&lt;/p&gt;
+
+&lt;h4 id=&quot;hashtag--geolocation&quot;&gt;Hashtag / Geolocation&lt;/h4&gt;
+
+&lt;p&gt;Should multiple hashtags be associated with a specific geolocation? &lt;/p&gt;
+
+&lt;p&gt;So doing might dilute the strength of the connection between a juice space and a twitter hashtag settlement - but it would also afford a more nuanced understanding of historicity of a space.&lt;/p&gt;
+
+&lt;h4 id=&quot;end-user-controls&quot;&gt;End user controls&lt;/h4&gt;
+
+&lt;p&gt;Given the above discussion, the end user will have some minimal controls - to select a hashtag (if there are multiple available at the geolocation), to pan around, to take a screenshot, and to scroll through time.&lt;/p&gt;
+
+&lt;h4 id=&quot;desktop-site&quot;&gt;Desktop site&lt;/h4&gt;
+
+&lt;p&gt;The desktop site will be quite minimal - a brief description of the project and map of the geolocations available. A sign-up for newsletter of project updates. &lt;/p&gt;
+
+&lt;h4 id=&quot;questions&quot;&gt;Questions&lt;/h4&gt;
+
+&lt;p&gt;What historic tweet data is available? - this needs to be answered ASAP to properly scope this and future versions.&lt;/p&gt;
+
+&lt;p&gt;Future directions:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Funding for a tweet aggregation service such as GNIP&lt;/li&gt;
+  &lt;li&gt;Development of a robust administrative layer&lt;/li&gt;
+  &lt;li&gt;Development of a way to share screen captures &lt;/li&gt;
+  &lt;li&gt;Integration with the Invisible Monument project (iOS)&lt;/li&gt;
+  &lt;li&gt;Development of a robust data collection system to gather data on contemporary events&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;More immediate goals for annotatAR (still) include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Bug fixing - hashtags on the stream seemed not to work on the website (though the stream worked on the local version)&lt;/li&gt;
+  &lt;li&gt;Fluid accelerometer use&lt;/li&gt;
+  &lt;li&gt;URL routing for hashtag display&lt;/li&gt;
+  &lt;li&gt;Automation or parameterization of annotatAR UX elements (ie age til die-off)&lt;/li&gt;
+  &lt;li&gt;Capturing additional tweet data (ie user, associated photos) for posterity&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Week 5 Invisible Monument</title>

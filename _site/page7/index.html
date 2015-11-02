@@ -41,100 +41,78 @@
   
   <article class="post">
     <h1 class="post-title">
-      <a href="/annotatar/2015/09/02/milestones/">
-        Capstone Project Milestones
+      <a href="/annotatar/2015/09/03/grading/">
+        Capstone Project Grading Rubric
       </a>
     </h1>
 
-    <time datetime="2015-09-02T00:00:00-04:00" class="post-date">02 Sep 2015</time>
+    <time datetime="2015-09-03T00:00:00-04:00" class="post-date">03 Sep 2015</time>
 
-    <p>As part of this week’s set of assignments, I have revisited the project milestones for annotatAR this fall. </p>
-
-<hr />
-
-<h4 id="beta-test-at-the-nyc-internet-yami-ichihttpyami-ichibiznyc">Beta-test at the <a href="http://yami-ichi.biz/nyc/">NYC Internet Yami-Ichi</a></h4>
-<p><em>12 Sept 2015</em></p>
-
-<ul>
-  <li>Mobile site deployed on a live server</li>
-  <li>Displays tweet stream overlaid on <code>getUserMedia</code> element</li>
-</ul>
+    <p>As part of this week’s assignments, I have developed a grading rubric for annotatAR, for the scope of this fall’s Capstone Design Studio. This rubric has six dimensions, with three criteria each. The dimensions are categorized in two sub-sections: <em>Mobile Site</em> and <em>Desktop Site</em>. The points are weighted to emphasize the <em>Mobile Site</em>, with a total possible score of 27 points.</p>
 
 <hr />
 
-<h4 id="device-sensing">Device sensing</h4>
-<p><em>30 Sept 2015</em></p>
+<table>
+  <thead>
+    <tr>
+      <th><em>Mobile Site (18pts total)</em></th>
+      <th style="text-align: center">Excellent (6pts)</th>
+      <th style="text-align: center">Competent (4pts)</th>
+      <th style="text-align: center">Needs Work (1pt)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Functionality</strong> :: Users can overlay tweets on a video stream; Device compatibility;  Geolocative;  Users can take screenshot</td>
+      <td style="text-align: center">Meets all requirements</td>
+      <td style="text-align: center">Meets 3/4 requirements</td>
+      <td style="text-align: center">Meets &lt;= 3 requirements</td>
+    </tr>
+    <tr>
+      <td><strong>Aesthetics</strong> :: Tweet metadata is visually encoded; Tweet position changes with device motion; Appealing visual design</td>
+      <td style="text-align: center">Meets all requirements</td>
+      <td style="text-align: center">Meets 2/3 requirements</td>
+      <td style="text-align: center">Meets &lt;= 2 requirements</td>
+    </tr>
+    <tr>
+      <td><strong>Scalability</strong> :: Deployable at a variety of events; Github repo + documentation for further development</td>
+      <td style="text-align: center">Meets all requirements</td>
+      <td style="text-align: center">Meets 1/2 requirements</td>
+      <td style="text-align: center">Meets &lt; 1 requirement</td>
+    </tr>
+  </tbody>
+</table>
 
-<ul>
-  <li>Geolocation-aware</li>
-  <li>Access device accelerometer data</li>
-  <li>Map tweet position to 3D model</li>
-  <li>Determine whether or not to compile to native app(s)</li>
-</ul>
-
-<hr />
-
-<h4 id="aesthetic-refinements-on-mobile">Aesthetic refinements on mobile</h4>
-<p><em>16 Oct 2015</em></p>
-
-<ul>
-  <li>Style tweets based on timestamp</li>
-  <li>Screenshot functionality</li>
-  <li>User testing of mobile</li>
-</ul>
-
-<hr />
-
-<h4 id="desktop-site-minimum-viable-product">Desktop site minimum viable product</h4>
-<p><em>30 Oct 2015</em></p>
-
-<ul>
-  <li>Display video from event with tweets overlaid</li>
-  <li>User testing of desktop</li>
-</ul>
-
-<hr />
-
-<h4 id="desktop-site-refinements">Desktop site refinements</h4>
-<p><em>20 Nov 2015</em></p>
-
-<ul>
-  <li>Text analysis (some or all of the following):
-    <ul>
-      <li>Sentiment analysis</li>
-      <li>Keyword parsing</li>
-      <li>Spatial and/or color encoding</li>
-    </ul>
-  </li>
-  <li>Scrub / navigate on time dimension</li>
-</ul>
-
-<hr />
-
-<h4 id="platform-scalability">Platform scalability</h4>
-<p><em>04 Dec 2015</em></p>
-
-<ul>
-  <li>Github repo with description and instructions for deployment</li>
-  <li>Integrate with existing social media (share buttons)</li>
-</ul>
-
-<hr />
-
-<h4 id="bonus-features">Bonus features</h4>
-<p><em>11 Dec 2015</em></p>
-
-<ul>
-  <li>User interface for deploying new app for an event</li>
-  <li>Compile to native Android app (if necessary)</li>
-  <li>Multiple views of augmented reality:
-    <ul>
-      <li>Tweet text becomes lexograph of video stream</li>
-      <li>Select variety of encoding for sentiments or keywords</li>
-    </ul>
-  </li>
-</ul>
-
+<table>
+  <thead>
+    <tr>
+      <th><em>Desktop Site (9pts total)</em></th>
+      <th style="text-align: center">Excellent (3pts)</th>
+      <th style="text-align: center">Competent (2pts)</th>
+      <th style="text-align: center">Needs Work (1pt)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Functionality</strong> :: Users can view event-specific video with tweet overlay; Cross-browser compatibility</td>
+      <td style="text-align: center">Meets all requirements</td>
+      <td style="text-align: center">Meets 1/2 requirements</td>
+      <td style="text-align: center">Meets &lt; 1 requirement</td>
+    </tr>
+    <tr>
+      <td><strong>Aesthetics</strong> :: Tweet metadata is visually encoded; Timeline of event is expressed visually</td>
+      <td style="text-align: center">Meets all requirements</td>
+      <td style="text-align: center">Meets 1/2 requirements</td>
+      <td style="text-align: center">Meets &lt; 1 requirement</td>
+    </tr>
+    <tr>
+      <td><strong>Scalability</strong> :: Deployable for multiple events; Integrates with other social media feeds</td>
+      <td style="text-align: center">Meets all requirements</td>
+      <td style="text-align: center">Meets 1/2 requirements</td>
+      <td style="text-align: center">Meets &lt; 1 requirement</td>
+    </tr>
+  </tbody>
+</table>
 
   </article>
   
@@ -153,7 +131,7 @@
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2015-10-02T19:17:17-04:00">2015</time>. All rights reserved.
+          &copy; <time datetime="2015-11-02T18:12:24-05:00">2015</time>. All rights reserved.
           <span class="right"><a href="/annotatar/archive" title="Archive">Archive</a></span>
         </small>
       </footer>

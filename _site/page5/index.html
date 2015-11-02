@@ -41,57 +41,44 @@
   
   <article class="post">
     <h1 class="post-title">
-      <a href="/annotatar/2015/09/04/week1/">
-        Week 1 Summer Progress
+      <a href="/annotatar/2015/09/13/week2/">
+        Week 2 Feedback and Learning
       </a>
     </h1>
 
-    <time datetime="2015-09-04T00:00:00-04:00" class="post-date">04 Sep 2015</time>
+    <time datetime="2015-09-13T00:00:00-04:00" class="post-date">13 Sep 2015</time>
 
-    <p>In which our hero recounts the details of this summer’s work….</p>
+    <p>In which annotatAR undergoes critique by two fellow capstone students, RB converses with Jen Kramer, and preparation is underway for the first beta deployment.</p>
 
 <hr />
 
-<h4 id="user-interaction-paradigm">User interaction paradigm</h4>
+<h4 id="check-in-with-jen">Check-in with Jen</h4>
 
-<p>annotatAR was inspired by a project I worked on in Fall 2014, <a href="http://docshop0.tumblr.com/">Notes from El Saniyya</a>. As part of <a href="http://docshop.space/">DocShop at metaLab</a>, I worked with Egyptian artist Lara Baladi to create a prototype of a living timeline of the Arab Spring. The <em>Notes…</em> event was highly participatory and we wondered what the next steps for engaging with a multi-media archive might be like.</p>
+<p>Call with Jen K was super helpful in thinking about next steps for the design and how to justify decisions with demographics and user personas. It was great to have a chat about high-level project goals, and it was super helpful start to think about deliverables in terms of the December presentations. </p>
 
-<blockquote>
-  <p>You walk into a gallery space, with a curved wall with a huge timeline, each point on the timeline is an event in the Arab Spring / Tahrir Square 21 days. you want to add your own comment to the timeline, reacting to something on the timeline that triggered a memory or emotion - given any possible technology or material, how would you leave a message?</p>
-</blockquote>
+<p>We reviewed the rubric and I’m going to revisit it in light of our conversation; the main advice was to try to define the criteria as specifically as possible so we are on the same page about the final deliverables. I will spend s bit of time thinking through the aesthetic qualities that are most important. Similarly, I will work to define a specific use-case for device compatibility and narrow the scope to what makes the most sense for the target audience demographic.</p>
 
-<p>This is motivation for utilizing an augmented reality platform, and Twitter as a common social interface.</p>
+<h4 id="feedback-from-pat--peg">Feedback from Pat &amp; Peg</h4>
 
-<h4 id="meteor">Meteor</h4>
+<p>My group members provided copius and helpful feedback - I think it really helped that I asked a couple of specific but somewhat open-ended questions in my video :) The main areas where I hoped to receive suggestions were user experience and scaling the project down the road. Overall, I’m hearing that a simple interface for the mobile site is preferable - the tweets should be obvious and contrasting. Scaling could go in various directions - Pat had some suggestions about devices which I will consider when I revisit my grading rubric. I look forward to incorporating the thoughtful ideas that Peg and Pat have shared with me.</p>
 
-<p>The major accomplishment achieved this summer was getting started with <a href="http://docs.meteor.com/#/full/">Meteor.js</a>. After reading docs and going through an example project tutorial, I was convinced that this was the technology on which I should build annotatAR. What first drew me to Meteor is the ability to code everything in Javascript, the active community, and the well-designed forward-looking codebase. I sat with a friend for an informational session to learn about how to utilize <a href="https://www.eventedmind.com/feed/meteor-what-is-meteor-bindenvironment">asynchronous external requests</a> in Meteor, through <a href="https://meteorhacks.com/fibers-eventloop-and-meteor">fibers</a> and <code>Meteor.bindEnvironment</code>. I’m starting to see even more value in how Meteor encourages code modularization, which may be quite helpful as the project develops.</p>
+<h4 id="learning-meteor">Learning Meteor</h4>
 
-<h4 id="alpha-site">Alpha site</h4>
+<p>I went to a Meteor meet-up in New York and met some awesome Meteor folks. I learned about <a href="https://www.discovermeteor.com/">Discover Meteor</a>, the guide to getting started. I also learned about how Meteor handles authorization and authentication, why you might want to render views on the server (which is functionality that will part of the next release of Meteor), and also heard about the Meteor package <a href="https://atmospherejs.com/houston/admin">houston</a> for implementing a database UI. </p>
 
-<p>With my newly acquired knowledge of Meteor, I built a test application called <em>truthtweets</em>, which connects to the <a href="https://dev.twitter.com/streaming/public">Twitter Firehose API</a> and overlays tweet texts that utilize the hashtag <em>#truth</em> onto a video stream from <code>getUserMedia</code> element. Voilà!</p>
-
-<p><img src="/annotatar/assets/images/screencap_20150904.png" alt="truthtweets app" /></p>
-
-<h4 id="next-directions">Next directions</h4>
-
-<p>In the short term, the mobile application has a number of refinements to be achieved:</p>
+<p>In preparing for the beta deployment at the <a href="http://yami-ichi.biz/nyc/">Internet Yami-Ichi NYC</a>, I realized that an HTML5 game engine might be a suitable platform for displaying the tweet database. Such a mobile framework wold handle the canvas on the mobile app - something as simple as resizing the video to fit the screen seems needlessly complex to code from scratch. So I’m seeking a mobile-first render engine. Some candidates:</p>
 
 <ul>
-  <li>
-    <strike>twitter api config file - untracked (not shared on github)</strike>
-    <p>done! - now using settings.json</p>
-  </li>
-  <li>resize navigator to fit device screen</li>
-  <li>use accelerometer data to detect motion and update tweet position</li>
-  <li>turn the stream on and display new tweets</li>
-  <li>change alpha based on tweet createdAt</li>
-  <li>deploy to meteor cloud or other web server</li>
-  <li><em>what if tweets became colored to reflect the background video feed? - lexigraph</em></li>
+  <li><a href="http://www.pixijs.com/">Pixi.js</a> - a 2D webgl renderer</li>
+  <li><a href="http://phaser.io">Phaser</a> - HTML 5 game framework that’s (previously) based on Pixi</li>
+  <li><a href="http://famous.org/">Famous</a> - js library for animations &amp; interfaces (not as much doc)</li>
 </ul>
 
-<h4 id="looking-ahead-this-month">Looking ahead this month</h4>
+<h4 id="looking-ahead-this-week">Looking ahead this week</h4>
 
-<p>My first <a href="/annotatar/2015/09/02/milestones">project milestone</a> will be next week, when I deploy a beta version of the application on a live server and test it at the <a href="http://yami-ichi.biz/nyc/">New York City Internet Yami-Ichi</a> event by giving the URL out to a (small) number of attendees. This early-stage test will be crucial in refining the user interactions and aesthetics. In addition to the application itself, I will design a brief Google forms survey to collect UX feedback.</p>
+<p>The upcoming week, I will develop a user persona based on the demographics of twitter users, sketch out the app database design, and mock up the UI for the mobile site.</p>
+
+<p>I’ll also be posting a recap of this weekend’s beta test as its own post.</p>
 
   </article>
   
@@ -110,7 +97,7 @@
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2015-10-02T19:17:17-04:00">2015</time>. All rights reserved.
+          &copy; <time datetime="2015-11-02T18:12:24-05:00">2015</time>. All rights reserved.
           <span class="right"><a href="/annotatar/archive" title="Archive">Archive</a></span>
         </small>
       </footer>
