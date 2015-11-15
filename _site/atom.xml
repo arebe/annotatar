@@ -4,7 +4,7 @@
  <title>annotatAR</title>
  <link href="http://arebe.github.io/annotatar/atom.xml" rel="self"/>
  <link href="http://arebe.github.io/annotatar/"/>
- <updated>2015-11-02T18:12:24-05:00</updated>
+ <updated>2015-11-15T17:04:01-05:00</updated>
  <id>http://arebe.github.io</id>
  <author>
    <name>RB</name>
@@ -13,7 +13,54 @@
 
  
  <entry>
-   <title>Week 9 Delinquncy</title>
+   <title>Week 10 Archive Research</title>
+   <link href="http://arebe.github.io/annotatar/2015/11/04/week10/"/>
+   <updated>2015-11-04T00:00:00-05:00</updated>
+   <id>http://arebe.github.io/2015/11/04/week10</id>
+   <content type="html">&lt;p&gt;Directions for sourcing and utilizing historical tweet data.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;r-shief-archive&quot;&gt;R-Shief Archive&lt;/h4&gt;
+
+&lt;p&gt;One very useful source for historical social media data is the repository &lt;a href=&quot;http://r-shief.org/&quot;&gt;R-Shief&lt;/a&gt;, which has three data products: &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Twitter, Facebook, and Instagram data for the past 30 days&lt;/li&gt;
+  &lt;li&gt;Twitter data from 2010-2013 on hashtags relevant to global activist events&lt;/li&gt;
+  &lt;li&gt;Facebook, Youtube, and Website archives from 2008-2013&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The second product is what interests me most as a potential corpus of material for annotatAR.&lt;/p&gt;
+
+&lt;h4 id=&quot;data-format&quot;&gt;Data format&lt;/h4&gt;
+
+&lt;p&gt;According to the website, R-Shief’s archive is accessible via their data visualization applications, where one can craft a chart and download the graphic to use. &lt;/p&gt;
+
+&lt;p&gt;They also have an incredibly informative table of relevant hashtags, with descriptions of what each abbreviation represents. &lt;/p&gt;
+
+&lt;p&gt;I have emailed R-Shief in the hopes that some of their archive will be available to use independently. Hopefully they will be able to provide an archive of data in JSON or CSV format that can be plugged in to the existing annotatAR architecture. &lt;/p&gt;
+
+&lt;p&gt;Right now, annotatAR translate incoming JSON data to a MongoDB database entry. In the context of utilizing historical data, the translatation step becomes unnecessary. However, translating the data archive to a database as a one-time operation could vastly improve the performance of the mobile site.&lt;/p&gt;
+
+&lt;h4 id=&quot;aesthetic-notes&quot;&gt;Aesthetic notes&lt;/h4&gt;
+
+&lt;p&gt;There are many ways to interact with the more conventional object of historic record - museum exhibits, primary texts, historical re-enactments, photographs. Digital tools afford a powerful new layer of interactivity as media assets can be juxtaposed and arranged fluidly. &lt;/p&gt;
+
+&lt;p&gt;In relation to new media object such as the annotatAR augmented reality experience, digital media affords all of the physical interactions of the mobile web: swiping, tapping, scrolling, tilting – plus animations and UI changes that can be bound to these events.&lt;/p&gt;
+
+&lt;p&gt;There is something oddly compelling about before-and-after photos, where we see the ghosts of past photons pinned to the contemporary record. So also do the tweets form a figure of past actions and recent historicity against the ground of the familiar urban juice.&lt;/p&gt;
+
+&lt;p&gt;One direction I’ve considered for visualizing the tweets is rendering the video stream as letters, using the tweet text colored as if it were the backgroud video. Using the tweet text as a mask for the video would provide the pivotal visual metaphor of seeing the present through the lens of the virtual past.&lt;/p&gt;
+
+&lt;h4 id=&quot;next-steps&quot;&gt;Next steps&lt;/h4&gt;
+
+&lt;p&gt;Test out the text masking idea using contemporary tweet data, and wait for answers from R-Shief. &lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Week 9 Delinquency</title>
    <link href="http://arebe.github.io/annotatar/2015/11/02/week9/"/>
    <updated>2015-11-02T00:00:00-05:00</updated>
    <id>http://arebe.github.io/2015/11/02/week9</id>
@@ -27,9 +74,9 @@
 
 &lt;p&gt;While I’ve been a bit delinquent in updating both this project blog and working on the project itself, I have accomplished much rumination on the final outcome for this project. &lt;/p&gt;
 
-&lt;p&gt;I somewhat switched focus at the begining of October, and began to think of the project as a sort of meta-documentation tool whose primary end-user would be me. This focus hasn’t sat well with me though, as the spirit of the project has been to build experientially what has already been ongoing virtually.&lt;/p&gt;
+&lt;p&gt;I somewhat switched focus at the beginning of October, and began to think of the project as a sort of meta-documentation tool whose primary end-user would be me. This focus hasn’t sat well with me though, as the spirit of the project has been to build experientially what has already been ongoing virtually.&lt;/p&gt;
 
-&lt;p&gt;Particular questions remain to be answered:&lt;/p&gt;
+&lt;p&gt;Many questions remain to be answered:&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Who is the audience for the mobile site? &lt;/li&gt;
@@ -42,13 +89,15 @@
   &lt;li&gt;Will there be an administrative site where an admin can set up a new database entry for a geolocation / hashtag pairing?&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;p&gt;I will attempt to clarify my thinking on these topics in this post.&lt;/p&gt;
+
 &lt;h4 id=&quot;audience&quot;&gt;Audience&lt;/h4&gt;
 
 &lt;p&gt;My current thinking on the purpose of annotatAR is to fully embrace the art project aspect. Rather than thinking that this project is a tool to make other works, I would like to present it as a work in itself, a generative social media artwork. &lt;/p&gt;
 
 &lt;p&gt;In this case, the audience / end user becomes those interested in radical use of digital spaces, Twitter and social media, and contemporary activist movements.&lt;/p&gt;
 
-&lt;p&gt;The limitations of this direction are that the promary purpose is no longer documentation of an event in process. The Twitter stream API will likely not be useful - it will be necessary to utilize historic tweet data, such as has been gathered by Occupy Research.&lt;/p&gt;
+&lt;p&gt;The limitations of this direction are that the primary purpose is no longer documentation of an event in process. The Twitter stream API will likely not be useful - it will be necessary to utilize historic tweet data, such as has been gathered by Occupy Research.&lt;/p&gt;
 
 &lt;h4 id=&quot;context&quot;&gt;Context&lt;/h4&gt;
 
@@ -103,9 +152,9 @@
   &lt;li&gt;Fluid accelerometer use&lt;/li&gt;
   &lt;li&gt;URL routing for hashtag display&lt;/li&gt;
   &lt;li&gt;Automation or parameterization of annotatAR UX elements (ie age til die-off)&lt;/li&gt;
-  &lt;li&gt;Capturing additional tweet data (ie user, associated photos) for posterity&lt;/li&gt;
+  &lt;li&gt;Pulling in historic tweets from Occupy Research (or other source)&lt;/li&gt;
+  &lt;li&gt;Single-page desktop site&lt;/li&gt;
 &lt;/ul&gt;
-
 </content>
  </entry>
  
