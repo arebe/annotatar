@@ -41,59 +41,85 @@
   
   <article class="post">
     <h1 class="post-title">
-      <a href="/annotatar/2015/09/23/week4/">
-        Week 4 Scope and Usability
+      <a href="/annotatar/2015/10/02/week5/">
+        Week 5 Invisible Monument
       </a>
     </h1>
 
-    <time datetime="2015-09-23T00:00:00-04:00" class="post-date">23 Sep 2015</time>
+    <time datetime="2015-10-02T00:00:00-04:00" class="post-date">02 Oct 2015</time>
 
-    <p>Revisiting the project goals, scope, and affordances.</p>
+    <p>Outcomes from deployement at Invisible Monument launch event in Boston.</p>
 
 <hr />
 
-<h4 id="reorienting">Reorienting</h4>
+<h4 id="lead-up-to-deployment">Lead up to deployment</h4>
 
-<p>Last Fall, I has the opportunity to work with the talented <a href="http://docshop.space">DocShop</a> team on an experimental event called <a href="http://docshop0.tumblr.com/">Notes from El Saniyya</a> in which we worked with artist Lara Baladi to prototype her ongoing <a href="http://www.tahrirarchives.com/">Vox Populi</a> project. This ambitious work is an interactive multimedia archive of the Arab Spring, specifically the Egyptian Revolution of 2011. The experience of working with archival material in a socially-aware setting has been a deep inspiration for annotatAR and its design goals.</p>
-
-<iframe src="https://player.vimeo.com/video/132129973?title=0&amp;byline=0&amp;portrait=0" width="600" height="337" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
-<p><a href="https://vimeo.com/132129973">Vox Populi, Archiving a Revolution in the Digital Age</a> from <a href="https://vimeo.com/user41572927">Lara Baladi</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-
-<p>It was with great excitement that I received an email from Lara last week, with news of the next iteration of the project: a picnic in Dewey Square to commemorate the anniversary of <a href="http://www.occupyboston.org/">Occupy Boston</a>, a collective protest and re-settlement of public space that occurred from September 30 - December 10, 2011 in solidarity with <a href="http://occupywallst.org/">Occupy Wall Street</a> and other <a href="https://en.wikipedia.org/wiki/Occupy_movement">Occupy movements</a> around the world.</p>
-
-<p>Lara is excited to utilized annotatAR as part of the commemorative picnic, and we are in the process of hashing out the details for incorporating my software. However, the overall goals and aesthetic of her event require some re-thinking of how to best to incorporate annotatAR as a digital tool. We’ve agreed that at this point it would be best to use annotatAR as a documentation tool rather than deploying it as a full-fledged augmented reality experience. </p>
-
-<h4 id="goals-for-the-picnic">Goals for the picnic</h4>
-
-<p>September 30 is approaching rapidly, and I’d really like to be able to utilize annotatAR to the fullest extent. My experience at the Internet Yami-Ichi was that, while the mechanics worked, there are many aesthetic improvements to be made.</p>
-
-<p>New focal points include:</p>
+<p>In the past week, I had a development push to meet the development goals that were most important to be able to demonstrate annotatAR’s utility as a docmentation tool. I met those goals for the most part. I was able to implement:</p>
 
 <ul>
-  <li>Legibility of the tweet text through typography and color palette</li>
-  <li>Resolution of video</li>
-  <li>Screen capture </li>
-  <li>Switching between several hashtags </li>
-  <li>Displaying tweets from 2011 to capture the historicity of the current event</li>
-  <li>Filtering out URLs that clutter the image with illegible content</li>
-  <li>Locating the tweets in a 3D space to further spread them out and increase legibility</li>
+  <li>Typography and color changes for better legibilty</li>
+  <li>Stripping the tweet text of URLs</li>
+  <li>Screen capture button to save an image of the <code>canvas</code> element</li>
+  <li>Panning with accelerometer data - incomplete implementation</li>
+  <li>Integrating stream and REST Twitter API data</li>
 </ul>
 
-<h4 id="post-picnic-content">Post-picnic content</h4>
+<p>Ideally, I want to use accelerometer data from the device to allow the end user to pan around - to change the position of the tweets to create the illusion that they are positioned in three dimensional space. While I wasn’t able to achieve a reliable 3D effect, I started to experiment with the <code>ondevicemotion</code> JavaScript event, and <code>accellerationIncludingGravity</code> on the X and Y axes. While I was able to achieve somewhat fluid UX on my laptop, the calibration did not translate properly to my Galaxy 4G device.</p>
 
-<p>Once we have screenshots created with annotatAR the next step is to generate an expressive media object using these images. Perhaps this takes the form of a multi-media collage. </p>
+<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_00.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
 
-<p>I’d like to incorporate text visualization from the tweets for a multi-modal presentation, as an interactive website along with static images and video. The end-user has become the archival artist (such as myself and Lara) and ultimately the general public. In this case success can be assessed by determining reactions of the audience, if the work elicits a sense of historicity and participation, and an emotive reaction. I believe this work also helps me process my experience of participating in Occupy, and commemorating it in an official capacity is an opportunity to orient my own experiences within a global context. My goal for this project is to do the same for other participants in Occupy - as well as provide a touchstone for folks who are interested in contemporary protest movements.</p>
+<h4 id="invisible-monument">Invisible Monument</h4>
 
-<h4 id="usability-and-scope">Usability and scope</h4>
+<p>The Invisible Monument launch event, #LuncheonOnTheGrass took place on 30 Sept 2015, in Dewey Square, Boston. <a href="http://invisiblemonument.com/">Invisible Monument</a> is a locative sound installation created by Halsey Burgund and Lara Baladi, that cn be experienced using an iOS application. Various sond elements are triggered by geolocations around Dewey Square. </p>
 
-<p>This new orientation for annotatAR focuses more on the output of screenshots than usability in the sense of affordances to a naive end-user. Geolocation is unnecessary for this iteration and cross-browser and -platform compatibility become irrelevant.</p>
+<p>I met the team on site for the launch event and started taking screen captures with annotatAR. I used three different Twitter tags: #occupy, #the99, and #luncheononthegrass. I adjusted the “die-off” rate for each of the tweets according to how often the tag was used. As the tweets get older, they become smaller and more transparent. </p>
 
-<p>Narrowing the scope of the project to a known and tested platform (Firefox on a Galaxy 4G smart phone) makes the project more manageable and provides a clear direction for design decisions. Geolocative and “on-boarding” affordances of the UI are features that can wait until the visual design has been refined.</p>
+<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_01.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
 
-<h4 id="further-planning">Further planning</h4>
+<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_02.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
 
-<p>As I continue to work with Lara and the DocShop team to prepare for the event, I believe more design ideas will surface. I expect that the next week will be full of challenges, brainstorming, and new ideas.</p>
+<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_03.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+
+<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_04.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+
+<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_05.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+
+<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_06.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+
+<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_07.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+
+<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_08.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+
+<h4 id="historic-tweets">Historic tweets</h4>
+
+<p>I would like to be able to overlay historic tweet data as well as current tweets. However, the <a href="https://dev.twitter.com/rest/public/search">Twitter REST API</a> allows access to tweets created within the past couple of weeks only.</p>
+
+<p>Third-party services such as <a href="https://gnip.com/">GNIP</a> are social media brokers from which you can purchase historic data. The base rate for historic tweet data starts at $1.1k and increased depending on length of time and number of tweets returned by the query. </p>
+
+<p>While this is cost-prohibitive for the time being, it does add a layer of utility to annotatAR. I have already implemented the ability to download the database of tweets as a CSV file, which could be quite useful in capturing an independent record of a hashtag.</p>
+
+<p>Additionally, I spoke to one of the participants in #LuncheonOnTheGrass who directed me to an archive of tweets from the Occupy movement, available at <a href="http://occupyresearch.net/">Occupy Research</a> and <a href="http://r-shief.org/">R-Shief</a>. These might be a useful corpus to draw on in future iterations. </p>
+
+<h4 id="future-of-invisible-monument">Future of Invisible Monument</h4>
+
+<p>Lara and team were quite excited by the output from annotatAR, and will use my documentation of #LuncheonOnTheGrass as part of the ongoing archive for Invisible Monument / Vox Populi. </p>
+
+<p>We began to discuss how annotatAR might be integrated with Halsey’s <a href="http://www.roundware.org/">Roundware</a> platform, to provide an integrated experience with the audioscape. Future directions for Invisible Monument are quite exciting, and I hope to continue to work with them. However, I think this will only be possible of Halsey ports Roundware to Android or the mobile web.</p>
+
+<h4 id="near-term-goals">Near term goals</h4>
+
+<p>More immediate goals for annotatAR include:</p>
+
+<ul>
+  <li>Bug fixing - hashtags on the stream seemed not to work on the website (though the stream worked on the local version)</li>
+  <li>Bug fixing - houston doesn’t seem to work, maybe due to special characters?</li>
+  <li>Fluid accelerometer use</li>
+  <li>URL routing for hashtag display</li>
+  <li>Automation or parameterization of annotatAR UX elements (ie age til die-off)</li>
+  <li>Capturing additional tweet data (ie user, associated photos) for posterity</li>
+</ul>
+
+<p>Once these goals are achieved it may be time to turn to text analysis and a desktop site.</p>
 
 
   </article>
@@ -113,7 +139,7 @@
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2015-11-15T17:04:01-05:00">2015</time>. All rights reserved.
+          &copy; <time datetime="2015-11-23T20:35:04-05:00">2015</time>. All rights reserved.
           <span class="right"><a href="/annotatar/archive" title="Archive">Archive</a></span>
         </small>
       </footer>

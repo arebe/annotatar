@@ -41,80 +41,60 @@
   
   <article class="post">
     <h1 class="post-title">
-      <a href="/annotatar/2015/09/14/week3a/">
-        Week 3 Beta Testing at NYC Internet Yami-Ichi
+      <a href="/annotatar/2015/09/23/week4/">
+        Week 4 Scope and Usability
       </a>
     </h1>
 
-    <time datetime="2015-09-14T00:00:00-04:00" class="post-date">14 Sep 2015</time>
+    <time datetime="2015-09-23T00:00:00-04:00" class="post-date">23 Sep 2015</time>
 
-    <p>In which we visit the internet black market and take some screenshots.</p>
+    <p>Revisiting the project goals, scope, and affordances.</p>
 
 <hr />
 
-<p><img src="/annotatar/assets/images/20150912_yaminyc/brian_esser_yaminyc.jpg" alt="NYC Internet Yami-Ichi (photo credit to Brian Esser)" /></p>
+<h4 id="reorienting">Reorienting</h4>
 
-<h4 id="preparation">Preparation</h4>
+<p>Last Fall, I has the opportunity to work with the talented <a href="http://docshop.space">DocShop</a> team on an experimental event called <a href="http://docshop0.tumblr.com/">Notes from El Saniyya</a> in which we worked with artist Lara Baladi to prototype her ongoing <a href="http://www.tahrirarchives.com/">Vox Populi</a> project. This ambitious work is an interactive multimedia archive of the Arab Spring, specifically the Egyptian Revolution of 2011. The experience of working with archival material in a socially-aware setting has been a deep inspiration for annotatAR and its design goals.</p>
 
-<p>I was tipped off to the existence of the <a href="http://yami-ichi.biz/nyc/">NYC Internet Yami-Ichi</a> by some colleagues from <a href="http://itp.nyu.edu/camp2015/">ITP Camp at NYU</a>. The event began in Japan and is devoted to the extrapolation of everything “internet-ish” into the real world. Due to my interest in net art and utilizing online interactions as an artistic medium, I was immediately interested in participating. It also seemed like an excellent place for the first test of annotatAR in the wild.</p>
+<iframe src="https://player.vimeo.com/video/132129973?title=0&amp;byline=0&amp;portrait=0" width="600" height="337" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<p><a href="https://vimeo.com/132129973">Vox Populi, Archiving a Revolution in the Digital Age</a> from <a href="https://vimeo.com/user41572927">Lara Baladi</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
-<p>I set the bar for the beta-test fairly low - the key here would be to see how and if people utilized the core functionality of tweets displayed on a real-time <code>getUserMedia</code> video feed. I deployed a test version of the app on Meteor’s test server. The Meteor platform proved itself useful in this regard: it was quite easy to deploy multiple versions from the same code base by simply changing the URL in the <code>meteor deploy</code> command.</p>
+<p>It was with great excitement that I received an email from Lara last week, with news of the next iteration of the project: a picnic in Dewey Square to commemorate the anniversary of <a href="http://www.occupyboston.org/">Occupy Boston</a>, a collective protest and re-settlement of public space that occurred from September 30 - December 10, 2011 in solidarity with <a href="http://occupywallst.org/">Occupy Wall Street</a> and other <a href="https://en.wikipedia.org/wiki/Occupy_movement">Occupy movements</a> around the world.</p>
 
-<p>annotatAR achieved the minimal viable test build plus a few extra features:</p>
+<p>Lara is excited to utilized annotatAR as part of the commemorative picnic, and we are in the process of hashing out the details for incorporating my software. However, the overall goals and aesthetic of her event require some re-thinking of how to best to incorporate annotatAR as a digital tool. We’ve agreed that at this point it would be best to use annotatAR as a documentation tool rather than deploying it as a full-fledged augmented reality experience. </p>
+
+<h4 id="goals-for-the-picnic">Goals for the picnic</h4>
+
+<p>September 30 is approaching rapidly, and I’d really like to be able to utilize annotatAR to the fullest extent. My experience at the Internet Yami-Ichi was that, while the mechanics worked, there are many aesthetic improvements to be made.</p>
+
+<p>New focal points include:</p>
 
 <ul>
-  <li>geolocation (coordinates and accuracy) was displayed below the video feed - for testing purposes only</li>
-  <li>tweet data was displayed in decresing font size - the age of the tweet was linearly mapped to the font scale - tweets appeared as 50px in size and decreased down to 5px over the course of 8 hours</li>
-  <li>the databse stores the hashtag for the search that generates each the tweet</li>
+  <li>Legibility of the tweet text through typography and color palette</li>
+  <li>Resolution of video</li>
+  <li>Screen capture </li>
+  <li>Switching between several hashtags </li>
+  <li>Displaying tweets from 2011 to capture the historicity of the current event</li>
+  <li>Filtering out URLs that clutter the image with illegible content</li>
+  <li>Locating the tweets in a 3D space to further spread them out and increase legibility</li>
 </ul>
 
-<h4 id="survey">Survey</h4>
+<h4 id="post-picnic-content">Post-picnic content</h4>
 
-<p>I also designed a brief user feedback survey and posted it on Google Forms. I also made a paper version (which is what I ended up utiliting in situ).</p>
+<p>Once we have screenshots created with annotatAR the next step is to generate an expressive media object using these images. Perhaps this takes the form of a multi-media collage. </p>
 
-<p>The survey captures whether or not the video and tweet functions work, information about th edevice &amp; browser, and some open-ended questions.</p>
+<p>I’d like to incorporate text visualization from the tweets for a multi-modal presentation, as an interactive website along with static images and video. The end-user has become the archival artist (such as myself and Lara) and ultimately the general public. In this case success can be assessed by determining reactions of the audience, if the work elicits a sense of historicity and participation, and an emotive reaction. I believe this work also helps me process my experience of participating in Occupy, and commemorating it in an official capacity is an opportunity to orient my own experiences within a global context. My goal for this project is to do the same for other participants in Occupy - as well as provide a touchstone for folks who are interested in contemporary protest movements.</p>
 
-<h4 id="internet-yami-ichi-deployment">Internet Yami-Ichi Deployment</h4>
+<h4 id="usability-and-scope">Usability and scope</h4>
 
-<p>The <a href="http://annotatar_yaminyc.meteor.com">#yaminyc app</a> was deployed the night before the event, and targeted at the Twitter hashtag “#yaminyc” where a couple of folks had already begun to interact. </p>
+<p>This new orientation for annotatAR focuses more on the output of screenshots than usability in the sense of affordances to a naive end-user. Geolocation is unnecessary for this iteration and cross-browser and -platform compatibility become irrelevant.</p>
 
-<p>I acheived two separate user tests during the event. One was successful and generated some great feedback regarding next directions for the UI: a “selfie” mode, screencapture interface button, and an animated GIF generator. The second test was not as successful - it was an iPhone and it seemed that the phone did not ask the user for permission to connect to the <code>getUserMedia</code> device at all. This may be a significant issue going forward, if iPhone defaults interfere with this browser funcitonality.</p>
+<p>Narrowing the scope of the project to a known and tested platform (Firefox on a Galaxy 4G smart phone) makes the project more manageable and provides a clear direction for design decisions. Geolocative and “on-boarding” affordances of the UI are features that can wait until the visual design has been refined.</p>
 
-<p>I also took a number of screenshots at the event. It is quite an expressive way of documenting this type of gathering - one gets a sense of a crowd of virtual eavesdropping entities. </p>
+<h4 id="further-planning">Further planning</h4>
 
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_00.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+<p>As I continue to work with Lara and the DocShop team to prepare for the event, I believe more design ideas will surface. I expect that the next week will be full of challenges, brainstorming, and new ideas.</p>
 
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_01.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
-
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_02.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
-
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_03.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
-
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_04.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
-
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_05.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
-
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_06.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
-
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_07.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
-
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_08.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
-
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_09.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
-
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_10.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
-
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_11.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
-
-<h4 id="lessons">Lessons</h4>
-
-<p>I think that annotatAR was quite effective in achieving the union of virtual and real space in an expressive way. </p>
-
-<p>I was a bit frustrated with the quality of the web camera picture, I wonder if anything can be done to improve it.</p>
-
-<p>I’m also brainstorming about the next level of the project: the desktop site. Perhaps it should be a focal point for sharing screenshots, or perhaps the screenshots could be utilized in a larger work of some kind. I now have a databse of tweets from an event to experiment with, as a corpus for text analysis.</p>
-
-<p>I’m a bit concerned about the <a href="http://iswebrtcreadyyet.com/">failure of iOS</a> to connect to the WebRTC protocol, which I was not expecting since it is supported by the versions of Firefox and Chrome that are on the iPhone device thtat was tested. I will address this in my upcoming post on scoping for compatibility and audience. </p>
 
   </article>
   
@@ -133,7 +113,7 @@
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2015-11-15T17:04:01-05:00">2015</time>. All rights reserved.
+          &copy; <time datetime="2015-11-23T20:35:04-05:00">2015</time>. All rights reserved.
           <span class="right"><a href="/annotatar/archive" title="Archive">Archive</a></span>
         </small>
       </footer>

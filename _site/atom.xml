@@ -4,13 +4,64 @@
  <title>annotatAR</title>
  <link href="http://arebe.github.io/annotatar/atom.xml" rel="self"/>
  <link href="http://arebe.github.io/annotatar/"/>
- <updated>2015-11-15T17:04:01-05:00</updated>
+ <updated>2015-11-23T20:35:04-05:00</updated>
  <id>http://arebe.github.io</id>
  <author>
    <name>RB</name>
    <email>rfboyce+annotatar@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Week 11 Routing</title>
+   <link href="http://arebe.github.io/annotatar/2015/11/15/week11/"/>
+   <updated>2015-11-15T00:00:00-05:00</updated>
+   <id>http://arebe.github.io/2015/11/15/week11</id>
+   <content type="html">&lt;p&gt;Learning about routing in Meteor.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;routing-in-meteor&quot;&gt;Routing in Meteor&lt;/h4&gt;
+
+&lt;p&gt;This week I spent my time learning about how to implement URL routing using Meteor. Routing is a key functionality as it will will allow me to dynamically generate pages using URL parameters, and use different layouts for each type of page.&lt;/p&gt;
+
+&lt;p&gt;The site architecture will be:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;index&lt;/li&gt;
+  &lt;li&gt;ar
+    &lt;ul&gt;
+      &lt;li&gt;occupyboston&lt;/li&gt;
+      &lt;li&gt;invisiblemonuments&lt;/li&gt;
+      &lt;li&gt;etc&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The index page is the documentation site, which will be served if someone visits the main URL, with a map and link to the blog. The AR page will house the Javascript function that detects geolocation, and re-routes to the appropriate URL.&lt;/p&gt;
+
+&lt;p&gt;There are two major routing libraries in Meteor: &lt;a href=&quot;https://atmospherejs.com/meteorhacks/flow-router&quot;&gt;Flow Router&lt;/a&gt; and &lt;a href=&quot;http://iron-meteor.github.io/iron-router/&quot;&gt;Iron:Router&lt;/a&gt;. I tried out both and ultimately decided to use Iron:router.&lt;/p&gt;
+
+&lt;h4 id=&quot;flow-router&quot;&gt;Flow Router&lt;/h4&gt;
+
+&lt;p&gt;This routing library is rigorously tested and was recommended by the folks at the Meteor.js meetup that I attended last month. It’s designed for client-side, non-reactive routing. The advice from the Meteor meetup was that Flow Router has a slightly steeper learning curve, but it has a design that enforces best practices - the application is unlikely to break for mysterious reasons, or work improperly. The limitation is that it must be used with another routing library for server-side routing, such as &lt;a href=&quot;https://github.com/meteorhacks/picker&quot;&gt;Picker&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;ironrouter&quot;&gt;Iron:Router&lt;/h4&gt;
+
+&lt;p&gt;Iron Router is the best-documented router for Meteor, and also has the largest user base. What interested me in it is the extensive set of websites for getting started with the library. I tried out Flow Router and found the examples difficult to translate to my application but had success with a &lt;a href=&quot;https://www.codetutorial.io/meteor-routing-and-layout/&quot;&gt;tutorial for Iron Router&lt;/a&gt;. It also appeals to me to be able to use the same router for server-side routing, as the geolocation function will utilize a server-side route to the appropriate database of tweets. &lt;/p&gt;
+
+&lt;p&gt;I was able to get up and running with a two-page website and Iron Router, though I am still troubleshooting some issue with the AR script.&lt;/p&gt;
+
+&lt;h4 id=&quot;templating-and-css&quot;&gt;Templating and CSS&lt;/h4&gt;
+
+&lt;p&gt;I’m using the standard templating language, &lt;a href=&quot;http://meteorcapture.com/spacebars/&quot;&gt;Spacebars&lt;/a&gt;, for my application, and installed the Twitter Bootstrap CSS framework.&lt;/p&gt;
+
+&lt;h4 id=&quot;next-directions&quot;&gt;Next directions&lt;/h4&gt;
+
+&lt;p&gt;Once I have fixed the bugs caused by the new site architecture, I will move on to creating the geolocative function for the AR page and re-routing to a sub-page that will display a particular hashtag.&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Week 10 Archive Research</title>
