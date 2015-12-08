@@ -41,85 +41,55 @@
   
   <article class="post">
     <h1 class="post-title">
-      <a href="/annotatar/2015/10/02/week5/">
-        Week 5 Invisible Monument
+      <a href="/annotatar/2015/11/15/week11/">
+        Week 11 Routing
       </a>
     </h1>
 
-    <time datetime="2015-10-02T00:00:00-04:00" class="post-date">02 Oct 2015</time>
+    <time datetime="2015-11-15T00:00:00-05:00" class="post-date">15 Nov 2015</time>
 
-    <p>Outcomes from deployement at Invisible Monument launch event in Boston.</p>
+    <p>Learning about routing in Meteor.</p>
 
 <hr />
 
-<h4 id="lead-up-to-deployment">Lead up to deployment</h4>
+<h4 id="routing-in-meteor">Routing in Meteor</h4>
 
-<p>In the past week, I had a development push to meet the development goals that were most important to be able to demonstrate annotatAR’s utility as a docmentation tool. I met those goals for the most part. I was able to implement:</p>
+<p>This week I spent my time learning about how to implement URL routing using Meteor. Routing is a key functionality as it will will allow me to dynamically generate pages using URL parameters, and use different layouts for each type of page.</p>
 
-<ul>
-  <li>Typography and color changes for better legibilty</li>
-  <li>Stripping the tweet text of URLs</li>
-  <li>Screen capture button to save an image of the <code>canvas</code> element</li>
-  <li>Panning with accelerometer data - incomplete implementation</li>
-  <li>Integrating stream and REST Twitter API data</li>
-</ul>
-
-<p>Ideally, I want to use accelerometer data from the device to allow the end user to pan around - to change the position of the tweets to create the illusion that they are positioned in three dimensional space. While I wasn’t able to achieve a reliable 3D effect, I started to experiment with the <code>ondevicemotion</code> JavaScript event, and <code>accellerationIncludingGravity</code> on the X and Y axes. While I was able to achieve somewhat fluid UX on my laptop, the calibration did not translate properly to my Galaxy 4G device.</p>
-
-<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_00.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
-
-<h4 id="invisible-monument">Invisible Monument</h4>
-
-<p>The Invisible Monument launch event, #LuncheonOnTheGrass took place on 30 Sept 2015, in Dewey Square, Boston. <a href="http://invisiblemonument.com/">Invisible Monument</a> is a locative sound installation created by Halsey Burgund and Lara Baladi, that cn be experienced using an iOS application. Various sond elements are triggered by geolocations around Dewey Square. </p>
-
-<p>I met the team on site for the launch event and started taking screen captures with annotatAR. I used three different Twitter tags: #occupy, #the99, and #luncheononthegrass. I adjusted the “die-off” rate for each of the tweets according to how often the tag was used. As the tweets get older, they become smaller and more transparent. </p>
-
-<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_01.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
-
-<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_02.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
-
-<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_03.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
-
-<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_04.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
-
-<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_05.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
-
-<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_06.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
-
-<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_07.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
-
-<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_08.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
-
-<h4 id="historic-tweets">Historic tweets</h4>
-
-<p>I would like to be able to overlay historic tweet data as well as current tweets. However, the <a href="https://dev.twitter.com/rest/public/search">Twitter REST API</a> allows access to tweets created within the past couple of weeks only.</p>
-
-<p>Third-party services such as <a href="https://gnip.com/">GNIP</a> are social media brokers from which you can purchase historic data. The base rate for historic tweet data starts at $1.1k and increased depending on length of time and number of tweets returned by the query. </p>
-
-<p>While this is cost-prohibitive for the time being, it does add a layer of utility to annotatAR. I have already implemented the ability to download the database of tweets as a CSV file, which could be quite useful in capturing an independent record of a hashtag.</p>
-
-<p>Additionally, I spoke to one of the participants in #LuncheonOnTheGrass who directed me to an archive of tweets from the Occupy movement, available at <a href="http://occupyresearch.net/">Occupy Research</a> and <a href="http://r-shief.org/">R-Shief</a>. These might be a useful corpus to draw on in future iterations. </p>
-
-<h4 id="future-of-invisible-monument">Future of Invisible Monument</h4>
-
-<p>Lara and team were quite excited by the output from annotatAR, and will use my documentation of #LuncheonOnTheGrass as part of the ongoing archive for Invisible Monument / Vox Populi. </p>
-
-<p>We began to discuss how annotatAR might be integrated with Halsey’s <a href="http://www.roundware.org/">Roundware</a> platform, to provide an integrated experience with the audioscape. Future directions for Invisible Monument are quite exciting, and I hope to continue to work with them. However, I think this will only be possible of Halsey ports Roundware to Android or the mobile web.</p>
-
-<h4 id="near-term-goals">Near term goals</h4>
-
-<p>More immediate goals for annotatAR include:</p>
+<p>The site architecture will be:</p>
 
 <ul>
-  <li>Bug fixing - hashtags on the stream seemed not to work on the website (though the stream worked on the local version)</li>
-  <li>Bug fixing - houston doesn’t seem to work, maybe due to special characters?</li>
-  <li>Fluid accelerometer use</li>
-  <li>URL routing for hashtag display</li>
-  <li>Automation or parameterization of annotatAR UX elements (ie age til die-off)</li>
-  <li>Capturing additional tweet data (ie user, associated photos) for posterity</li>
+  <li>index</li>
+  <li>ar
+    <ul>
+      <li>occupyboston</li>
+      <li>invisiblemonuments</li>
+      <li>etc</li>
+    </ul>
+  </li>
 </ul>
 
-<p>Once these goals are achieved it may be time to turn to text analysis and a desktop site.</p>
+<p>The index page is the documentation site, which will be served if someone visits the main URL, with a map and link to the blog. The AR page will house the Javascript function that detects geolocation, and re-routes to the appropriate URL.</p>
+
+<p>There are two major routing libraries in Meteor: <a href="https://atmospherejs.com/meteorhacks/flow-router">Flow Router</a> and <a href="http://iron-meteor.github.io/iron-router/">Iron:Router</a>. I tried out both and ultimately decided to use Iron:router.</p>
+
+<h4 id="flow-router">Flow Router</h4>
+
+<p>This routing library is rigorously tested and was recommended by the folks at the Meteor.js meetup that I attended last month. It’s designed for client-side, non-reactive routing. The advice from the Meteor meetup was that Flow Router has a slightly steeper learning curve, but it has a design that enforces best practices - the application is unlikely to break for mysterious reasons, or work improperly. The limitation is that it must be used with another routing library for server-side routing, such as <a href="https://github.com/meteorhacks/picker">Picker</a>.</p>
+
+<h4 id="ironrouter">Iron:Router</h4>
+
+<p>Iron Router is the best-documented router for Meteor, and also has the largest user base. What interested me in it is the extensive set of websites for getting started with the library. I tried out Flow Router and found the examples difficult to translate to my application but had success with a <a href="https://www.codetutorial.io/meteor-routing-and-layout/">tutorial for Iron Router</a>. It also appeals to me to be able to use the same router for server-side routing, as the geolocation function will utilize a server-side route to the appropriate database of tweets. </p>
+
+<p>I was able to get up and running with a two-page website and Iron Router, though I am still troubleshooting some issue with the AR script.</p>
+
+<h4 id="templating-and-css">Templating and CSS</h4>
+
+<p>I’m using the standard templating language, <a href="http://meteorcapture.com/spacebars/">Spacebars</a>, for my application, and installed the Twitter Bootstrap CSS framework.</p>
+
+<h4 id="next-directions">Next directions</h4>
+
+<p>Once I have fixed the bugs caused by the new site architecture, I will move on to creating the geolocative function for the AR page and re-routing to a sub-page that will display a particular hashtag.</p>
 
 
   </article>
@@ -139,7 +109,7 @@
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2015-11-23T20:35:04-05:00">2015</time>. All rights reserved.
+          &copy; <time datetime="2015-12-08T00:09:32-05:00">2015</time>. All rights reserved.
           <span class="right"><a href="/annotatar/archive" title="Archive">Archive</a></span>
         </small>
       </footer>

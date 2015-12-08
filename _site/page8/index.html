@@ -41,57 +41,60 @@
   
   <article class="post">
     <h1 class="post-title">
-      <a href="/annotatar/2015/09/04/week1/">
-        Week 1 Summer Progress
+      <a href="/annotatar/2015/09/23/week4/">
+        Week 4 Scope and Usability
       </a>
     </h1>
 
-    <time datetime="2015-09-04T00:00:00-04:00" class="post-date">04 Sep 2015</time>
+    <time datetime="2015-09-23T00:00:00-04:00" class="post-date">23 Sep 2015</time>
 
-    <p>In which our hero recounts the details of this summer’s work….</p>
+    <p>Revisiting the project goals, scope, and affordances.</p>
 
 <hr />
 
-<h4 id="user-interaction-paradigm">User interaction paradigm</h4>
+<h4 id="reorienting">Reorienting</h4>
 
-<p>annotatAR was inspired by a project I worked on in Fall 2014, <a href="http://docshop0.tumblr.com/">Notes from El Saniyya</a>. As part of <a href="http://docshop.space/">DocShop at metaLab</a>, I worked with Egyptian artist Lara Baladi to create a prototype of a living timeline of the Arab Spring. The <em>Notes…</em> event was highly participatory and we wondered what the next steps for engaging with a multi-media archive might be like.</p>
+<p>Last Fall, I has the opportunity to work with the talented <a href="http://docshop.space">DocShop</a> team on an experimental event called <a href="http://docshop0.tumblr.com/">Notes from El Saniyya</a> in which we worked with artist Lara Baladi to prototype her ongoing <a href="http://www.tahrirarchives.com/">Vox Populi</a> project. This ambitious work is an interactive multimedia archive of the Arab Spring, specifically the Egyptian Revolution of 2011. The experience of working with archival material in a socially-aware setting has been a deep inspiration for annotatAR and its design goals.</p>
 
-<blockquote>
-  <p>You walk into a gallery space, with a curved wall with a huge timeline, each point on the timeline is an event in the Arab Spring / Tahrir Square 21 days. you want to add your own comment to the timeline, reacting to something on the timeline that triggered a memory or emotion - given any possible technology or material, how would you leave a message?</p>
-</blockquote>
+<iframe src="https://player.vimeo.com/video/132129973?title=0&amp;byline=0&amp;portrait=0" width="600" height="337" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+<p><a href="https://vimeo.com/132129973">Vox Populi, Archiving a Revolution in the Digital Age</a> from <a href="https://vimeo.com/user41572927">Lara Baladi</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
-<p>This is motivation for utilizing an augmented reality platform, and Twitter as a common social interface.</p>
+<p>It was with great excitement that I received an email from Lara last week, with news of the next iteration of the project: a picnic in Dewey Square to commemorate the anniversary of <a href="http://www.occupyboston.org/">Occupy Boston</a>, a collective protest and re-settlement of public space that occurred from September 30 - December 10, 2011 in solidarity with <a href="http://occupywallst.org/">Occupy Wall Street</a> and other <a href="https://en.wikipedia.org/wiki/Occupy_movement">Occupy movements</a> around the world.</p>
 
-<h4 id="meteor">Meteor</h4>
+<p>Lara is excited to utilized annotatAR as part of the commemorative picnic, and we are in the process of hashing out the details for incorporating my software. However, the overall goals and aesthetic of her event require some re-thinking of how to best to incorporate annotatAR as a digital tool. We’ve agreed that at this point it would be best to use annotatAR as a documentation tool rather than deploying it as a full-fledged augmented reality experience. </p>
 
-<p>The major accomplishment achieved this summer was getting started with <a href="http://docs.meteor.com/#/full/">Meteor.js</a>. After reading docs and going through an example project tutorial, I was convinced that this was the technology on which I should build annotatAR. What first drew me to Meteor is the ability to code everything in Javascript, the active community, and the well-designed forward-looking codebase. I sat with a friend for an informational session to learn about how to utilize <a href="https://www.eventedmind.com/feed/meteor-what-is-meteor-bindenvironment">asynchronous external requests</a> in Meteor, through <a href="https://meteorhacks.com/fibers-eventloop-and-meteor">fibers</a> and <code>Meteor.bindEnvironment</code>. I’m starting to see even more value in how Meteor encourages code modularization, which may be quite helpful as the project develops.</p>
+<h4 id="goals-for-the-picnic">Goals for the picnic</h4>
 
-<h4 id="alpha-site">Alpha site</h4>
+<p>September 30 is approaching rapidly, and I’d really like to be able to utilize annotatAR to the fullest extent. My experience at the Internet Yami-Ichi was that, while the mechanics worked, there are many aesthetic improvements to be made.</p>
 
-<p>With my newly acquired knowledge of Meteor, I built a test application called <em>truthtweets</em>, which connects to the <a href="https://dev.twitter.com/streaming/public">Twitter Firehose API</a> and overlays tweet texts that utilize the hashtag <em>#truth</em> onto a video stream from <code>getUserMedia</code> element. Voilà!</p>
-
-<p><img src="/annotatar/assets/images/screencap_20150904.png" alt="truthtweets app" /></p>
-
-<h4 id="next-directions">Next directions</h4>
-
-<p>In the short term, the mobile application has a number of refinements to be achieved:</p>
+<p>New focal points include:</p>
 
 <ul>
-  <li>
-    <strike>twitter api config file - untracked (not shared on github)</strike>
-    <p>done! - now using settings.json</p>
-  </li>
-  <li>resize navigator to fit device screen</li>
-  <li>use accelerometer data to detect motion and update tweet position</li>
-  <li>turn the stream on and display new tweets</li>
-  <li>change alpha based on tweet createdAt</li>
-  <li>deploy to meteor cloud or other web server</li>
-  <li><em>what if tweets became colored to reflect the background video feed? - lexigraph</em></li>
+  <li>Legibility of the tweet text through typography and color palette</li>
+  <li>Resolution of video</li>
+  <li>Screen capture </li>
+  <li>Switching between several hashtags </li>
+  <li>Displaying tweets from 2011 to capture the historicity of the current event</li>
+  <li>Filtering out URLs that clutter the image with illegible content</li>
+  <li>Locating the tweets in a 3D space to further spread them out and increase legibility</li>
 </ul>
 
-<h4 id="looking-ahead-this-month">Looking ahead this month</h4>
+<h4 id="post-picnic-content">Post-picnic content</h4>
 
-<p>My first <a href="/annotatar/2015/09/02/milestones">project milestone</a> will be next week, when I deploy a beta version of the application on a live server and test it at the <a href="http://yami-ichi.biz/nyc/">New York City Internet Yami-Ichi</a> event by giving the URL out to a (small) number of attendees. This early-stage test will be crucial in refining the user interactions and aesthetics. In addition to the application itself, I will design a brief Google forms survey to collect UX feedback.</p>
+<p>Once we have screenshots created with annotatAR the next step is to generate an expressive media object using these images. Perhaps this takes the form of a multi-media collage. </p>
+
+<p>I’d like to incorporate text visualization from the tweets for a multi-modal presentation, as an interactive website along with static images and video. The end-user has become the archival artist (such as myself and Lara) and ultimately the general public. In this case success can be assessed by determining reactions of the audience, if the work elicits a sense of historicity and participation, and an emotive reaction. I believe this work also helps me process my experience of participating in Occupy, and commemorating it in an official capacity is an opportunity to orient my own experiences within a global context. My goal for this project is to do the same for other participants in Occupy - as well as provide a touchstone for folks who are interested in contemporary protest movements.</p>
+
+<h4 id="usability-and-scope">Usability and scope</h4>
+
+<p>This new orientation for annotatAR focuses more on the output of screenshots than usability in the sense of affordances to a naive end-user. Geolocation is unnecessary for this iteration and cross-browser and -platform compatibility become irrelevant.</p>
+
+<p>Narrowing the scope of the project to a known and tested platform (Firefox on a Galaxy 4G smart phone) makes the project more manageable and provides a clear direction for design decisions. Geolocative and “on-boarding” affordances of the UI are features that can wait until the visual design has been refined.</p>
+
+<h4 id="further-planning">Further planning</h4>
+
+<p>As I continue to work with Lara and the DocShop team to prepare for the event, I believe more design ideas will surface. I expect that the next week will be full of challenges, brainstorming, and new ideas.</p>
+
 
   </article>
   
@@ -110,7 +113,7 @@
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2015-11-23T20:35:04-05:00">2015</time>. All rights reserved.
+          &copy; <time datetime="2015-12-08T00:09:32-05:00">2015</time>. All rights reserved.
           <span class="right"><a href="/annotatar/archive" title="Archive">Archive</a></span>
         </small>
       </footer>

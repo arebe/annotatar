@@ -4,13 +4,364 @@
  <title>annotatAR</title>
  <link href="http://arebe.github.io/annotatar/atom.xml" rel="self"/>
  <link href="http://arebe.github.io/annotatar/"/>
- <updated>2015-11-23T20:35:04-05:00</updated>
+ <updated>2015-12-08T00:09:32-05:00</updated>
  <id>http://arebe.github.io</id>
  <author>
    <name>RB</name>
    <email>rfboyce+annotatar@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Week 14 MUP, NGINX, HTTPS</title>
+   <link href="http://arebe.github.io/annotatar/2015/12/08/week14/"/>
+   <updated>2015-12-08T00:00:00-05:00</updated>
+   <id>http://arebe.github.io/2015/12/08/week14</id>
+   <content type="html">&lt;p&gt;Deploying the Meteor app to a production webserver with NGINX and HTTPS, using &lt;a href=&quot;https://letsencrypt.org/&quot;&gt;Let’s Encrypt&lt;/a&gt; CA.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;create-a-digital-ocean-droplet-for-the-app&quot;&gt;Create a Digital Ocean droplet for the app&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;create an ubuntu droplet
+    &lt;ul&gt;
+      &lt;li&gt;add your SSH key&lt;/li&gt;
+      &lt;li&gt;networking -&amp;gt; match domain name to IP of new droplet&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;regenerate password - will send an email&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;ssh root@ipaddress&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;change password&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;apt-get update&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;apt-get install nginx&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;apt-get install git&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;obtain-ssl-cert-from-lets-encrypt&quot;&gt;Obtain SSL Cert from Let’s Encrypt&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://letsencrypt.readthedocs.org/en/latest/using.html#installation&quot;&gt;Let’s Encrypt Docs&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Install letsencrypt&lt;/li&gt;
+  &lt;li&gt;cd to letsencrypt dir&lt;/li&gt;
+  &lt;li&gt;Run &lt;code&gt;./letsencrypt-auto certonly —standalone-supported-challenges tls-sni-01&lt;/code&gt;  (to use port 443)&lt;/li&gt;
+  &lt;li&gt;Follow prompts to obtain cert (you might have to temporarily disable other web services - such as node - if they use port 443)&lt;/li&gt;
+  &lt;li&gt;Add the certs to your nginx server config (see below)
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code&gt;ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code&gt;ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;&lt;/code&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;set-up-nginx&quot;&gt;Set up nginx&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code&gt;sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/example&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code&gt;sudo nano /etc/nginx/sites-available/example&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Example nginx config file, from &lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-deploy-a-meteor-js-application-on-ubuntu-14-04-with-nginx&quot;&gt;How To Deploy a Meteor.js Application on Ubuntu 14.04 with Nginx&lt;/a&gt;:&lt;/p&gt;
+
+&lt;pre&gt;
+server_tokens off; # for security-by-obscurity: stop displaying nginx version
+
+# this section is needed to proxy web-socket connections
+map $http_upgrade $connection_upgrade {
+    default upgrade;
+    &#39;&#39;      close;
+}
+
+# HTTP
+server {
+    listen 80 default_server; # if this is not a default server, remove &quot;default_server&quot;
+    listen [::]:80 default_server ipv6only=on;
+
+    root /usr/share/nginx/html; # root is irrelevant
+    index index.html index.htm; # this is also irrelevant
+
+    server_name annotatar.xyz; # the domain on which we want to host the application. Since we set &quot;default_server&quot; previously, nginx will answer all hosts anyway.
+
+
+    # redirect non-SSL to SSL
+    location / {
+       rewrite     ^ https://$server_name$request_uri? permanent;
+    }
+}
+
+# HTTPS server
+server {
+    listen 443 spdy; 
+    ssl on;
+    server_name annotatar.xyz; # this domain must match Common Name (CN) in the SSL certificate
+
+    root html; # irrelevant
+    index index.html; # irrelevant
+
+    ssl_certificate /etc/letsencrypt/live/annotatar.xyz/fullchain.pem; # full path to SSL certificate and CA certificate concatenated together
+    ssl_certificate_key /etc/letsencrypt/live/annotatar.xyz/privkey.pem; # full path to SSL key
+
+    # performance enhancement for SSL
+    ssl_stapling on;
+    ssl_session_cache shared:SSL:10m;
+    ssl_session_timeout 5m;
+
+    # safety enhancement to SSL: make sure we actually use a safe cipher
+    ssl_prefer_server_ciphers on;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers &#39;ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-GCM-SHA384:kEDH+AESGCM:ECDHE-RSA-AES128-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA:ECDHE-ECDSA-AES128-SHA:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA:ECDHE-ECDSA-AES256-SHA:DHE-RSA-AES128-SHA256:DHE-RSA-AES128-SHA:DHE-RSA-AES256-SHA256:DHE-DSS-AES256-SHA:AES128-GCM-SHA256:AES256-GCM-SHA384:ECDHE-RSA-RC4-SHA:ECDHE-ECDSA-RC4-SHA:RC4-SHA:HIGH:!aNULL:!eNULL:!EXPORT:!DES:!3DES:!MD5:!PSK&#39;;
+
+    # config to enable HSTS(HTTP Strict Transport Security) https://developer.mozilla.org/en-US/docs/Security/HTTP_Strict_Transport_Security
+    # to avoid ssl stripping https://en.wikipedia.org/wiki/SSL_stripping#SSL_stripping
+    add_header Strict-Transport-Security &quot;max-age=31536000;&quot;;
+
+    # If your application is not compatible with IE &amp;lt;= 10, this will redirect visitors to a page advising a browser update
+    # This works because IE 11 does not present itself as MSIE anymore
+    if ($http_user_agent ~ &quot;MSIE&quot; ) {
+        return 303 https://browser-update.org/update.html;
+    }
+
+    # pass all requests to Meteor
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade; # allow websockets
+        proxy_set_header Connection $connection_upgrade;
+        proxy_set_header X-Forwarded-For $remote_addr; # preserve client IP
+        proxy_set_header X-Forward-Proto https;
+
+        # this setting allows the browser to cache the application in a way compatible with Meteor
+        # on every applicaiton update the name of CSS and JS file is different, so they can be cache infinitely (here: 30 days)
+        # the root path (/) MUST NOT be cached
+        if ($uri != &#39;/&#39;) {
+            expires 30d;
+        }
+   }
+}
+
+&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;rm /etc/nginx/sites-enabled/default&lt;/code&gt; remove default config&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;ln -s /etc/nginx/sites-available/todos /etc/nginx/sites-enabled/todos&lt;/code&gt; enable vhost by linking config file&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;nginx -t&lt;/code&gt; test out the config&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;nginx -s reload&lt;/code&gt; depoloy – also &lt;code&gt;service nginx startup&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.digitalocean.com/community/tutorials/how-to-create-a-ssl-certificate-on-nginx-for-ubuntu-12-04&quot;&gt;How to Create Self-signed Certs, if you dont want to use Let’s Encrypt&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;note-on-nginx-config&quot;&gt;Note on NGINX config&lt;/h4&gt;
+&lt;p&gt;&lt;em&gt;**&lt;/em&gt; &lt;code&gt;proxy_pass http://127.0.0.1:8080;&lt;/code&gt;
+&lt;code&gt;:8080&lt;/code&gt; —&amp;gt; this should match the mup.json env &lt;code&gt;PORT&lt;/code&gt; (see below)&lt;/p&gt;
+
+&lt;h4 id=&quot;mup&quot;&gt;MUP&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;install &lt;a href=&quot;https://github.com/arunoda/meteor-up&quot;&gt;MUP&lt;/a&gt; on local machine&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;mup init&lt;/code&gt; —in proj directory&lt;/li&gt;
+  &lt;li&gt;edit &lt;code&gt;mup.json&lt;/code&gt; config file — use password &amp;amp; ip address of droplet or ssh id&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;mup setup&lt;/code&gt; —- configures remote server, run this every time the config file changes&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;mup deploy&lt;/code&gt; —– run this to update app files on the remote server&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Example &lt;code&gt;mup.json&lt;/code&gt;:&lt;/p&gt;
+&lt;pre&gt;
+{
+  // Server authentication info
+  &quot;servers&quot;: [
+    {
+      &quot;host&quot;: &quot;104.236.3.79&quot;, // your droplet&#39;s IP
+      &quot;username&quot;: &quot;root&quot;,
+      //&quot;password&quot;: “passwordyness&quot;
+      // or pem file (ssh based authentication)
+      &quot;pem&quot;: &quot;~/.ssh/id_rsa&quot;
+    }
+  ],
+
+  // Install MongoDB in the server, does not destroy local MongoDB on future setup
+  &quot;setupMongo&quot;: true,
+
+  // WARNING: Node.js is required! Only skip if you already have Node.js installed on server.
+  &quot;setupNode&quot;: true,
+
+  // WARNING: If nodeVersion omitted will setup 0.10.36 by default. Do not use v, only version number.
+  &quot;nodeVersion&quot;: &quot;0.10.40&quot;, // Meteor requires at least 0.10.40
+
+  // Install PhantomJS in the server
+  // &quot;setupPhantom&quot;: true,
+
+  // Show a progress bar during the upload of the bundle to the server.
+  // Might cause an error in some rare cases if set to true, for instance in Shippable CI
+  &quot;enableUploadProgressBar&quot;: false,
+
+  // Application name (No spaces)
+  &quot;appName&quot;: &quot;annotatar&quot;,
+
+  // Location of app (local directory)
+  &quot;app&quot;: &quot;.&quot;,
+
+  // Configure environment
+  &quot;env&quot;: {
+    &quot;PORT&quot;: 3000,
+    &quot;ROOT_URL&quot;: &quot;http://104.236.3.79&quot; // your droplet&#39;s IP -- don&#39;t use https, nginx will take care of routing
+  },
+
+  // Meteor Up checks if the app comes online just after the deployment
+  // before mup checks that, it will wait for no. of seconds configured below
+  &quot;deployCheckWaitTime&quot;: 15
+}
+&lt;/pre&gt;
+
+&lt;h4 id=&quot;next-steps&quot;&gt;Next steps&lt;/h4&gt;
+
+&lt;p&gt;The REST API has already been implemented, so implementing the stream is not mission-critical at this time. At this time I’ve got a number of pressing issues to finalize the documentation page.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Normalizing age-til-die-off&lt;/li&gt;
+  &lt;li&gt;Styling the documentation page&lt;/li&gt;
+  &lt;li&gt;Using accelerometer data to change the tweet positions&lt;/li&gt;
+  &lt;li&gt;Styling the tweets&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Week 13 Subscriptions and Cursors</title>
+   <link href="http://arebe.github.io/annotatar/2015/12/02/week13/"/>
+   <updated>2015-12-02T00:00:00-05:00</updated>
+   <id>http://arebe.github.io/2015/12/02/week13</id>
+   <content type="html">&lt;p&gt;Working with Meteor: automating modifications to the hashtag database.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;streamlining-the-app&quot;&gt;Streamlining the app&lt;/h4&gt;
+
+&lt;p&gt;Originally, the implementation of Hashtag collection additions and look-up required a number of “manual” code modifications. This week, I refactored the code to leverage the &lt;a href=&quot;http://www.meteorpedia.com/read/Understanding_Meteor_Publish_and_Subscribe&quot;&gt;database functionalities in Mongo / Meteor&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;Rather than publishing many versions of the Tweet database, the client-side subscription takes the relevant hashtag as an argument, and passes this to the server which then provides the appropriate publication - the tweets filtered on the appropriate hashtag. There is a fall-back defaulting to the “occupy” hashtag, if the app cannot access the geolocation of the client’s device, or if there is no hashtag paired with that location.&lt;/p&gt;
+
+&lt;p&gt;Previously, there was a separate array to track the hashtags and make a Twitter API query - however, this was inefficient. By utilizing the functionality of the Mongo &lt;code&gt;find()&lt;/code&gt; command to return a cursor that can be used as a dynamically-updated array, the Hashtag collection now also functions as the basis for the Twitter REST API call. &lt;/p&gt;
+
+&lt;h4 id=&quot;template-mods&quot;&gt;Template mods&lt;/h4&gt;
+
+&lt;p&gt;I’ve also restructured the application so that Meteor appends a header HTML block with references to css and Google fonts. I based the application file structure on &lt;a href=&quot;https://themeteorchef.com/snippets/organizing-your-meteor-project/&quot;&gt;The Meteor Chef&lt;/a&gt; recommendations, resulting in a more maintainable and legible code base.&lt;/p&gt;
+
+&lt;h4 id=&quot;stream-vs-rest&quot;&gt;Stream vs REST&lt;/h4&gt;
+
+&lt;p&gt;This is the major decision that still needs to be made. Currently, I’m using the Twitter REST API to request the last 20 tweets for each hashtag in the database. This approach has several limitations: &lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Dilution of the concept of merging two simultaneous, multi-sited events&lt;/li&gt;
+  &lt;li&gt;Age-til-die-off is often inappropriate - this needs to be normalized per hashtag&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The REST API does have a few advantages:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Predictable number of query results&lt;/li&gt;
+  &lt;li&gt;Static database once the app is running&lt;/li&gt;
+  &lt;li&gt;Ensures that tweets will be present in the AR frame, even if there isn’t a lot of recent activity on the hashtag&lt;/li&gt;
+  &lt;li&gt;Provides a framework for future deployment with historic tweet data (ie as part of Invisible Monument)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I think the best approach is to blend the two - to make an initial REST query when the app initializes, to ensure that there is a corpus of tweets to display in the AR frame. The age-til-die-off might be normalized based on the results of the initial query. Then as the app runs, it will connect to a &lt;a href=&quot;http://www.meteorpedia.com/read/Understanding_Meteor_Publish_and_Subscribe&quot;&gt;multi-channel stream&lt;/a&gt;. Tweets will be added to the database - up to 100 per hashtag. Once the limit is reached, the database will delete the oldest tweet as each new one arrives.&lt;/p&gt;
+
+&lt;h4 id=&quot;next-steps&quot;&gt;Next steps&lt;/h4&gt;
+
+&lt;p&gt;The REST API has already been implemented, so implementing the stream is not mission-critical at this time. At this time I’ve got a number of pressing issues to finalize the documentation page.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Normalizing age-til-die-off&lt;/li&gt;
+  &lt;li&gt;Styling the documentation page&lt;/li&gt;
+  &lt;li&gt;Adding a map to the documentation page &lt;/li&gt;
+  &lt;li&gt;Using accelerometer data to change the tweet positions&lt;/li&gt;
+  &lt;li&gt;Styling the tweets&lt;/li&gt;
+  &lt;li&gt;Deploying annotatAR on Digital Ocean&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Week 12 Templates and Collections</title>
+   <link href="http://arebe.github.io/annotatar/2015/11/23/week12/"/>
+   <updated>2015-11-23T00:00:00-05:00</updated>
+   <id>http://arebe.github.io/2015/11/23/week12</id>
+   <content type="html">&lt;p&gt;Working with Meteor: implementing routing, templates, and geolocation. &lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;routing-troubleshooting&quot;&gt;Routing troubleshooting&lt;/h4&gt;
+
+&lt;p&gt;As described last week, I’ve installed &lt;a href=&quot;http://iron-meteor.github.io/iron-router/&quot;&gt;Iron:Router&lt;/a&gt; to handle URL and template routing for annotatAR. Last week, I ran into an issue where the new routing scheme seemed to break the Javascript that generated the AR elements. Upon testing and inspection, I determined that it was the template rendering that caused the issue - the AR code ran before the template had fully rendered and therefore had been attempting to act on parts of the DOM that didn’t exist yet. It was an easy fix once I realized this, I put the AR script inside of a call-back function:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Template.mytemplate.onRendered(function(){....})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I now have two routes for my site, the index (documentation) page and the AR page. Each has their own template.&lt;/p&gt;
+
+&lt;h4 id=&quot;hashtag--geolocation-collection&quot;&gt;Hashtag / Geolocation collection&lt;/h4&gt;
+
+&lt;p&gt;I’ve also implemented the hashtag lookup functionality. There is now a collection that contains each lat/long and hashtag association. Also, the server publishes a number of versions of the tweet collection, one for each hashtag in the Hashtag collection. When the client loads the page, a script looks up the hashtag and subscribe to the appropriate publication. This should be quite secure, as the client doesn’t make a special request of the server – it simply subscribes to a different publication that the server is already making available.&lt;/p&gt;
+
+&lt;p&gt;I’ve run into a bug in implementing this system. On the server, I’d like to be able to iterate over all of the hashtags in the Hastags collection and automatically collect tweets for each one. To do so I’m using &lt;code&gt;hashtags.map()&lt;/code&gt; to call the fiber for the Twitter API. I need to be able to pass each hashtag to this fiber, and thus far I haven’t figured out how to do that without throwing an error. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var handleTweets = Meteor.bindEnvironment(function(err, data, response) {
+  console.log(data);
+  console.log(&quot;***********************&quot;, err, &quot;***********************&quot;);
+  for(var i = 0; i &amp;lt; data.statuses.length; i++){
+    Meteor.call(&quot;addTweet&quot;, data.statuses[i].text, hashtag, data.statuses[i].created_at);
+  }
+  
+});
+
+
+//**************************************************//
+// ******  uncomment to turn the rest on: ****** //
+hashtags.map(function(hashtag){
+  Twit.get(&#39;search/tweets&#39;,
+  {
+   q: hashtag,
+   count: 20
+ }, handleTweets);
+
+})
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;In prior versions of the application, &lt;code&gt;hashtag&lt;/code&gt; was scoped within the containing function for both of these calls, but now it is not. Further research on fibers might be helpful.&lt;/p&gt;
+
+&lt;h4 id=&quot;fullscreen&quot;&gt;Fullscreen&lt;/h4&gt;
+
+&lt;p&gt;While I was taking a break from troubleshooting the templating issue, I also worked on fullscreen for AR. This has been a tricky problem to solve - there are built-in fullscreening styles for &lt;code&gt;video&lt;/code&gt; elements, but the AR canvas is actually a series of images that are taken from the cdevice input and rendered one frame every 100ms with the tweet text overlaid. I need to scale the image to fit the device viewport, and also slice the image to fill the screen. &lt;/p&gt;
+
+&lt;p&gt;The code needs to check if:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;check if the dimensions of the video are larger than the dimensions of the viewport &lt;/li&gt;
+  &lt;li&gt;check if the viewport is in portrait (height &amp;gt; width) or landscape (height &amp;lt; width)&lt;/li&gt;
+  &lt;li&gt;scale the image so that the shorter dimension matches the corresponding viewport dimension&lt;/li&gt;
+  &lt;li&gt;slice any extra parts from the scaled image to center it on the viewport&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I’ve tried a few methods to do this, and nothing seems to work 100% of the time. &lt;/p&gt;
+
+&lt;h4 id=&quot;next-steps&quot;&gt;Next steps&lt;/h4&gt;
+
+&lt;p&gt;I’ve solved some of the major problems with annotatAR but I’ve still got a long way to go in the next couple of weeks. After fixing the bugs with the Twitter fiber and with fullscreen, I can move on to:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Styling the documentation page&lt;/li&gt;
+  &lt;li&gt;Adding a map to the documentation page &lt;/li&gt;
+  &lt;li&gt;Using accelerometer data to change the tweet positions&lt;/li&gt;
+  &lt;li&gt;Styling the tweets&lt;/li&gt;
+  &lt;li&gt;Deploying annotatAR on Digital Ocean&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Week 11 Routing</title>

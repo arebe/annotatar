@@ -41,100 +41,44 @@
   
   <article class="post">
     <h1 class="post-title">
-      <a href="/annotatar/2015/09/02/milestones/">
-        Capstone Project Milestones
+      <a href="/annotatar/2015/09/13/week2/">
+        Week 2 Feedback and Learning
       </a>
     </h1>
 
-    <time datetime="2015-09-02T00:00:00-04:00" class="post-date">02 Sep 2015</time>
+    <time datetime="2015-09-13T00:00:00-04:00" class="post-date">13 Sep 2015</time>
 
-    <p>As part of this week’s set of assignments, I have revisited the project milestones for annotatAR this fall. </p>
-
-<hr />
-
-<h4 id="beta-test-at-the-nyc-internet-yami-ichihttpyami-ichibiznyc">Beta-test at the <a href="http://yami-ichi.biz/nyc/">NYC Internet Yami-Ichi</a></h4>
-<p><em>12 Sept 2015</em></p>
-
-<ul>
-  <li>Mobile site deployed on a live server</li>
-  <li>Displays tweet stream overlaid on <code>getUserMedia</code> element</li>
-</ul>
+    <p>In which annotatAR undergoes critique by two fellow capstone students, RB converses with Jen Kramer, and preparation is underway for the first beta deployment.</p>
 
 <hr />
 
-<h4 id="device-sensing">Device sensing</h4>
-<p><em>30 Sept 2015</em></p>
+<h4 id="check-in-with-jen">Check-in with Jen</h4>
+
+<p>Call with Jen K was super helpful in thinking about next steps for the design and how to justify decisions with demographics and user personas. It was great to have a chat about high-level project goals, and it was super helpful start to think about deliverables in terms of the December presentations. </p>
+
+<p>We reviewed the rubric and I’m going to revisit it in light of our conversation; the main advice was to try to define the criteria as specifically as possible so we are on the same page about the final deliverables. I will spend s bit of time thinking through the aesthetic qualities that are most important. Similarly, I will work to define a specific use-case for device compatibility and narrow the scope to what makes the most sense for the target audience demographic.</p>
+
+<h4 id="feedback-from-pat--peg">Feedback from Pat &amp; Peg</h4>
+
+<p>My group members provided copius and helpful feedback - I think it really helped that I asked a couple of specific but somewhat open-ended questions in my video :) The main areas where I hoped to receive suggestions were user experience and scaling the project down the road. Overall, I’m hearing that a simple interface for the mobile site is preferable - the tweets should be obvious and contrasting. Scaling could go in various directions - Pat had some suggestions about devices which I will consider when I revisit my grading rubric. I look forward to incorporating the thoughtful ideas that Peg and Pat have shared with me.</p>
+
+<h4 id="learning-meteor">Learning Meteor</h4>
+
+<p>I went to a Meteor meet-up in New York and met some awesome Meteor folks. I learned about <a href="https://www.discovermeteor.com/">Discover Meteor</a>, the guide to getting started. I also learned about how Meteor handles authorization and authentication, why you might want to render views on the server (which is functionality that will part of the next release of Meteor), and also heard about the Meteor package <a href="https://atmospherejs.com/houston/admin">houston</a> for implementing a database UI. </p>
+
+<p>In preparing for the beta deployment at the <a href="http://yami-ichi.biz/nyc/">Internet Yami-Ichi NYC</a>, I realized that an HTML5 game engine might be a suitable platform for displaying the tweet database. Such a mobile framework wold handle the canvas on the mobile app - something as simple as resizing the video to fit the screen seems needlessly complex to code from scratch. So I’m seeking a mobile-first render engine. Some candidates:</p>
 
 <ul>
-  <li>Geolocation-aware</li>
-  <li>Access device accelerometer data</li>
-  <li>Map tweet position to 3D model</li>
-  <li>Determine whether or not to compile to native app(s)</li>
+  <li><a href="http://www.pixijs.com/">Pixi.js</a> - a 2D webgl renderer</li>
+  <li><a href="http://phaser.io">Phaser</a> - HTML 5 game framework that’s (previously) based on Pixi</li>
+  <li><a href="http://famous.org/">Famous</a> - js library for animations &amp; interfaces (not as much doc)</li>
 </ul>
 
-<hr />
+<h4 id="looking-ahead-this-week">Looking ahead this week</h4>
 
-<h4 id="aesthetic-refinements-on-mobile">Aesthetic refinements on mobile</h4>
-<p><em>16 Oct 2015</em></p>
+<p>The upcoming week, I will develop a user persona based on the demographics of twitter users, sketch out the app database design, and mock up the UI for the mobile site.</p>
 
-<ul>
-  <li>Style tweets based on timestamp</li>
-  <li>Screenshot functionality</li>
-  <li>User testing of mobile</li>
-</ul>
-
-<hr />
-
-<h4 id="desktop-site-minimum-viable-product">Desktop site minimum viable product</h4>
-<p><em>30 Oct 2015</em></p>
-
-<ul>
-  <li>Display video from event with tweets overlaid</li>
-  <li>User testing of desktop</li>
-</ul>
-
-<hr />
-
-<h4 id="desktop-site-refinements">Desktop site refinements</h4>
-<p><em>20 Nov 2015</em></p>
-
-<ul>
-  <li>Text analysis (some or all of the following):
-    <ul>
-      <li>Sentiment analysis</li>
-      <li>Keyword parsing</li>
-      <li>Spatial and/or color encoding</li>
-    </ul>
-  </li>
-  <li>Scrub / navigate on time dimension</li>
-</ul>
-
-<hr />
-
-<h4 id="platform-scalability">Platform scalability</h4>
-<p><em>04 Dec 2015</em></p>
-
-<ul>
-  <li>Github repo with description and instructions for deployment</li>
-  <li>Integrate with existing social media (share buttons)</li>
-</ul>
-
-<hr />
-
-<h4 id="bonus-features">Bonus features</h4>
-<p><em>11 Dec 2015</em></p>
-
-<ul>
-  <li>User interface for deploying new app for an event</li>
-  <li>Compile to native Android app (if necessary)</li>
-  <li>Multiple views of augmented reality:
-    <ul>
-      <li>Tweet text becomes lexograph of video stream</li>
-      <li>Select variety of encoding for sentiments or keywords</li>
-    </ul>
-  </li>
-</ul>
-
+<p>I’ll also be posting a recap of this weekend’s beta test as its own post.</p>
 
   </article>
   
@@ -153,7 +97,7 @@
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2015-11-23T20:35:04-05:00">2015</time>. All rights reserved.
+          &copy; <time datetime="2015-12-08T00:09:32-05:00">2015</time>. All rights reserved.
           <span class="right"><a href="/annotatar/archive" title="Archive">Archive</a></span>
         </small>
       </footer>

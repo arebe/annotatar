@@ -41,31 +41,57 @@
   
   <article class="post">
     <h1 class="post-title">
-      <a href="/annotatar/2015/08/31/welcome/">
-        Welcome to annotatAR's Blog
+      <a href="/annotatar/2015/09/04/week1/">
+        Week 1 Summer Progress
       </a>
     </h1>
 
-    <time datetime="2015-08-31T00:00:00-04:00" class="post-date">31 Aug 2015</time>
+    <time datetime="2015-09-04T00:00:00-04:00" class="post-date">04 Sep 2015</time>
 
-    <p>This blog will track my progress on my ALM capstone project, annotatAR. Details about the motivation, design, and prospective schedule are part of <a href="/annotatar/assets/files/ALM_Capstone_Proposal_RBoyce_v3.2.pdf">the project proposal</a>.</p>
+    <p>In which our hero recounts the details of this summer’s work….</p>
 
 <hr />
 
-<h3 id="some-links-to-track">Some links to track:</h3>
+<h4 id="user-interaction-paradigm">User interaction paradigm</h4>
+
+<p>annotatAR was inspired by a project I worked on in Fall 2014, <a href="http://docshop0.tumblr.com/">Notes from El Saniyya</a>. As part of <a href="http://docshop.space/">DocShop at metaLab</a>, I worked with Egyptian artist Lara Baladi to create a prototype of a living timeline of the Arab Spring. The <em>Notes…</em> event was highly participatory and we wondered what the next steps for engaging with a multi-media archive might be like.</p>
+
+<blockquote>
+  <p>You walk into a gallery space, with a curved wall with a huge timeline, each point on the timeline is an event in the Arab Spring / Tahrir Square 21 days. you want to add your own comment to the timeline, reacting to something on the timeline that triggered a memory or emotion - given any possible technology or material, how would you leave a message?</p>
+</blockquote>
+
+<p>This is motivation for utilizing an augmented reality platform, and Twitter as a common social interface.</p>
+
+<h4 id="meteor">Meteor</h4>
+
+<p>The major accomplishment achieved this summer was getting started with <a href="http://docs.meteor.com/#/full/">Meteor.js</a>. After reading docs and going through an example project tutorial, I was convinced that this was the technology on which I should build annotatAR. What first drew me to Meteor is the ability to code everything in Javascript, the active community, and the well-designed forward-looking codebase. I sat with a friend for an informational session to learn about how to utilize <a href="https://www.eventedmind.com/feed/meteor-what-is-meteor-bindenvironment">asynchronous external requests</a> in Meteor, through <a href="https://meteorhacks.com/fibers-eventloop-and-meteor">fibers</a> and <code>Meteor.bindEnvironment</code>. I’m starting to see even more value in how Meteor encourages code modularization, which may be quite helpful as the project develops.</p>
+
+<h4 id="alpha-site">Alpha site</h4>
+
+<p>With my newly acquired knowledge of Meteor, I built a test application called <em>truthtweets</em>, which connects to the <a href="https://dev.twitter.com/streaming/public">Twitter Firehose API</a> and overlays tweet texts that utilize the hashtag <em>#truth</em> onto a video stream from <code>getUserMedia</code> element. Voilà!</p>
+
+<p><img src="/annotatar/assets/images/screencap_20150904.png" alt="truthtweets app" /></p>
+
+<h4 id="next-directions">Next directions</h4>
+
+<p>In the short term, the mobile application has a number of refinements to be achieved:</p>
 
 <ul>
-  <li><a href="#">annotatAR live site - coming soon!</a></li>
-  <li><a href="https://canvas.harvard.edu/courses/4308">Capstone design studio site</a></li>
+  <li>
+    <strike>twitter api config file - untracked (not shared on github)</strike>
+    <p>done! - now using settings.json</p>
+  </li>
+  <li>resize navigator to fit device screen</li>
+  <li>use accelerometer data to detect motion and update tweet position</li>
+  <li>turn the stream on and display new tweets</li>
+  <li>change alpha based on tweet createdAt</li>
+  <li>deploy to meteor cloud or other web server</li>
+  <li><em>what if tweets became colored to reflect the background video feed? - lexigraph</em></li>
 </ul>
 
-<h3 id="summer-work">Summer work</h3>
+<h4 id="looking-ahead-this-month">Looking ahead this month</h4>
 
-<p>Over the summer, I learned a bit about <a href="https://www.meteor.com/">meteor.js</a> and began building a version 0 of the site, which connects to the <a href="https://dev.twitter.com/streaming/public">Twitter API</a>, grabs tweets with a particular hashtag, and displays them on top of a video feed from <a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator/getUserMedia">getUserMedia</a>. </p>
-
-<h3 id="next-steps">Next steps</h3>
-
-<p>While the most basic form of this mechanic “works,” there is much to be done in terms of styling, user interactions, and geolocation. Additionally, meta-analysis of the tweets will add layers of semantics to both the mobile site and eventually to a desktop archival version.</p>
+<p>My first <a href="/annotatar/2015/09/02/milestones">project milestone</a> will be next week, when I deploy a beta version of the application on a live server and test it at the <a href="http://yami-ichi.biz/nyc/">New York City Internet Yami-Ichi</a> event by giving the URL out to a (small) number of attendees. This early-stage test will be crucial in refining the user interactions and aesthetics. In addition to the application itself, I will design a brief Google forms survey to collect UX feedback.</p>
 
   </article>
   
@@ -73,7 +99,7 @@
 
 <div class="pagination">
   
-    <span class="pagination-item older">Older</span>
+    <a class="pagination-item older" href="/annotatar/page12">Older</a>
   
   
     <a class="pagination-item newer" href="/annotatar/page10">Newer</a>
@@ -84,7 +110,7 @@
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2015-11-23T20:35:04-05:00">2015</time>. All rights reserved.
+          &copy; <time datetime="2015-12-08T00:09:32-05:00">2015</time>. All rights reserved.
           <span class="right"><a href="/annotatar/archive" title="Archive">Archive</a></span>
         </small>
       </footer>

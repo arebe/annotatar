@@ -41,44 +41,86 @@
   
   <article class="post">
     <h1 class="post-title">
-      <a href="/annotatar/2015/09/13/week2/">
-        Week 2 Feedback and Learning
+      <a href="/annotatar/2015/10/02/week5/">
+        Week 5 Invisible Monument
       </a>
     </h1>
 
-    <time datetime="2015-09-13T00:00:00-04:00" class="post-date">13 Sep 2015</time>
+    <time datetime="2015-10-02T00:00:00-04:00" class="post-date">02 Oct 2015</time>
 
-    <p>In which annotatAR undergoes critique by two fellow capstone students, RB converses with Jen Kramer, and preparation is underway for the first beta deployment.</p>
+    <p>Outcomes from deployement at Invisible Monument launch event in Boston.</p>
 
 <hr />
 
-<h4 id="check-in-with-jen">Check-in with Jen</h4>
+<h4 id="lead-up-to-deployment">Lead up to deployment</h4>
 
-<p>Call with Jen K was super helpful in thinking about next steps for the design and how to justify decisions with demographics and user personas. It was great to have a chat about high-level project goals, and it was super helpful start to think about deliverables in terms of the December presentations. </p>
-
-<p>We reviewed the rubric and I’m going to revisit it in light of our conversation; the main advice was to try to define the criteria as specifically as possible so we are on the same page about the final deliverables. I will spend s bit of time thinking through the aesthetic qualities that are most important. Similarly, I will work to define a specific use-case for device compatibility and narrow the scope to what makes the most sense for the target audience demographic.</p>
-
-<h4 id="feedback-from-pat--peg">Feedback from Pat &amp; Peg</h4>
-
-<p>My group members provided copius and helpful feedback - I think it really helped that I asked a couple of specific but somewhat open-ended questions in my video :) The main areas where I hoped to receive suggestions were user experience and scaling the project down the road. Overall, I’m hearing that a simple interface for the mobile site is preferable - the tweets should be obvious and contrasting. Scaling could go in various directions - Pat had some suggestions about devices which I will consider when I revisit my grading rubric. I look forward to incorporating the thoughtful ideas that Peg and Pat have shared with me.</p>
-
-<h4 id="learning-meteor">Learning Meteor</h4>
-
-<p>I went to a Meteor meet-up in New York and met some awesome Meteor folks. I learned about <a href="https://www.discovermeteor.com/">Discover Meteor</a>, the guide to getting started. I also learned about how Meteor handles authorization and authentication, why you might want to render views on the server (which is functionality that will part of the next release of Meteor), and also heard about the Meteor package <a href="https://atmospherejs.com/houston/admin">houston</a> for implementing a database UI. </p>
-
-<p>In preparing for the beta deployment at the <a href="http://yami-ichi.biz/nyc/">Internet Yami-Ichi NYC</a>, I realized that an HTML5 game engine might be a suitable platform for displaying the tweet database. Such a mobile framework wold handle the canvas on the mobile app - something as simple as resizing the video to fit the screen seems needlessly complex to code from scratch. So I’m seeking a mobile-first render engine. Some candidates:</p>
+<p>In the past week, I had a development push to meet the development goals that were most important to be able to demonstrate annotatAR’s utility as a docmentation tool. I met those goals for the most part. I was able to implement:</p>
 
 <ul>
-  <li><a href="http://www.pixijs.com/">Pixi.js</a> - a 2D webgl renderer</li>
-  <li><a href="http://phaser.io">Phaser</a> - HTML 5 game framework that’s (previously) based on Pixi</li>
-  <li><a href="http://famous.org/">Famous</a> - js library for animations &amp; interfaces (not as much doc)</li>
+  <li>Typography and color changes for better legibilty</li>
+  <li>Stripping the tweet text of URLs</li>
+  <li>Screen capture button to save an image of the <code>canvas</code> element</li>
+  <li>Panning with accelerometer data - incomplete implementation</li>
+  <li>Integrating stream and REST Twitter API data</li>
 </ul>
 
-<h4 id="looking-ahead-this-week">Looking ahead this week</h4>
+<p>Ideally, I want to use accelerometer data from the device to allow the end user to pan around - to change the position of the tweets to create the illusion that they are positioned in three dimensional space. While I wasn’t able to achieve a reliable 3D effect, I started to experiment with the <code>ondevicemotion</code> JavaScript event, and <code>accellerationIncludingGravity</code> on the X and Y axes. While I was able to achieve somewhat fluid UX on my laptop, the calibration did not translate properly to my Galaxy 4G device.</p>
 
-<p>The upcoming week, I will develop a user persona based on the demographics of twitter users, sketch out the app database design, and mock up the UI for the mobile site.</p>
+<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_00.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
 
-<p>I’ll also be posting a recap of this weekend’s beta test as its own post.</p>
+<h4 id="invisible-monument">Invisible Monument</h4>
+
+<p>The Invisible Monument launch event, #LuncheonOnTheGrass took place on 30 Sept 2015, in Dewey Square, Boston. <a href="http://invisiblemonument.com/">Invisible Monument</a> is a locative sound installation created by Halsey Burgund and Lara Baladi, that cn be experienced using an iOS application. Various sond elements are triggered by geolocations around Dewey Square. </p>
+
+<p>I met the team on site for the launch event and started taking screen captures with annotatAR. I used three different Twitter tags: #occupy, #the99, and #luncheononthegrass. I adjusted the “die-off” rate for each of the tweets according to how often the tag was used. As the tweets get older, they become smaller and more transparent. </p>
+
+<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_01.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+
+<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_02.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+
+<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_03.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+
+<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_04.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+
+<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_05.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+
+<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_06.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+
+<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_07.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+
+<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_08.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+
+<h4 id="historic-tweets">Historic tweets</h4>
+
+<p>I would like to be able to overlay historic tweet data as well as current tweets. However, the <a href="https://dev.twitter.com/rest/public/search">Twitter REST API</a> allows access to tweets created within the past couple of weeks only.</p>
+
+<p>Third-party services such as <a href="https://gnip.com/">GNIP</a> are social media brokers from which you can purchase historic data. The base rate for historic tweet data starts at $1.1k and increased depending on length of time and number of tweets returned by the query. </p>
+
+<p>While this is cost-prohibitive for the time being, it does add a layer of utility to annotatAR. I have already implemented the ability to download the database of tweets as a CSV file, which could be quite useful in capturing an independent record of a hashtag.</p>
+
+<p>Additionally, I spoke to one of the participants in #LuncheonOnTheGrass who directed me to an archive of tweets from the Occupy movement, available at <a href="http://occupyresearch.net/">Occupy Research</a> and <a href="http://r-shief.org/">R-Shief</a>. These might be a useful corpus to draw on in future iterations. </p>
+
+<h4 id="future-of-invisible-monument">Future of Invisible Monument</h4>
+
+<p>Lara and team were quite excited by the output from annotatAR, and will use my documentation of #LuncheonOnTheGrass as part of the ongoing archive for Invisible Monument / Vox Populi. </p>
+
+<p>We began to discuss how annotatAR might be integrated with Halsey’s <a href="http://www.roundware.org/">Roundware</a> platform, to provide an integrated experience with the audioscape. Future directions for Invisible Monument are quite exciting, and I hope to continue to work with them. However, I think this will only be possible of Halsey ports Roundware to Android or the mobile web.</p>
+
+<h4 id="near-term-goals">Near term goals</h4>
+
+<p>More immediate goals for annotatAR include:</p>
+
+<ul>
+  <li>Bug fixing - hashtags on the stream seemed not to work on the website (though the stream worked on the local version)</li>
+  <li>Bug fixing - houston doesn’t seem to work, maybe due to special characters?</li>
+  <li>Fluid accelerometer use</li>
+  <li>URL routing for hashtag display</li>
+  <li>Automation or parameterization of annotatAR UX elements (ie age til die-off)</li>
+  <li>Capturing additional tweet data (ie user, associated photos) for posterity</li>
+</ul>
+
+<p>Once these goals are achieved it may be time to turn to text analysis and a desktop site.</p>
+
 
   </article>
   
@@ -97,7 +139,7 @@
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2015-11-23T20:35:04-05:00">2015</time>. All rights reserved.
+          &copy; <time datetime="2015-12-08T00:09:32-05:00">2015</time>. All rights reserved.
           <span class="right"><a href="/annotatar/archive" title="Archive">Archive</a></span>
         </small>
       </footer>

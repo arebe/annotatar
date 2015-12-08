@@ -41,78 +41,80 @@
   
   <article class="post">
     <h1 class="post-title">
-      <a href="/annotatar/2015/09/03/grading/">
-        Capstone Project Grading Rubric
+      <a href="/annotatar/2015/09/14/week3a/">
+        Week 3 Beta Testing at NYC Internet Yami-Ichi
       </a>
     </h1>
 
-    <time datetime="2015-09-03T00:00:00-04:00" class="post-date">03 Sep 2015</time>
+    <time datetime="2015-09-14T00:00:00-04:00" class="post-date">14 Sep 2015</time>
 
-    <p>As part of this week’s assignments, I have developed a grading rubric for annotatAR, for the scope of this fall’s Capstone Design Studio. This rubric has six dimensions, with three criteria each. The dimensions are categorized in two sub-sections: <em>Mobile Site</em> and <em>Desktop Site</em>. The points are weighted to emphasize the <em>Mobile Site</em>, with a total possible score of 27 points.</p>
+    <p>In which we visit the internet black market and take some screenshots.</p>
 
 <hr />
 
-<table>
-  <thead>
-    <tr>
-      <th><em>Mobile Site (18pts total)</em></th>
-      <th style="text-align: center">Excellent (6pts)</th>
-      <th style="text-align: center">Competent (4pts)</th>
-      <th style="text-align: center">Needs Work (1pt)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Functionality</strong> :: Users can overlay tweets on a video stream; Device compatibility;  Geolocative;  Users can take screenshot</td>
-      <td style="text-align: center">Meets all requirements</td>
-      <td style="text-align: center">Meets 3/4 requirements</td>
-      <td style="text-align: center">Meets &lt;= 3 requirements</td>
-    </tr>
-    <tr>
-      <td><strong>Aesthetics</strong> :: Tweet metadata is visually encoded; Tweet position changes with device motion; Appealing visual design</td>
-      <td style="text-align: center">Meets all requirements</td>
-      <td style="text-align: center">Meets 2/3 requirements</td>
-      <td style="text-align: center">Meets &lt;= 2 requirements</td>
-    </tr>
-    <tr>
-      <td><strong>Scalability</strong> :: Deployable at a variety of events; Github repo + documentation for further development</td>
-      <td style="text-align: center">Meets all requirements</td>
-      <td style="text-align: center">Meets 1/2 requirements</td>
-      <td style="text-align: center">Meets &lt; 1 requirement</td>
-    </tr>
-  </tbody>
-</table>
+<p><img src="/annotatar/assets/images/20150912_yaminyc/brian_esser_yaminyc.jpg" alt="NYC Internet Yami-Ichi (photo credit to Brian Esser)" /></p>
 
-<table>
-  <thead>
-    <tr>
-      <th><em>Desktop Site (9pts total)</em></th>
-      <th style="text-align: center">Excellent (3pts)</th>
-      <th style="text-align: center">Competent (2pts)</th>
-      <th style="text-align: center">Needs Work (1pt)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Functionality</strong> :: Users can view event-specific video with tweet overlay; Cross-browser compatibility</td>
-      <td style="text-align: center">Meets all requirements</td>
-      <td style="text-align: center">Meets 1/2 requirements</td>
-      <td style="text-align: center">Meets &lt; 1 requirement</td>
-    </tr>
-    <tr>
-      <td><strong>Aesthetics</strong> :: Tweet metadata is visually encoded; Timeline of event is expressed visually</td>
-      <td style="text-align: center">Meets all requirements</td>
-      <td style="text-align: center">Meets 1/2 requirements</td>
-      <td style="text-align: center">Meets &lt; 1 requirement</td>
-    </tr>
-    <tr>
-      <td><strong>Scalability</strong> :: Deployable for multiple events; Integrates with other social media feeds</td>
-      <td style="text-align: center">Meets all requirements</td>
-      <td style="text-align: center">Meets 1/2 requirements</td>
-      <td style="text-align: center">Meets &lt; 1 requirement</td>
-    </tr>
-  </tbody>
-</table>
+<h4 id="preparation">Preparation</h4>
+
+<p>I was tipped off to the existence of the <a href="http://yami-ichi.biz/nyc/">NYC Internet Yami-Ichi</a> by some colleagues from <a href="http://itp.nyu.edu/camp2015/">ITP Camp at NYU</a>. The event began in Japan and is devoted to the extrapolation of everything “internet-ish” into the real world. Due to my interest in net art and utilizing online interactions as an artistic medium, I was immediately interested in participating. It also seemed like an excellent place for the first test of annotatAR in the wild.</p>
+
+<p>I set the bar for the beta-test fairly low - the key here would be to see how and if people utilized the core functionality of tweets displayed on a real-time <code>getUserMedia</code> video feed. I deployed a test version of the app on Meteor’s test server. The Meteor platform proved itself useful in this regard: it was quite easy to deploy multiple versions from the same code base by simply changing the URL in the <code>meteor deploy</code> command.</p>
+
+<p>annotatAR achieved the minimal viable test build plus a few extra features:</p>
+
+<ul>
+  <li>geolocation (coordinates and accuracy) was displayed below the video feed - for testing purposes only</li>
+  <li>tweet data was displayed in decresing font size - the age of the tweet was linearly mapped to the font scale - tweets appeared as 50px in size and decreased down to 5px over the course of 8 hours</li>
+  <li>the databse stores the hashtag for the search that generates each the tweet</li>
+</ul>
+
+<h4 id="survey">Survey</h4>
+
+<p>I also designed a brief user feedback survey and posted it on Google Forms. I also made a paper version (which is what I ended up utiliting in situ).</p>
+
+<p>The survey captures whether or not the video and tweet functions work, information about th edevice &amp; browser, and some open-ended questions.</p>
+
+<h4 id="internet-yami-ichi-deployment">Internet Yami-Ichi Deployment</h4>
+
+<p>The <a href="http://annotatar_yaminyc.meteor.com">#yaminyc app</a> was deployed the night before the event, and targeted at the Twitter hashtag “#yaminyc” where a couple of folks had already begun to interact. </p>
+
+<p>I acheived two separate user tests during the event. One was successful and generated some great feedback regarding next directions for the UI: a “selfie” mode, screencapture interface button, and an animated GIF generator. The second test was not as successful - it was an iPhone and it seemed that the phone did not ask the user for permission to connect to the <code>getUserMedia</code> device at all. This may be a significant issue going forward, if iPhone defaults interfere with this browser funcitonality.</p>
+
+<p>I also took a number of screenshots at the event. It is quite an expressive way of documenting this type of gathering - one gets a sense of a crowd of virtual eavesdropping entities. </p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_00.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_01.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_02.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_03.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_04.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_05.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_06.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_07.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_08.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_09.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_10.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_11.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+
+<h4 id="lessons">Lessons</h4>
+
+<p>I think that annotatAR was quite effective in achieving the union of virtual and real space in an expressive way. </p>
+
+<p>I was a bit frustrated with the quality of the web camera picture, I wonder if anything can be done to improve it.</p>
+
+<p>I’m also brainstorming about the next level of the project: the desktop site. Perhaps it should be a focal point for sharing screenshots, or perhaps the screenshots could be utilized in a larger work of some kind. I now have a databse of tweets from an event to experiment with, as a corpus for text analysis.</p>
+
+<p>I’m a bit concerned about the <a href="http://iswebrtcreadyyet.com/">failure of iOS</a> to connect to the WebRTC protocol, which I was not expecting since it is supported by the versions of Firefox and Chrome that are on the iPhone device thtat was tested. I will address this in my upcoming post on scoping for compatibility and audience. </p>
 
   </article>
   
@@ -131,7 +133,7 @@
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2015-11-23T20:35:04-05:00">2015</time>. All rights reserved.
+          &copy; <time datetime="2015-12-08T00:09:32-05:00">2015</time>. All rights reserved.
           <span class="right"><a href="/annotatar/archive" title="Archive">Archive</a></span>
         </small>
       </footer>

@@ -41,80 +41,104 @@
   
   <article class="post">
     <h1 class="post-title">
-      <a href="/annotatar/2015/09/14/week3a/">
-        Week 3 Beta Testing at NYC Internet Yami-Ichi
+      <a href="/annotatar/2015/11/02/week9/">
+        Week 9 Delinquency
       </a>
     </h1>
 
-    <time datetime="2015-09-14T00:00:00-04:00" class="post-date">14 Sep 2015</time>
+    <time datetime="2015-11-02T00:00:00-05:00" class="post-date">02 Nov 2015</time>
 
-    <p>In which we visit the internet black market and take some screenshots.</p>
+    <p>Overthinking and under-doing in October. Next steps.</p>
 
 <hr />
 
-<p><img src="/annotatar/assets/images/20150912_yaminyc/brian_esser_yaminyc.jpg" alt="NYC Internet Yami-Ichi (photo credit to Brian Esser)" /></p>
+<h4 id="how-i-spent-october">How I spent October</h4>
 
-<h4 id="preparation">Preparation</h4>
+<p>I’ve had a very fruitful October. Unfortunately, this activity has not been focused on my own projects and thus annotatAR has been left on the wayside for far too long.</p>
 
-<p>I was tipped off to the existence of the <a href="http://yami-ichi.biz/nyc/">NYC Internet Yami-Ichi</a> by some colleagues from <a href="http://itp.nyu.edu/camp2015/">ITP Camp at NYU</a>. The event began in Japan and is devoted to the extrapolation of everything “internet-ish” into the real world. Due to my interest in net art and utilizing online interactions as an artistic medium, I was immediately interested in participating. It also seemed like an excellent place for the first test of annotatAR in the wild.</p>
+<p>While I’ve been a bit delinquent in updating both this project blog and working on the project itself, I have accomplished much rumination on the final outcome for this project. </p>
 
-<p>I set the bar for the beta-test fairly low - the key here would be to see how and if people utilized the core functionality of tweets displayed on a real-time <code>getUserMedia</code> video feed. I deployed a test version of the app on Meteor’s test server. The Meteor platform proved itself useful in this regard: it was quite easy to deploy multiple versions from the same code base by simply changing the URL in the <code>meteor deploy</code> command.</p>
+<p>I somewhat switched focus at the beginning of October, and began to think of the project as a sort of meta-documentation tool whose primary end-user would be me. This focus hasn’t sat well with me though, as the spirit of the project has been to build experientially what has already been ongoing virtually.</p>
 
-<p>annotatAR achieved the minimal viable test build plus a few extra features:</p>
+<p>Many questions remain to be answered:</p>
 
 <ul>
-  <li>geolocation (coordinates and accuracy) was displayed below the video feed - for testing purposes only</li>
-  <li>tweet data was displayed in decresing font size - the age of the tweet was linearly mapped to the font scale - tweets appeared as 50px in size and decreased down to 5px over the course of 8 hours</li>
-  <li>the databse stores the hashtag for the search that generates each the tweet</li>
+  <li>Who is the audience for the mobile site? </li>
+  <li>In what context will they discover it?</li>
+  <li>Will the site display current or historic tweets?</li>
+  <li>What controls will the end user have over the tweets being display?</li>
+  <li>Will the website generate a database of tweet data?</li>
+  <li>Will multiple hashtags be available at a particular location?</li>
+  <li>Will the end user be able to change tweets?</li>
+  <li>Will there be an administrative site where an admin can set up a new database entry for a geolocation / hashtag pairing?</li>
 </ul>
 
-<h4 id="survey">Survey</h4>
+<p>I will attempt to clarify my thinking on these topics in this post.</p>
 
-<p>I also designed a brief user feedback survey and posted it on Google Forms. I also made a paper version (which is what I ended up utiliting in situ).</p>
+<h4 id="audience">Audience</h4>
 
-<p>The survey captures whether or not the video and tweet functions work, information about th edevice &amp; browser, and some open-ended questions.</p>
+<p>My current thinking on the purpose of annotatAR is to fully embrace the art project aspect. Rather than thinking that this project is a tool to make other works, I would like to present it as a work in itself, a generative social media artwork. </p>
 
-<h4 id="internet-yami-ichi-deployment">Internet Yami-Ichi Deployment</h4>
+<p>In this case, the audience / end user becomes those interested in radical use of digital spaces, Twitter and social media, and contemporary activist movements.</p>
 
-<p>The <a href="http://annotatar_yaminyc.meteor.com">#yaminyc app</a> was deployed the night before the event, and targeted at the Twitter hashtag “#yaminyc” where a couple of folks had already begun to interact. </p>
+<p>The limitations of this direction are that the primary purpose is no longer documentation of an event in process. The Twitter stream API will likely not be useful - it will be necessary to utilize historic tweet data, such as has been gathered by Occupy Research.</p>
 
-<p>I acheived two separate user tests during the event. One was successful and generated some great feedback regarding next directions for the UI: a “selfie” mode, screencapture interface button, and an animated GIF generator. The second test was not as successful - it was an iPhone and it seemed that the phone did not ask the user for permission to connect to the <code>getUserMedia</code> device at all. This may be a significant issue going forward, if iPhone defaults interfere with this browser funcitonality.</p>
+<h4 id="context">Context</h4>
 
-<p>I also took a number of screenshots at the event. It is quite an expressive way of documenting this type of gathering - one gets a sense of a crowd of virtual eavesdropping entities. </p>
+<p>The working context for annotatAR will be a digital exhibition of some kind, where the audience finds out about the work through some third party - much like the Invisible Monument project. The artwork will be available for a specified timeframe during which someone can go to the appropriate location and experience the augmented reality app on their Android mobile device. </p>
 
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_00.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+<p>This work might be highlighted in a launch event or tour of some kind. Once annotatAR has a first version, I can begin to look at fellowships and opportunities to take the project further and share it with communities.</p>
 
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_01.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+<h4 id="stream-vs-rest-vs-historic">Stream vs REST vs Historic</h4>
 
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_02.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+<p>The Twitter API has two versions: the stream which affords access to real-time data as it is posted - and the REST version that allows queries based on various parameters.</p>
 
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_03.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+<p>For the conceptual purposes of this project, the stream is ideal, as it expresses the contemporality of dual sites:  online and in the “juice” of physical space. However, the stream depends highly the volume of tweets being generated in a given timeframe; if the event is generating a low level of interest on Twitter, than annotatAR will have sparse data to work with and be less effective as a visual presentation. </p>
 
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_04.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+<p>My deployment at the Invisible Monument launch utilized a blend of REST and stream in order to overcome the limitations of the stream API. </p>
 
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_05.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+<p>As the purpose of annotatAR has solidified around an experiential artwork, it becomes imperative to use Twitter API in a way that best expresses concept of the piece. The idea of synesthesia becomes an important concept - as we walk through the juice, the ideas and social sites of Twitter are invisible but present. annotatAR interacts with the visual sense to encode the virtual component of a multi-sited co-occurring event.</p>
 
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_06.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+<p>The use of historic data, where it exists, affords a slightly different expression of this co-occurrence. Instead of expressing contemporality, the visual metaphor would be more archeological in tone - that of unearthing and re-experiencing an event in the past, like an historical marker expressed in virtuality.</p>
 
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_07.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+<h4 id="hashtag--geolocation">Hashtag / Geolocation</h4>
 
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_08.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+<p>Should multiple hashtags be associated with a specific geolocation? </p>
 
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_09.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+<p>So doing might dilute the strength of the connection between a juice space and a twitter hashtag settlement - but it would also afford a more nuanced understanding of historicity of a space.</p>
 
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_10.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+<h4 id="end-user-controls">End user controls</h4>
 
-<p><img src="/annotatar/assets/images/20150912_yaminyc/annotatar_yaminyc_20150912_11.png" alt="annotatAR at NYC Internet Yami-Ichi" /></p>
+<p>Given the above discussion, the end user will have some minimal controls - to select a hashtag (if there are multiple available at the geolocation), to pan around, to take a screenshot, and to scroll through time.</p>
 
-<h4 id="lessons">Lessons</h4>
+<h4 id="desktop-site">Desktop site</h4>
 
-<p>I think that annotatAR was quite effective in achieving the union of virtual and real space in an expressive way. </p>
+<p>The desktop site will be quite minimal - a brief description of the project and map of the geolocations available. A sign-up for newsletter of project updates. </p>
 
-<p>I was a bit frustrated with the quality of the web camera picture, I wonder if anything can be done to improve it.</p>
+<h4 id="questions">Questions</h4>
 
-<p>I’m also brainstorming about the next level of the project: the desktop site. Perhaps it should be a focal point for sharing screenshots, or perhaps the screenshots could be utilized in a larger work of some kind. I now have a databse of tweets from an event to experiment with, as a corpus for text analysis.</p>
+<p>What historic tweet data is available? - this needs to be answered ASAP to properly scope this and future versions.</p>
 
-<p>I’m a bit concerned about the <a href="http://iswebrtcreadyyet.com/">failure of iOS</a> to connect to the WebRTC protocol, which I was not expecting since it is supported by the versions of Firefox and Chrome that are on the iPhone device thtat was tested. I will address this in my upcoming post on scoping for compatibility and audience. </p>
+<p>Future directions:</p>
+
+<ul>
+  <li>Funding for a tweet aggregation service such as GNIP</li>
+  <li>Development of a robust administrative layer</li>
+  <li>Development of a way to share screen captures </li>
+  <li>Integration with the Invisible Monument project (iOS)</li>
+  <li>Development of a robust data collection system to gather data on contemporary events</li>
+</ul>
+
+<p>More immediate goals for annotatAR (still) include:</p>
+
+<ul>
+  <li>Bug fixing - hashtags on the stream seemed not to work on the website (though the stream worked on the local version)</li>
+  <li>Fluid accelerometer use</li>
+  <li>URL routing for hashtag display</li>
+  <li>Automation or parameterization of annotatAR UX elements (ie age til die-off)</li>
+  <li>Pulling in historic tweets from Occupy Research (or other source)</li>
+  <li>Single-page desktop site</li>
+</ul>
 
   </article>
   
@@ -133,7 +157,7 @@
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2015-11-23T20:35:04-05:00">2015</time>. All rights reserved.
+          &copy; <time datetime="2015-12-08T00:09:32-05:00">2015</time>. All rights reserved.
           <span class="right"><a href="/annotatar/archive" title="Archive">Archive</a></span>
         </small>
       </footer>
