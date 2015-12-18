@@ -41,76 +41,55 @@
   
   <article class="post">
     <h1 class="post-title">
-      <a href="/annotatar/2015/11/23/week12/">
-        Week 12 Templates and Collections
+      <a href="/annotatar/2015/12/02/week13/">
+        Week 13 Subscriptions and Cursors
       </a>
     </h1>
 
-    <time datetime="2015-11-23T00:00:00-05:00" class="post-date">23 Nov 2015</time>
+    <time datetime="2015-12-02T00:00:00-05:00" class="post-date">02 Dec 2015</time>
 
-    <p>Working with Meteor: implementing routing, templates, and geolocation. </p>
+    <p>Working with Meteor: automating modifications to the hashtag database.</p>
 
 <hr />
 
-<h4 id="routing-troubleshooting">Routing troubleshooting</h4>
+<h4 id="streamlining-the-app">Streamlining the app</h4>
 
-<p>As described last week, I’ve installed <a href="http://iron-meteor.github.io/iron-router/">Iron:Router</a> to handle URL and template routing for annotatAR. Last week, I ran into an issue where the new routing scheme seemed to break the Javascript that generated the AR elements. Upon testing and inspection, I determined that it was the template rendering that caused the issue - the AR code ran before the template had fully rendered and therefore had been attempting to act on parts of the DOM that didn’t exist yet. It was an easy fix once I realized this, I put the AR script inside of a call-back function:</p>
+<p>Originally, the implementation of Hashtag collection additions and look-up required a number of “manual” code modifications. This week, I refactored the code to leverage the <a href="http://www.meteorpedia.com/read/Understanding_Meteor_Publish_and_Subscribe">database functionalities in Mongo / Meteor</a>. </p>
 
-<pre><code>Template.mytemplate.onRendered(function(){....})
-</code></pre>
+<p>Rather than publishing many versions of the Tweet database, the client-side subscription takes the relevant hashtag as an argument, and passes this to the server which then provides the appropriate publication - the tweets filtered on the appropriate hashtag. There is a fall-back defaulting to the “occupy” hashtag, if the app cannot access the geolocation of the client’s device, or if there is no hashtag paired with that location.</p>
 
-<p>I now have two routes for my site, the index (documentation) page and the AR page. Each has their own template.</p>
+<p>Previously, there was a separate array to track the hashtags and make a Twitter API query - however, this was inefficient. By utilizing the functionality of the Mongo <code>find()</code> command to return a cursor that can be used as a dynamically-updated array, the Hashtag collection now also functions as the basis for the Twitter REST API call. </p>
 
-<h4 id="hashtag--geolocation-collection">Hashtag / Geolocation collection</h4>
+<h4 id="template-mods">Template mods</h4>
 
-<p>I’ve also implemented the hashtag lookup functionality. There is now a collection that contains each lat/long and hashtag association. Also, the server publishes a number of versions of the tweet collection, one for each hashtag in the Hashtag collection. When the client loads the page, a script looks up the hashtag and subscribe to the appropriate publication. This should be quite secure, as the client doesn’t make a special request of the server – it simply subscribes to a different publication that the server is already making available.</p>
+<p>I’ve also restructured the application so that Meteor appends a header HTML block with references to css and Google fonts. I based the application file structure on <a href="https://themeteorchef.com/snippets/organizing-your-meteor-project/">The Meteor Chef</a> recommendations, resulting in a more maintainable and legible code base.</p>
 
-<p>I’ve run into a bug in implementing this system. On the server, I’d like to be able to iterate over all of the hashtags in the Hastags collection and automatically collect tweets for each one. To do so I’m using <code>hashtags.map()</code> to call the fiber for the Twitter API. I need to be able to pass each hashtag to this fiber, and thus far I haven’t figured out how to do that without throwing an error. </p>
+<h4 id="stream-vs-rest">Stream vs REST</h4>
 
-<pre><code>var handleTweets = Meteor.bindEnvironment(function(err, data, response) {
-  console.log(data);
-  console.log("***********************", err, "***********************");
-  for(var i = 0; i &lt; data.statuses.length; i++){
-    Meteor.call("addTweet", data.statuses[i].text, hashtag, data.statuses[i].created_at);
-  }
-  
-});
-
-
-//**************************************************//
-// ******  uncomment to turn the rest on: ****** //
-hashtags.map(function(hashtag){
-  Twit.get('search/tweets',
-  {
-   q: hashtag,
-   count: 20
- }, handleTweets);
-
-})
-</code></pre>
-
-<p>In prior versions of the application, <code>hashtag</code> was scoped within the containing function for both of these calls, but now it is not. Further research on fibers might be helpful.</p>
-
-<h4 id="fullscreen">Fullscreen</h4>
-
-<p>While I was taking a break from troubleshooting the templating issue, I also worked on fullscreen for AR. This has been a tricky problem to solve - there are built-in fullscreening styles for <code>video</code> elements, but the AR canvas is actually a series of images that are taken from the cdevice input and rendered one frame every 100ms with the tweet text overlaid. I need to scale the image to fit the device viewport, and also slice the image to fill the screen. </p>
-
-<p>The code needs to check if:</p>
+<p>This is the major decision that still needs to be made. Currently, I’m using the Twitter REST API to request the last 20 tweets for each hashtag in the database. This approach has several limitations: </p>
 
 <ul>
-  <li>check if the dimensions of the video are larger than the dimensions of the viewport </li>
-  <li>check if the viewport is in portrait (height &gt; width) or landscape (height &lt; width)</li>
-  <li>scale the image so that the shorter dimension matches the corresponding viewport dimension</li>
-  <li>slice any extra parts from the scaled image to center it on the viewport</li>
+  <li>Dilution of the concept of merging two simultaneous, multi-sited events</li>
+  <li>Age-til-die-off is often inappropriate - this needs to be normalized per hashtag</li>
 </ul>
 
-<p>I’ve tried a few methods to do this, and nothing seems to work 100% of the time. </p>
+<p>The REST API does have a few advantages:</p>
+
+<ul>
+  <li>Predictable number of query results</li>
+  <li>Static database once the app is running</li>
+  <li>Ensures that tweets will be present in the AR frame, even if there isn’t a lot of recent activity on the hashtag</li>
+  <li>Provides a framework for future deployment with historic tweet data (ie as part of Invisible Monument)</li>
+</ul>
+
+<p>I think the best approach is to blend the two - to make an initial REST query when the app initializes, to ensure that there is a corpus of tweets to display in the AR frame. The age-til-die-off might be normalized based on the results of the initial query. Then as the app runs, it will connect to a <a href="http://www.meteorpedia.com/read/Understanding_Meteor_Publish_and_Subscribe">multi-channel stream</a>. Tweets will be added to the database - up to 100 per hashtag. Once the limit is reached, the database will delete the oldest tweet as each new one arrives.</p>
 
 <h4 id="next-steps">Next steps</h4>
 
-<p>I’ve solved some of the major problems with annotatAR but I’ve still got a long way to go in the next couple of weeks. After fixing the bugs with the Twitter fiber and with fullscreen, I can move on to:</p>
+<p>The REST API has already been implemented, so implementing the stream is not mission-critical at this time. At this time I’ve got a number of pressing issues to finalize the documentation page.</p>
 
 <ul>
+  <li>Normalizing age-til-die-off</li>
   <li>Styling the documentation page</li>
   <li>Adding a map to the documentation page </li>
   <li>Using accelerometer data to change the tweet positions</li>
@@ -136,7 +115,7 @@ hashtags.map(function(hashtag){
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2015-12-08T00:09:32-05:00">2015</time>. All rights reserved.
+          &copy; <time datetime="2015-12-18T18:31:53-05:00">2015</time>. All rights reserved.
           <span class="right"><a href="/annotatar/archive" title="Archive">Archive</a></span>
         </small>
       </footer>

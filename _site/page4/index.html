@@ -41,55 +41,82 @@
   
   <article class="post">
     <h1 class="post-title">
-      <a href="/annotatar/2015/11/15/week11/">
-        Week 11 Routing
+      <a href="/annotatar/2015/11/23/week12/">
+        Week 12 Templates and Collections
       </a>
     </h1>
 
-    <time datetime="2015-11-15T00:00:00-05:00" class="post-date">15 Nov 2015</time>
+    <time datetime="2015-11-23T00:00:00-05:00" class="post-date">23 Nov 2015</time>
 
-    <p>Learning about routing in Meteor.</p>
+    <p>Working with Meteor: implementing routing, templates, and geolocation. </p>
 
 <hr />
 
-<h4 id="routing-in-meteor">Routing in Meteor</h4>
+<h4 id="routing-troubleshooting">Routing troubleshooting</h4>
 
-<p>This week I spent my time learning about how to implement URL routing using Meteor. Routing is a key functionality as it will will allow me to dynamically generate pages using URL parameters, and use different layouts for each type of page.</p>
+<p>As described last week, I’ve installed <a href="http://iron-meteor.github.io/iron-router/">Iron:Router</a> to handle URL and template routing for annotatAR. Last week, I ran into an issue where the new routing scheme seemed to break the Javascript that generated the AR elements. Upon testing and inspection, I determined that it was the template rendering that caused the issue - the AR code ran before the template had fully rendered and therefore had been attempting to act on parts of the DOM that didn’t exist yet. It was an easy fix once I realized this, I put the AR script inside of a call-back function:</p>
 
-<p>The site architecture will be:</p>
+<pre><code>Template.mytemplate.onRendered(function(){....})
+</code></pre>
+
+<p>I now have two routes for my site, the index (documentation) page and the AR page. Each has their own template.</p>
+
+<h4 id="hashtag--geolocation-collection">Hashtag / Geolocation collection</h4>
+
+<p>I’ve also implemented the hashtag lookup functionality. There is now a collection that contains each lat/long and hashtag association. Also, the server publishes a number of versions of the tweet collection, one for each hashtag in the Hashtag collection. When the client loads the page, a script looks up the hashtag and subscribe to the appropriate publication. This should be quite secure, as the client doesn’t make a special request of the server – it simply subscribes to a different publication that the server is already making available.</p>
+
+<p>I’ve run into a bug in implementing this system. On the server, I’d like to be able to iterate over all of the hashtags in the Hastags collection and automatically collect tweets for each one. To do so I’m using <code>hashtags.map()</code> to call the fiber for the Twitter API. I need to be able to pass each hashtag to this fiber, and thus far I haven’t figured out how to do that without throwing an error. </p>
+
+<pre><code>var handleTweets = Meteor.bindEnvironment(function(err, data, response) {
+  console.log(data);
+  console.log("***********************", err, "***********************");
+  for(var i = 0; i &lt; data.statuses.length; i++){
+    Meteor.call("addTweet", data.statuses[i].text, hashtag, data.statuses[i].created_at);
+  }
+  
+});
+
+
+//**************************************************//
+// ******  uncomment to turn the rest on: ****** //
+hashtags.map(function(hashtag){
+  Twit.get('search/tweets',
+  {
+   q: hashtag,
+   count: 20
+ }, handleTweets);
+
+})
+</code></pre>
+
+<p>In prior versions of the application, <code>hashtag</code> was scoped within the containing function for both of these calls, but now it is not. Further research on fibers might be helpful.</p>
+
+<h4 id="fullscreen">Fullscreen</h4>
+
+<p>While I was taking a break from troubleshooting the templating issue, I also worked on fullscreen for AR. This has been a tricky problem to solve - there are built-in fullscreening styles for <code>video</code> elements, but the AR canvas is actually a series of images that are taken from the cdevice input and rendered one frame every 100ms with the tweet text overlaid. I need to scale the image to fit the device viewport, and also slice the image to fill the screen. </p>
+
+<p>The code needs to check if:</p>
 
 <ul>
-  <li>index</li>
-  <li>ar
-    <ul>
-      <li>occupyboston</li>
-      <li>invisiblemonuments</li>
-      <li>etc</li>
-    </ul>
-  </li>
+  <li>check if the dimensions of the video are larger than the dimensions of the viewport </li>
+  <li>check if the viewport is in portrait (height &gt; width) or landscape (height &lt; width)</li>
+  <li>scale the image so that the shorter dimension matches the corresponding viewport dimension</li>
+  <li>slice any extra parts from the scaled image to center it on the viewport</li>
 </ul>
 
-<p>The index page is the documentation site, which will be served if someone visits the main URL, with a map and link to the blog. The AR page will house the Javascript function that detects geolocation, and re-routes to the appropriate URL.</p>
+<p>I’ve tried a few methods to do this, and nothing seems to work 100% of the time. </p>
 
-<p>There are two major routing libraries in Meteor: <a href="https://atmospherejs.com/meteorhacks/flow-router">Flow Router</a> and <a href="http://iron-meteor.github.io/iron-router/">Iron:Router</a>. I tried out both and ultimately decided to use Iron:router.</p>
+<h4 id="next-steps">Next steps</h4>
 
-<h4 id="flow-router">Flow Router</h4>
+<p>I’ve solved some of the major problems with annotatAR but I’ve still got a long way to go in the next couple of weeks. After fixing the bugs with the Twitter fiber and with fullscreen, I can move on to:</p>
 
-<p>This routing library is rigorously tested and was recommended by the folks at the Meteor.js meetup that I attended last month. It’s designed for client-side, non-reactive routing. The advice from the Meteor meetup was that Flow Router has a slightly steeper learning curve, but it has a design that enforces best practices - the application is unlikely to break for mysterious reasons, or work improperly. The limitation is that it must be used with another routing library for server-side routing, such as <a href="https://github.com/meteorhacks/picker">Picker</a>.</p>
-
-<h4 id="ironrouter">Iron:Router</h4>
-
-<p>Iron Router is the best-documented router for Meteor, and also has the largest user base. What interested me in it is the extensive set of websites for getting started with the library. I tried out Flow Router and found the examples difficult to translate to my application but had success with a <a href="https://www.codetutorial.io/meteor-routing-and-layout/">tutorial for Iron Router</a>. It also appeals to me to be able to use the same router for server-side routing, as the geolocation function will utilize a server-side route to the appropriate database of tweets. </p>
-
-<p>I was able to get up and running with a two-page website and Iron Router, though I am still troubleshooting some issue with the AR script.</p>
-
-<h4 id="templating-and-css">Templating and CSS</h4>
-
-<p>I’m using the standard templating language, <a href="http://meteorcapture.com/spacebars/">Spacebars</a>, for my application, and installed the Twitter Bootstrap CSS framework.</p>
-
-<h4 id="next-directions">Next directions</h4>
-
-<p>Once I have fixed the bugs caused by the new site architecture, I will move on to creating the geolocative function for the AR page and re-routing to a sub-page that will display a particular hashtag.</p>
+<ul>
+  <li>Styling the documentation page</li>
+  <li>Adding a map to the documentation page </li>
+  <li>Using accelerometer data to change the tweet positions</li>
+  <li>Styling the tweets</li>
+  <li>Deploying annotatAR on Digital Ocean</li>
+</ul>
 
 
   </article>
@@ -109,7 +136,7 @@
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2015-12-08T00:09:32-05:00">2015</time>. All rights reserved.
+          &copy; <time datetime="2015-12-18T18:31:53-05:00">2015</time>. All rights reserved.
           <span class="right"><a href="/annotatar/archive" title="Archive">Archive</a></span>
         </small>
       </footer>

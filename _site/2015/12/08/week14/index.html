@@ -49,7 +49,7 @@
   <li>create an ubuntu droplet
     <ul>
       <li>add your SSH key</li>
-      <li>networking -&gt; match domain name to IP of new droplet</li>
+      <li>networking -&gt; add DNS records for the domain name &amp; IP address of new droplet</li>
     </ul>
   </li>
   <li>regenerate password - will send an email</li>
@@ -240,13 +240,14 @@ server {
 
 <h4 id="next-steps">Next steps</h4>
 
-<p>The REST API has already been implemented, so implementing the stream is not mission-critical at this time. At this time I’ve got a number of pressing issues to finalize the documentation page.</p>
+<p>Prior to deploying the app to a Digital Ocean server, I also implemented a Google Maps view of the Hashtags collection as part of the documentation page. With only a few days left, I’m working away at (mostly-stylistic) remaining tasks, and my presentation.</p>
 
 <ul>
   <li>Normalizing age-til-die-off</li>
   <li>Styling the documentation page</li>
   <li>Using accelerometer data to change the tweet positions</li>
   <li>Styling the tweets</li>
+  <li>Auto-selecting back-facing camera on the device </li>
 </ul>
 
 </article>
@@ -255,6 +256,15 @@ server {
 <aside class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/annotatar/2015/12/18/week15/">
+            Week 15 Project Review
+            <small><time datetime="2015-12-18T00:00:00-05:00">18 Dec 2015</time></small>
+          </a>
+        </h3>
+      </li>
     
       <li>
         <h3>
@@ -274,15 +284,6 @@ server {
         </h3>
       </li>
     
-      <li>
-        <h3>
-          <a href="/annotatar/2015/11/15/week11/">
-            Week 11 Routing
-            <small><time datetime="2015-11-15T00:00:00-05:00">15 Nov 2015</time></small>
-          </a>
-        </h3>
-      </li>
-    
   </ul>
 </aside>
 
@@ -291,7 +292,7 @@ server {
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2015-12-08T00:09:32-05:00">2015</time>. All rights reserved.
+          &copy; <time datetime="2015-12-18T18:31:53-05:00">2015</time>. All rights reserved.
           <span class="right"><a href="/annotatar/archive" title="Archive">Archive</a></span>
         </small>
       </footer>

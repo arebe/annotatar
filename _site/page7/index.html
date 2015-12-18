@@ -41,86 +41,104 @@
   
   <article class="post">
     <h1 class="post-title">
-      <a href="/annotatar/2015/10/02/week5/">
-        Week 5 Invisible Monument
+      <a href="/annotatar/2015/11/02/week9/">
+        Week 9 Delinquency
       </a>
     </h1>
 
-    <time datetime="2015-10-02T00:00:00-04:00" class="post-date">02 Oct 2015</time>
+    <time datetime="2015-11-02T00:00:00-05:00" class="post-date">02 Nov 2015</time>
 
-    <p>Outcomes from deployement at Invisible Monument launch event in Boston.</p>
+    <p>Overthinking and under-doing in October. Next steps.</p>
 
 <hr />
 
-<h4 id="lead-up-to-deployment">Lead up to deployment</h4>
+<h4 id="how-i-spent-october">How I spent October</h4>
 
-<p>In the past week, I had a development push to meet the development goals that were most important to be able to demonstrate annotatAR’s utility as a docmentation tool. I met those goals for the most part. I was able to implement:</p>
+<p>I’ve had a very fruitful October. Unfortunately, this activity has not been focused on my own projects and thus annotatAR has been left on the wayside for far too long.</p>
+
+<p>While I’ve been a bit delinquent in updating both this project blog and working on the project itself, I have accomplished much rumination on the final outcome for this project. </p>
+
+<p>I somewhat switched focus at the beginning of October, and began to think of the project as a sort of meta-documentation tool whose primary end-user would be me. This focus hasn’t sat well with me though, as the spirit of the project has been to build experientially what has already been ongoing virtually.</p>
+
+<p>Many questions remain to be answered:</p>
 
 <ul>
-  <li>Typography and color changes for better legibilty</li>
-  <li>Stripping the tweet text of URLs</li>
-  <li>Screen capture button to save an image of the <code>canvas</code> element</li>
-  <li>Panning with accelerometer data - incomplete implementation</li>
-  <li>Integrating stream and REST Twitter API data</li>
+  <li>Who is the audience for the mobile site? </li>
+  <li>In what context will they discover it?</li>
+  <li>Will the site display current or historic tweets?</li>
+  <li>What controls will the end user have over the tweets being display?</li>
+  <li>Will the website generate a database of tweet data?</li>
+  <li>Will multiple hashtags be available at a particular location?</li>
+  <li>Will the end user be able to change tweets?</li>
+  <li>Will there be an administrative site where an admin can set up a new database entry for a geolocation / hashtag pairing?</li>
 </ul>
 
-<p>Ideally, I want to use accelerometer data from the device to allow the end user to pan around - to change the position of the tweets to create the illusion that they are positioned in three dimensional space. While I wasn’t able to achieve a reliable 3D effect, I started to experiment with the <code>ondevicemotion</code> JavaScript event, and <code>accellerationIncludingGravity</code> on the X and Y axes. While I was able to achieve somewhat fluid UX on my laptop, the calibration did not translate properly to my Galaxy 4G device.</p>
+<p>I will attempt to clarify my thinking on these topics in this post.</p>
 
-<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_00.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+<h4 id="audience">Audience</h4>
 
-<h4 id="invisible-monument">Invisible Monument</h4>
+<p>My current thinking on the purpose of annotatAR is to fully embrace the art project aspect. Rather than thinking that this project is a tool to make other works, I would like to present it as a work in itself, a generative social media artwork. </p>
 
-<p>The Invisible Monument launch event, #LuncheonOnTheGrass took place on 30 Sept 2015, in Dewey Square, Boston. <a href="http://invisiblemonument.com/">Invisible Monument</a> is a locative sound installation created by Halsey Burgund and Lara Baladi, that cn be experienced using an iOS application. Various sond elements are triggered by geolocations around Dewey Square. </p>
+<p>In this case, the audience / end user becomes those interested in radical use of digital spaces, Twitter and social media, and contemporary activist movements.</p>
 
-<p>I met the team on site for the launch event and started taking screen captures with annotatAR. I used three different Twitter tags: #occupy, #the99, and #luncheononthegrass. I adjusted the “die-off” rate for each of the tweets according to how often the tag was used. As the tweets get older, they become smaller and more transparent. </p>
+<p>The limitations of this direction are that the primary purpose is no longer documentation of an event in process. The Twitter stream API will likely not be useful - it will be necessary to utilize historic tweet data, such as has been gathered by Occupy Research.</p>
 
-<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_01.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+<h4 id="context">Context</h4>
 
-<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_02.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+<p>The working context for annotatAR will be a digital exhibition of some kind, where the audience finds out about the work through some third party - much like the Invisible Monument project. The artwork will be available for a specified timeframe during which someone can go to the appropriate location and experience the augmented reality app on their Android mobile device. </p>
 
-<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_03.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+<p>This work might be highlighted in a launch event or tour of some kind. Once annotatAR has a first version, I can begin to look at fellowships and opportunities to take the project further and share it with communities.</p>
 
-<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_04.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+<h4 id="stream-vs-rest-vs-historic">Stream vs REST vs Historic</h4>
 
-<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_05.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+<p>The Twitter API has two versions: the stream which affords access to real-time data as it is posted - and the REST version that allows queries based on various parameters.</p>
 
-<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_06.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+<p>For the conceptual purposes of this project, the stream is ideal, as it expresses the contemporality of dual sites:  online and in the “juice” of physical space. However, the stream depends highly the volume of tweets being generated in a given timeframe; if the event is generating a low level of interest on Twitter, than annotatAR will have sparse data to work with and be less effective as a visual presentation. </p>
 
-<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_07.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+<p>My deployment at the Invisible Monument launch utilized a blend of REST and stream in order to overcome the limitations of the stream API. </p>
 
-<p><img src="/annotatar/assets/images/20151002_invisible/invisible_screenshot_20150930_08.png" alt="annotatAR at #LuncheonOnTheGrass" /></p>
+<p>As the purpose of annotatAR has solidified around an experiential artwork, it becomes imperative to use Twitter API in a way that best expresses concept of the piece. The idea of synesthesia becomes an important concept - as we walk through the juice, the ideas and social sites of Twitter are invisible but present. annotatAR interacts with the visual sense to encode the virtual component of a multi-sited co-occurring event.</p>
 
-<h4 id="historic-tweets">Historic tweets</h4>
+<p>The use of historic data, where it exists, affords a slightly different expression of this co-occurrence. Instead of expressing contemporality, the visual metaphor would be more archeological in tone - that of unearthing and re-experiencing an event in the past, like an historical marker expressed in virtuality.</p>
 
-<p>I would like to be able to overlay historic tweet data as well as current tweets. However, the <a href="https://dev.twitter.com/rest/public/search">Twitter REST API</a> allows access to tweets created within the past couple of weeks only.</p>
+<h4 id="hashtag--geolocation">Hashtag / Geolocation</h4>
 
-<p>Third-party services such as <a href="https://gnip.com/">GNIP</a> are social media brokers from which you can purchase historic data. The base rate for historic tweet data starts at $1.1k and increased depending on length of time and number of tweets returned by the query. </p>
+<p>Should multiple hashtags be associated with a specific geolocation? </p>
 
-<p>While this is cost-prohibitive for the time being, it does add a layer of utility to annotatAR. I have already implemented the ability to download the database of tweets as a CSV file, which could be quite useful in capturing an independent record of a hashtag.</p>
+<p>So doing might dilute the strength of the connection between a juice space and a twitter hashtag settlement - but it would also afford a more nuanced understanding of historicity of a space.</p>
 
-<p>Additionally, I spoke to one of the participants in #LuncheonOnTheGrass who directed me to an archive of tweets from the Occupy movement, available at <a href="http://occupyresearch.net/">Occupy Research</a> and <a href="http://r-shief.org/">R-Shief</a>. These might be a useful corpus to draw on in future iterations. </p>
+<h4 id="end-user-controls">End user controls</h4>
 
-<h4 id="future-of-invisible-monument">Future of Invisible Monument</h4>
+<p>Given the above discussion, the end user will have some minimal controls - to select a hashtag (if there are multiple available at the geolocation), to pan around, to take a screenshot, and to scroll through time.</p>
 
-<p>Lara and team were quite excited by the output from annotatAR, and will use my documentation of #LuncheonOnTheGrass as part of the ongoing archive for Invisible Monument / Vox Populi. </p>
+<h4 id="desktop-site">Desktop site</h4>
 
-<p>We began to discuss how annotatAR might be integrated with Halsey’s <a href="http://www.roundware.org/">Roundware</a> platform, to provide an integrated experience with the audioscape. Future directions for Invisible Monument are quite exciting, and I hope to continue to work with them. However, I think this will only be possible of Halsey ports Roundware to Android or the mobile web.</p>
+<p>The desktop site will be quite minimal - a brief description of the project and map of the geolocations available. A sign-up for newsletter of project updates. </p>
 
-<h4 id="near-term-goals">Near term goals</h4>
+<h4 id="questions">Questions</h4>
 
-<p>More immediate goals for annotatAR include:</p>
+<p>What historic tweet data is available? - this needs to be answered ASAP to properly scope this and future versions.</p>
+
+<p>Future directions:</p>
+
+<ul>
+  <li>Funding for a tweet aggregation service such as GNIP</li>
+  <li>Development of a robust administrative layer</li>
+  <li>Development of a way to share screen captures </li>
+  <li>Integration with the Invisible Monument project (iOS)</li>
+  <li>Development of a robust data collection system to gather data on contemporary events</li>
+</ul>
+
+<p>More immediate goals for annotatAR (still) include:</p>
 
 <ul>
   <li>Bug fixing - hashtags on the stream seemed not to work on the website (though the stream worked on the local version)</li>
-  <li>Bug fixing - houston doesn’t seem to work, maybe due to special characters?</li>
   <li>Fluid accelerometer use</li>
   <li>URL routing for hashtag display</li>
   <li>Automation or parameterization of annotatAR UX elements (ie age til die-off)</li>
-  <li>Capturing additional tweet data (ie user, associated photos) for posterity</li>
+  <li>Pulling in historic tweets from Occupy Research (or other source)</li>
+  <li>Single-page desktop site</li>
 </ul>
-
-<p>Once these goals are achieved it may be time to turn to text analysis and a desktop site.</p>
-
 
   </article>
   
@@ -139,7 +157,7 @@
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2015-12-08T00:09:32-05:00">2015</time>. All rights reserved.
+          &copy; <time datetime="2015-12-18T18:31:53-05:00">2015</time>. All rights reserved.
           <span class="right"><a href="/annotatar/archive" title="Archive">Archive</a></span>
         </small>
       </footer>

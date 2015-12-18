@@ -4,13 +4,83 @@
  <title>annotatAR</title>
  <link href="http://arebe.github.io/annotatar/atom.xml" rel="self"/>
  <link href="http://arebe.github.io/annotatar/"/>
- <updated>2015-12-08T00:09:32-05:00</updated>
+ <updated>2015-12-18T18:31:53-05:00</updated>
  <id>http://arebe.github.io</id>
  <author>
    <name>RB</name>
    <email>rfboyce+annotatar@gmail.com</email>
  </author>
 
+ 
+ <entry>
+   <title>Week 15 Project Review</title>
+   <link href="http://arebe.github.io/annotatar/2015/12/18/week15/"/>
+   <updated>2015-12-18T00:00:00-05:00</updated>
+   <id>http://arebe.github.io/2015/12/18/week15</id>
+   <content type="html">&lt;p&gt;Final thoughts on annotatAR and the Digital Media Capstone experience.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h4 id=&quot;background-on-annotatar&quot;&gt;Background on annotatAR&lt;/h4&gt;
+
+&lt;p&gt;The ubiquity of personal data collection causes a bit of anxiety, naturally, because until now the boundaries of the public and private spheres were more obvious. Today, many of our professional and personal communications are mediated by companies and technologies that the end-user does not perfectly understand. We send a lot of information through an opaque black box and we have no real reason to trust the altruism of the organizations that own the infrastructure.&lt;/p&gt;
+
+&lt;p&gt;However, there is a flip side to all of this. Personal data is rich resource that can be harnessed to our benefit - for example, data-driven lifestyle decisions can improve one’s efficiency, happiness, and personal agency.  I also see personal data as a new artistic medium that can be utilized to communicate nuanced messages and to understand issues emerging in today’s world.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/annotatar/assets/images/20151218_timessq/Screenshot_2015-12-11-12-02-45.png&quot; alt=&quot;annotatAR at #RiseUpOctober&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;With annotatAR we achieve:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Détournment or re-taking of public space with its corresponding virtual settlement&lt;/li&gt;
+  &lt;li&gt;Provide an outlet for participation and action in a non-disruptive, discursive context&lt;/li&gt;
+  &lt;li&gt;Amplify dissenting voices from people who are geographically and demographically diverse that unite around ideological issues&lt;/li&gt;
+  &lt;li&gt;Utilize emerging web technologies like Meteor.js for non-business purposes
+    &lt;ul&gt;
+      &lt;li&gt;Data on the wire&lt;/li&gt;
+      &lt;li&gt;Quick deployment&lt;/li&gt;
+      &lt;li&gt;Participation in the development community &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;project-summary&quot;&gt;Project summary&lt;/h4&gt;
+
+&lt;p&gt;With annotatAR, I created a &lt;a href=&quot;https://www.meteor.com/&quot;&gt;Meteor.js&lt;/a&gt; mobile web application that annotates a &lt;code&gt;getUserMedia&lt;/code&gt; video stream with real-time tweets from the &lt;a href=&quot;https://dev.twitter.com/overview/documentation&quot;&gt;Twitter API&lt;/a&gt; and leverages device geolocation to map particular hashtags to lat/long coordinates. &lt;/p&gt;
+
+&lt;p&gt;The server-side app accesses a database of hashtags with their corresponding geocoordinates, and queries the Twitter API on those hashtags. It publishes a subset of the tweet database in response to the client-side app subscription. The application directory structure is based on specifications outlined by &lt;a href=&quot;https://themeteorchef.com/snippets/organizing-your-meteor-project/&quot;&gt;The Meteor Chef&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The augmented reality portion of the website detects the device location and subscribes to the approriate data from the server, and overlays the tweet text on a full-screen view from the device camera. The end-user can take screen captures, download a CSV of the tweet data, and tweet from the website.&lt;/p&gt;
+
+&lt;p&gt;The desktop portion of the website provides documentation on the project, and a map of the current deployments, along withseveral screenshots of annotatAR in action.&lt;/p&gt;
+
+&lt;p&gt;The site is deployed on a &lt;a href=&quot;https://www.digitalocean.com/&quot;&gt;Digital Ocean&lt;/a&gt; droplet, uses an &lt;a href=&quot;https://www.nginx.com/resources/wiki/&quot;&gt;NGINX&lt;/a&gt; server with SSL certs verified by &lt;a href=&quot;https://letsencrypt.org/&quot;&gt;Let’s Encrypt&lt;/a&gt;. The live app is updated using the command line interface &lt;a href=&quot;https://github.com/arunoda/meteor-up&quot;&gt;Meteor Up&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;future-directions&quot;&gt;Future directions&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Short-term technical improvements
+    &lt;ul&gt;
+      &lt;li&gt;Object-ifying tweet display and improving interactivity&lt;/li&gt;
+      &lt;li&gt;Multi-channel tweet streams&lt;/li&gt;
+      &lt;li&gt;Cross-browser support for Chrome&lt;/li&gt;
+      &lt;li&gt;Implementation of a 3D library for AR&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Long-term affordance improvements
+    &lt;ul&gt;
+      &lt;li&gt;Hashtag admin interface&lt;/li&gt;
+      &lt;li&gt;Sharing screenshots more broadly&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;digital-media-capstone-at-harvard-extension-school&quot;&gt;Digital Media Capstone at Harvard Extension School&lt;/h4&gt;
+
+&lt;p&gt;This project was produced as partial requirement for the degree of &lt;a href=&quot;https://www.extension.harvard.edu/academics/graduate-degrees/digital-media-design-degree&quot;&gt;Masters of Liberal Arts in the Digital Media Design&lt;/a&gt; program at Harvard Extension School. The capstone studio class provided a supportive environment for designing and implementing a self-initiated practical project. I am grateful to Dr. Jeff Parker, the program director, and Jen Kramer, my capstone studio advisor, as well as all of my colleagues in the program. Thank you very much for your input, feedback, and support during this process.&lt;/p&gt;
+
+</content>
+ </entry>
  
  <entry>
    <title>Week 14 MUP, NGINX, HTTPS</title>
@@ -26,7 +96,7 @@
   &lt;li&gt;create an ubuntu droplet
     &lt;ul&gt;
       &lt;li&gt;add your SSH key&lt;/li&gt;
-      &lt;li&gt;networking -&amp;gt; match domain name to IP of new droplet&lt;/li&gt;
+      &lt;li&gt;networking -&amp;gt; add DNS records for the domain name &amp;amp; IP address of new droplet&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;regenerate password - will send an email&lt;/li&gt;
@@ -217,13 +287,14 @@ server {
 
 &lt;h4 id=&quot;next-steps&quot;&gt;Next steps&lt;/h4&gt;
 
-&lt;p&gt;The REST API has already been implemented, so implementing the stream is not mission-critical at this time. At this time I’ve got a number of pressing issues to finalize the documentation page.&lt;/p&gt;
+&lt;p&gt;Prior to deploying the app to a Digital Ocean server, I also implemented a Google Maps view of the Hashtags collection as part of the documentation page. With only a few days left, I’m working away at (mostly-stylistic) remaining tasks, and my presentation.&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;Normalizing age-til-die-off&lt;/li&gt;
   &lt;li&gt;Styling the documentation page&lt;/li&gt;
   &lt;li&gt;Using accelerometer data to change the tweet positions&lt;/li&gt;
   &lt;li&gt;Styling the tweets&lt;/li&gt;
+  &lt;li&gt;Auto-selecting back-facing camera on the device &lt;/li&gt;
 &lt;/ul&gt;
 </content>
  </entry>
@@ -1042,7 +1113,8 @@ hashtags.map(function(hashtag){
 &lt;h3 id=&quot;some-links-to-track&quot;&gt;Some links to track:&lt;/h3&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;annotatAR live site - coming soon!&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://annotatar.xyz&quot;&gt;annotatAR live site&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://slides.com/arebe/annotatarcap&quot;&gt;annotatAR design slide deck&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://canvas.harvard.edu/courses/4308&quot;&gt;Capstone design studio site&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 

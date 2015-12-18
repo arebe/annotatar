@@ -41,52 +41,56 @@
   
   <article class="post">
     <h1 class="post-title">
-      <a href="/annotatar/2015/11/04/week10/">
-        Week 10 Archive Research
+      <a href="/annotatar/2015/11/15/week11/">
+        Week 11 Routing
       </a>
     </h1>
 
-    <time datetime="2015-11-04T00:00:00-05:00" class="post-date">04 Nov 2015</time>
+    <time datetime="2015-11-15T00:00:00-05:00" class="post-date">15 Nov 2015</time>
 
-    <p>Directions for sourcing and utilizing historical tweet data.</p>
+    <p>Learning about routing in Meteor.</p>
 
 <hr />
 
-<h4 id="r-shief-archive">R-Shief Archive</h4>
+<h4 id="routing-in-meteor">Routing in Meteor</h4>
 
-<p>One very useful source for historical social media data is the repository <a href="http://r-shief.org/">R-Shief</a>, which has three data products: </p>
+<p>This week I spent my time learning about how to implement URL routing using Meteor. Routing is a key functionality as it will will allow me to dynamically generate pages using URL parameters, and use different layouts for each type of page.</p>
+
+<p>The site architecture will be:</p>
 
 <ul>
-  <li>Twitter, Facebook, and Instagram data for the past 30 days</li>
-  <li>Twitter data from 2010-2013 on hashtags relevant to global activist events</li>
-  <li>Facebook, Youtube, and Website archives from 2008-2013</li>
+  <li>index</li>
+  <li>ar
+    <ul>
+      <li>occupyboston</li>
+      <li>invisiblemonuments</li>
+      <li>etc</li>
+    </ul>
+  </li>
 </ul>
 
-<p>The second product is what interests me most as a potential corpus of material for annotatAR.</p>
+<p>The index page is the documentation site, which will be served if someone visits the main URL, with a map and link to the blog. The AR page will house the Javascript function that detects geolocation, and re-routes to the appropriate URL.</p>
 
-<h4 id="data-format">Data format</h4>
+<p>There are two major routing libraries in Meteor: <a href="https://atmospherejs.com/meteorhacks/flow-router">Flow Router</a> and <a href="http://iron-meteor.github.io/iron-router/">Iron:Router</a>. I tried out both and ultimately decided to use Iron:router.</p>
 
-<p>According to the website, R-Shief’s archive is accessible via their data visualization applications, where one can craft a chart and download the graphic to use. </p>
+<h4 id="flow-router">Flow Router</h4>
 
-<p>They also have an incredibly informative table of relevant hashtags, with descriptions of what each abbreviation represents. </p>
+<p>This routing library is rigorously tested and was recommended by the folks at the Meteor.js meetup that I attended last month. It’s designed for client-side, non-reactive routing. The advice from the Meteor meetup was that Flow Router has a slightly steeper learning curve, but it has a design that enforces best practices - the application is unlikely to break for mysterious reasons, or work improperly. The limitation is that it must be used with another routing library for server-side routing, such as <a href="https://github.com/meteorhacks/picker">Picker</a>.</p>
 
-<p>I have emailed R-Shief in the hopes that some of their archive will be available to use independently. Hopefully they will be able to provide an archive of data in JSON or CSV format that can be plugged in to the existing annotatAR architecture. </p>
+<h4 id="ironrouter">Iron:Router</h4>
 
-<p>Right now, annotatAR translate incoming JSON data to a MongoDB database entry. In the context of utilizing historical data, the translatation step becomes unnecessary. However, translating the data archive to a database as a one-time operation could vastly improve the performance of the mobile site.</p>
+<p>Iron Router is the best-documented router for Meteor, and also has the largest user base. What interested me in it is the extensive set of websites for getting started with the library. I tried out Flow Router and found the examples difficult to translate to my application but had success with a <a href="https://www.codetutorial.io/meteor-routing-and-layout/">tutorial for Iron Router</a>. It also appeals to me to be able to use the same router for server-side routing, as the geolocation function will utilize a server-side route to the appropriate database of tweets. </p>
 
-<h4 id="aesthetic-notes">Aesthetic notes</h4>
+<p>I was able to get up and running with a two-page website and Iron Router, though I am still troubleshooting some issue with the AR script.</p>
 
-<p>There are many ways to interact with the more conventional object of historic record - museum exhibits, primary texts, historical re-enactments, photographs. Digital tools afford a powerful new layer of interactivity as media assets can be juxtaposed and arranged fluidly. </p>
+<h4 id="templating-and-css">Templating and CSS</h4>
 
-<p>In relation to new media object such as the annotatAR augmented reality experience, digital media affords all of the physical interactions of the mobile web: swiping, tapping, scrolling, tilting – plus animations and UI changes that can be bound to these events.</p>
+<p>I’m using the standard templating language, <a href="http://meteorcapture.com/spacebars/">Spacebars</a>, for my application, and installed the Twitter Bootstrap CSS framework.</p>
 
-<p>There is something oddly compelling about before-and-after photos, where we see the ghosts of past photons pinned to the contemporary record. So also do the tweets form a figure of past actions and recent historicity against the ground of the familiar urban juice.</p>
+<h4 id="next-directions">Next directions</h4>
 
-<p>One direction I’ve considered for visualizing the tweets is rendering the video stream as letters, using the tweet text colored as if it were the backgroud video. Using the tweet text as a mask for the video would provide the pivotal visual metaphor of seeing the present through the lens of the virtual past.</p>
+<p>Once I have fixed the bugs caused by the new site architecture, I will move on to creating the geolocative function for the AR page and re-routing to a sub-page that will display a particular hashtag.</p>
 
-<h4 id="next-steps">Next steps</h4>
-
-<p>Test out the text masking idea using contemporary tweet data, and wait for answers from R-Shief. </p>
 
   </article>
   
@@ -105,7 +109,7 @@
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2015-12-08T00:09:32-05:00">2015</time>. All rights reserved.
+          &copy; <time datetime="2015-12-18T18:31:53-05:00">2015</time>. All rights reserved.
           <span class="right"><a href="/annotatar/archive" title="Archive">Archive</a></span>
         </small>
       </footer>

@@ -41,78 +41,57 @@
   
   <article class="post">
     <h1 class="post-title">
-      <a href="/annotatar/2015/09/03/grading/">
-        Capstone Project Grading Rubric
+      <a href="/annotatar/2015/09/04/week1/">
+        Week 1 Summer Progress
       </a>
     </h1>
 
-    <time datetime="2015-09-03T00:00:00-04:00" class="post-date">03 Sep 2015</time>
+    <time datetime="2015-09-04T00:00:00-04:00" class="post-date">04 Sep 2015</time>
 
-    <p>As part of this week’s assignments, I have developed a grading rubric for annotatAR, for the scope of this fall’s Capstone Design Studio. This rubric has six dimensions, with three criteria each. The dimensions are categorized in two sub-sections: <em>Mobile Site</em> and <em>Desktop Site</em>. The points are weighted to emphasize the <em>Mobile Site</em>, with a total possible score of 27 points.</p>
+    <p>In which our hero recounts the details of this summer’s work….</p>
 
 <hr />
 
-<table>
-  <thead>
-    <tr>
-      <th><em>Mobile Site (18pts total)</em></th>
-      <th style="text-align: center">Excellent (6pts)</th>
-      <th style="text-align: center">Competent (4pts)</th>
-      <th style="text-align: center">Needs Work (1pt)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Functionality</strong> :: Users can overlay tweets on a video stream; Device compatibility;  Geolocative;  Users can take screenshot</td>
-      <td style="text-align: center">Meets all requirements</td>
-      <td style="text-align: center">Meets 3/4 requirements</td>
-      <td style="text-align: center">Meets &lt;= 3 requirements</td>
-    </tr>
-    <tr>
-      <td><strong>Aesthetics</strong> :: Tweet metadata is visually encoded; Tweet position changes with device motion; Appealing visual design</td>
-      <td style="text-align: center">Meets all requirements</td>
-      <td style="text-align: center">Meets 2/3 requirements</td>
-      <td style="text-align: center">Meets &lt;= 2 requirements</td>
-    </tr>
-    <tr>
-      <td><strong>Scalability</strong> :: Deployable at a variety of events; Github repo + documentation for further development</td>
-      <td style="text-align: center">Meets all requirements</td>
-      <td style="text-align: center">Meets 1/2 requirements</td>
-      <td style="text-align: center">Meets &lt; 1 requirement</td>
-    </tr>
-  </tbody>
-</table>
+<h4 id="user-interaction-paradigm">User interaction paradigm</h4>
 
-<table>
-  <thead>
-    <tr>
-      <th><em>Desktop Site (9pts total)</em></th>
-      <th style="text-align: center">Excellent (3pts)</th>
-      <th style="text-align: center">Competent (2pts)</th>
-      <th style="text-align: center">Needs Work (1pt)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Functionality</strong> :: Users can view event-specific video with tweet overlay; Cross-browser compatibility</td>
-      <td style="text-align: center">Meets all requirements</td>
-      <td style="text-align: center">Meets 1/2 requirements</td>
-      <td style="text-align: center">Meets &lt; 1 requirement</td>
-    </tr>
-    <tr>
-      <td><strong>Aesthetics</strong> :: Tweet metadata is visually encoded; Timeline of event is expressed visually</td>
-      <td style="text-align: center">Meets all requirements</td>
-      <td style="text-align: center">Meets 1/2 requirements</td>
-      <td style="text-align: center">Meets &lt; 1 requirement</td>
-    </tr>
-    <tr>
-      <td><strong>Scalability</strong> :: Deployable for multiple events; Integrates with other social media feeds</td>
-      <td style="text-align: center">Meets all requirements</td>
-      <td style="text-align: center">Meets 1/2 requirements</td>
-      <td style="text-align: center">Meets &lt; 1 requirement</td>
-    </tr>
-  </tbody>
-</table>
+<p>annotatAR was inspired by a project I worked on in Fall 2014, <a href="http://docshop0.tumblr.com/">Notes from El Saniyya</a>. As part of <a href="http://docshop.space/">DocShop at metaLab</a>, I worked with Egyptian artist Lara Baladi to create a prototype of a living timeline of the Arab Spring. The <em>Notes…</em> event was highly participatory and we wondered what the next steps for engaging with a multi-media archive might be like.</p>
+
+<blockquote>
+  <p>You walk into a gallery space, with a curved wall with a huge timeline, each point on the timeline is an event in the Arab Spring / Tahrir Square 21 days. you want to add your own comment to the timeline, reacting to something on the timeline that triggered a memory or emotion - given any possible technology or material, how would you leave a message?</p>
+</blockquote>
+
+<p>This is motivation for utilizing an augmented reality platform, and Twitter as a common social interface.</p>
+
+<h4 id="meteor">Meteor</h4>
+
+<p>The major accomplishment achieved this summer was getting started with <a href="http://docs.meteor.com/#/full/">Meteor.js</a>. After reading docs and going through an example project tutorial, I was convinced that this was the technology on which I should build annotatAR. What first drew me to Meteor is the ability to code everything in Javascript, the active community, and the well-designed forward-looking codebase. I sat with a friend for an informational session to learn about how to utilize <a href="https://www.eventedmind.com/feed/meteor-what-is-meteor-bindenvironment">asynchronous external requests</a> in Meteor, through <a href="https://meteorhacks.com/fibers-eventloop-and-meteor">fibers</a> and <code>Meteor.bindEnvironment</code>. I’m starting to see even more value in how Meteor encourages code modularization, which may be quite helpful as the project develops.</p>
+
+<h4 id="alpha-site">Alpha site</h4>
+
+<p>With my newly acquired knowledge of Meteor, I built a test application called <em>truthtweets</em>, which connects to the <a href="https://dev.twitter.com/streaming/public">Twitter Firehose API</a> and overlays tweet texts that utilize the hashtag <em>#truth</em> onto a video stream from <code>getUserMedia</code> element. Voilà!</p>
+
+<p><img src="/annotatar/assets/images/screencap_20150904.png" alt="truthtweets app" /></p>
+
+<h4 id="next-directions">Next directions</h4>
+
+<p>In the short term, the mobile application has a number of refinements to be achieved:</p>
+
+<ul>
+  <li>
+    <strike>twitter api config file - untracked (not shared on github)</strike>
+    <p>done! - now using settings.json</p>
+  </li>
+  <li>resize navigator to fit device screen</li>
+  <li>use accelerometer data to detect motion and update tweet position</li>
+  <li>turn the stream on and display new tweets</li>
+  <li>change alpha based on tweet createdAt</li>
+  <li>deploy to meteor cloud or other web server</li>
+  <li><em>what if tweets became colored to reflect the background video feed? - lexigraph</em></li>
+</ul>
+
+<h4 id="looking-ahead-this-month">Looking ahead this month</h4>
+
+<p>My first <a href="/annotatar/2015/09/02/milestones">project milestone</a> will be next week, when I deploy a beta version of the application on a live server and test it at the <a href="http://yami-ichi.biz/nyc/">New York City Internet Yami-Ichi</a> event by giving the URL out to a (small) number of attendees. This early-stage test will be crucial in refining the user interactions and aesthetics. In addition to the application itself, I will design a brief Google forms survey to collect UX feedback.</p>
 
   </article>
   
@@ -131,7 +110,7 @@
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2015-12-08T00:09:32-05:00">2015</time>. All rights reserved.
+          &copy; <time datetime="2015-12-18T18:31:53-05:00">2015</time>. All rights reserved.
           <span class="right"><a href="/annotatar/archive" title="Archive">Archive</a></span>
         </small>
       </footer>

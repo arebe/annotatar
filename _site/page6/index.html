@@ -41,104 +41,52 @@
   
   <article class="post">
     <h1 class="post-title">
-      <a href="/annotatar/2015/11/02/week9/">
-        Week 9 Delinquency
+      <a href="/annotatar/2015/11/04/week10/">
+        Week 10 Archive Research
       </a>
     </h1>
 
-    <time datetime="2015-11-02T00:00:00-05:00" class="post-date">02 Nov 2015</time>
+    <time datetime="2015-11-04T00:00:00-05:00" class="post-date">04 Nov 2015</time>
 
-    <p>Overthinking and under-doing in October. Next steps.</p>
+    <p>Directions for sourcing and utilizing historical tweet data.</p>
 
 <hr />
 
-<h4 id="how-i-spent-october">How I spent October</h4>
+<h4 id="r-shief-archive">R-Shief Archive</h4>
 
-<p>I’ve had a very fruitful October. Unfortunately, this activity has not been focused on my own projects and thus annotatAR has been left on the wayside for far too long.</p>
-
-<p>While I’ve been a bit delinquent in updating both this project blog and working on the project itself, I have accomplished much rumination on the final outcome for this project. </p>
-
-<p>I somewhat switched focus at the beginning of October, and began to think of the project as a sort of meta-documentation tool whose primary end-user would be me. This focus hasn’t sat well with me though, as the spirit of the project has been to build experientially what has already been ongoing virtually.</p>
-
-<p>Many questions remain to be answered:</p>
+<p>One very useful source for historical social media data is the repository <a href="http://r-shief.org/">R-Shief</a>, which has three data products: </p>
 
 <ul>
-  <li>Who is the audience for the mobile site? </li>
-  <li>In what context will they discover it?</li>
-  <li>Will the site display current or historic tweets?</li>
-  <li>What controls will the end user have over the tweets being display?</li>
-  <li>Will the website generate a database of tweet data?</li>
-  <li>Will multiple hashtags be available at a particular location?</li>
-  <li>Will the end user be able to change tweets?</li>
-  <li>Will there be an administrative site where an admin can set up a new database entry for a geolocation / hashtag pairing?</li>
+  <li>Twitter, Facebook, and Instagram data for the past 30 days</li>
+  <li>Twitter data from 2010-2013 on hashtags relevant to global activist events</li>
+  <li>Facebook, Youtube, and Website archives from 2008-2013</li>
 </ul>
 
-<p>I will attempt to clarify my thinking on these topics in this post.</p>
+<p>The second product is what interests me most as a potential corpus of material for annotatAR.</p>
 
-<h4 id="audience">Audience</h4>
+<h4 id="data-format">Data format</h4>
 
-<p>My current thinking on the purpose of annotatAR is to fully embrace the art project aspect. Rather than thinking that this project is a tool to make other works, I would like to present it as a work in itself, a generative social media artwork. </p>
+<p>According to the website, R-Shief’s archive is accessible via their data visualization applications, where one can craft a chart and download the graphic to use. </p>
 
-<p>In this case, the audience / end user becomes those interested in radical use of digital spaces, Twitter and social media, and contemporary activist movements.</p>
+<p>They also have an incredibly informative table of relevant hashtags, with descriptions of what each abbreviation represents. </p>
 
-<p>The limitations of this direction are that the primary purpose is no longer documentation of an event in process. The Twitter stream API will likely not be useful - it will be necessary to utilize historic tweet data, such as has been gathered by Occupy Research.</p>
+<p>I have emailed R-Shief in the hopes that some of their archive will be available to use independently. Hopefully they will be able to provide an archive of data in JSON or CSV format that can be plugged in to the existing annotatAR architecture. </p>
 
-<h4 id="context">Context</h4>
+<p>Right now, annotatAR translate incoming JSON data to a MongoDB database entry. In the context of utilizing historical data, the translatation step becomes unnecessary. However, translating the data archive to a database as a one-time operation could vastly improve the performance of the mobile site.</p>
 
-<p>The working context for annotatAR will be a digital exhibition of some kind, where the audience finds out about the work through some third party - much like the Invisible Monument project. The artwork will be available for a specified timeframe during which someone can go to the appropriate location and experience the augmented reality app on their Android mobile device. </p>
+<h4 id="aesthetic-notes">Aesthetic notes</h4>
 
-<p>This work might be highlighted in a launch event or tour of some kind. Once annotatAR has a first version, I can begin to look at fellowships and opportunities to take the project further and share it with communities.</p>
+<p>There are many ways to interact with the more conventional object of historic record - museum exhibits, primary texts, historical re-enactments, photographs. Digital tools afford a powerful new layer of interactivity as media assets can be juxtaposed and arranged fluidly. </p>
 
-<h4 id="stream-vs-rest-vs-historic">Stream vs REST vs Historic</h4>
+<p>In relation to new media object such as the annotatAR augmented reality experience, digital media affords all of the physical interactions of the mobile web: swiping, tapping, scrolling, tilting – plus animations and UI changes that can be bound to these events.</p>
 
-<p>The Twitter API has two versions: the stream which affords access to real-time data as it is posted - and the REST version that allows queries based on various parameters.</p>
+<p>There is something oddly compelling about before-and-after photos, where we see the ghosts of past photons pinned to the contemporary record. So also do the tweets form a figure of past actions and recent historicity against the ground of the familiar urban juice.</p>
 
-<p>For the conceptual purposes of this project, the stream is ideal, as it expresses the contemporality of dual sites:  online and in the “juice” of physical space. However, the stream depends highly the volume of tweets being generated in a given timeframe; if the event is generating a low level of interest on Twitter, than annotatAR will have sparse data to work with and be less effective as a visual presentation. </p>
+<p>One direction I’ve considered for visualizing the tweets is rendering the video stream as letters, using the tweet text colored as if it were the backgroud video. Using the tweet text as a mask for the video would provide the pivotal visual metaphor of seeing the present through the lens of the virtual past.</p>
 
-<p>My deployment at the Invisible Monument launch utilized a blend of REST and stream in order to overcome the limitations of the stream API. </p>
+<h4 id="next-steps">Next steps</h4>
 
-<p>As the purpose of annotatAR has solidified around an experiential artwork, it becomes imperative to use Twitter API in a way that best expresses concept of the piece. The idea of synesthesia becomes an important concept - as we walk through the juice, the ideas and social sites of Twitter are invisible but present. annotatAR interacts with the visual sense to encode the virtual component of a multi-sited co-occurring event.</p>
-
-<p>The use of historic data, where it exists, affords a slightly different expression of this co-occurrence. Instead of expressing contemporality, the visual metaphor would be more archeological in tone - that of unearthing and re-experiencing an event in the past, like an historical marker expressed in virtuality.</p>
-
-<h4 id="hashtag--geolocation">Hashtag / Geolocation</h4>
-
-<p>Should multiple hashtags be associated with a specific geolocation? </p>
-
-<p>So doing might dilute the strength of the connection between a juice space and a twitter hashtag settlement - but it would also afford a more nuanced understanding of historicity of a space.</p>
-
-<h4 id="end-user-controls">End user controls</h4>
-
-<p>Given the above discussion, the end user will have some minimal controls - to select a hashtag (if there are multiple available at the geolocation), to pan around, to take a screenshot, and to scroll through time.</p>
-
-<h4 id="desktop-site">Desktop site</h4>
-
-<p>The desktop site will be quite minimal - a brief description of the project and map of the geolocations available. A sign-up for newsletter of project updates. </p>
-
-<h4 id="questions">Questions</h4>
-
-<p>What historic tweet data is available? - this needs to be answered ASAP to properly scope this and future versions.</p>
-
-<p>Future directions:</p>
-
-<ul>
-  <li>Funding for a tweet aggregation service such as GNIP</li>
-  <li>Development of a robust administrative layer</li>
-  <li>Development of a way to share screen captures </li>
-  <li>Integration with the Invisible Monument project (iOS)</li>
-  <li>Development of a robust data collection system to gather data on contemporary events</li>
-</ul>
-
-<p>More immediate goals for annotatAR (still) include:</p>
-
-<ul>
-  <li>Bug fixing - hashtags on the stream seemed not to work on the website (though the stream worked on the local version)</li>
-  <li>Fluid accelerometer use</li>
-  <li>URL routing for hashtag display</li>
-  <li>Automation or parameterization of annotatAR UX elements (ie age til die-off)</li>
-  <li>Pulling in historic tweets from Occupy Research (or other source)</li>
-  <li>Single-page desktop site</li>
-</ul>
+<p>Test out the text masking idea using contemporary tweet data, and wait for answers from R-Shief. </p>
 
   </article>
   
@@ -157,7 +105,7 @@
 
       <footer class="footer">
         <small>
-          &copy; <time datetime="2015-12-08T00:09:32-05:00">2015</time>. All rights reserved.
+          &copy; <time datetime="2015-12-18T18:31:53-05:00">2015</time>. All rights reserved.
           <span class="right"><a href="/annotatar/archive" title="Archive">Archive</a></span>
         </small>
       </footer>
