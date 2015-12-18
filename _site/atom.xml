@@ -4,7 +4,7 @@
  <title>annotatAR</title>
  <link href="http://arebe.github.io/annotatar/atom.xml" rel="self"/>
  <link href="http://arebe.github.io/annotatar/"/>
- <updated>2015-12-18T18:31:53-05:00</updated>
+ <updated>2015-12-18T18:39:19-05:00</updated>
  <id>http://arebe.github.io</id>
  <author>
    <name>RB</name>
@@ -21,7 +21,7 @@
 
 &lt;hr /&gt;
 
-&lt;h4 id=&quot;background-on-annotatar&quot;&gt;Background on annotatAR&lt;/h4&gt;
+&lt;h4 id=&quot;creative-design-of-annotatar&quot;&gt;Creative design of annotatAR&lt;/h4&gt;
 
 &lt;p&gt;The ubiquity of personal data collection causes a bit of anxiety, naturally, because until now the boundaries of the public and private spheres were more obvious. Today, many of our professional and personal communications are mediated by companies and technologies that the end-user does not perfectly understand. We send a lot of information through an opaque black box and we have no real reason to trust the altruism of the organizations that own the infrastructure.&lt;/p&gt;
 
@@ -52,9 +52,11 @@
 
 &lt;p&gt;The augmented reality portion of the website detects the device location and subscribes to the approriate data from the server, and overlays the tweet text on a full-screen view from the device camera. The end-user can take screen captures, download a CSV of the tweet data, and tweet from the website.&lt;/p&gt;
 
-&lt;p&gt;The desktop portion of the website provides documentation on the project, and a map of the current deployments, along withseveral screenshots of annotatAR in action.&lt;/p&gt;
+&lt;p&gt;The desktop portion of the website provides documentation on the project, and a map of the current deployments, along with several screenshots of annotatAR in action.&lt;/p&gt;
 
 &lt;p&gt;The site is deployed on a &lt;a href=&quot;https://www.digitalocean.com/&quot;&gt;Digital Ocean&lt;/a&gt; droplet, uses an &lt;a href=&quot;https://www.nginx.com/resources/wiki/&quot;&gt;NGINX&lt;/a&gt; server with SSL certs verified by &lt;a href=&quot;https://letsencrypt.org/&quot;&gt;Let’s Encrypt&lt;/a&gt;. The live app is updated using the command line interface &lt;a href=&quot;https://github.com/arunoda/meteor-up&quot;&gt;Meteor Up&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can visit the live app at &lt;a href=&quot;https://annotatar.xyz&quot;&gt;annotatAR.xyz&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h4 id=&quot;future-directions&quot;&gt;Future directions&lt;/h4&gt;
 
@@ -77,7 +79,9 @@
 
 &lt;h4 id=&quot;digital-media-capstone-at-harvard-extension-school&quot;&gt;Digital Media Capstone at Harvard Extension School&lt;/h4&gt;
 
-&lt;p&gt;This project was produced as partial requirement for the degree of &lt;a href=&quot;https://www.extension.harvard.edu/academics/graduate-degrees/digital-media-design-degree&quot;&gt;Masters of Liberal Arts in the Digital Media Design&lt;/a&gt; program at Harvard Extension School. The capstone studio class provided a supportive environment for designing and implementing a self-initiated practical project. I am grateful to Dr. Jeff Parker, the program director, and Jen Kramer, my capstone studio advisor, as well as all of my colleagues in the program. Thank you very much for your input, feedback, and support during this process.&lt;/p&gt;
+&lt;p&gt;This project was produced as partial requirement for the degree of &lt;a href=&quot;https://www.extension.harvard.edu/academics/graduate-degrees/digital-media-design-degree&quot;&gt;Masters of Liberal Arts in the Digital Media Design&lt;/a&gt; program at Harvard Extension School. The capstone studio class provided a supportive environment for designing and implementing a self-initiated practical project. The studio culminated in a presentation session; &lt;a href=&quot;http://slides.com/arebe/annotatarcap&quot;&gt;the slides for annotatAR are available here&lt;/a&gt;. A summary of the all of the studio projects is available in this &lt;a href=&quot;/annotatar/assets/files/capstone poster session program.pdf&quot;&gt;material for the capstone fair&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I am grateful to Dr. Jeff Parker, the program director, and Jen Kramer, my capstone studio advisor, as well as all of my colleagues in the program. Thank you very much for your input, feedback, and support during this process.&lt;/p&gt;
 
 </content>
  </entry>
