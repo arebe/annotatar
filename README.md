@@ -1,9 +1,10 @@
 annotatAR
 =========
 
-*Created by*: RB [arebe.us](http://arebe.us)
-
 *Prototype Website*: [annotatar.xyz](https://annotatar.xyz)
+
+*Created by*: Rachel Boyce (RB) [arebe.us](http://arebe.us)
+
 
 What's all this?
 ----------------
@@ -28,7 +29,7 @@ How to deploy annotatAR
 
 5. Pull the repo from the remote (this may take a few moments)
 
-6. Open the `packages` file in the project root directory and add the following: 
+6. Open the `packages` file in the `.meteor` directory and add the following: 
 ````
 mrt:twit
 lfergon:exportcsv
@@ -56,10 +57,10 @@ dburles:google-maps
 ````
 8. Run the meteor app with `meteor --settings settings.json`
 
-9. Deploy to your own server using [Meteor Up](https://github.com/arunoda/meteor-up)
+9. Deploy to your own server using [Meteor Up](https://github.com/arunoda/meteor-up), instructions for which can be found [on the project blog](http://arebe.github.io/annotatar/2015/12/08/week14/)
 
 License
 -------
 Original code in this repo is licensed under [GPLv3](https://www.gnu.org/licenses/gpl-3.0.html). Its dependencies include Meteor.js and jQuery (MIT license).
 
-*annotatAR* is being developed as a capstone project as a requirement for ALM in IT at Harvard University School for Extension Studies.
+*annotatAR* was originally developed as a capstone project as a requirement for ALM in Digital Media Design at Harvard University School for Extension Studies.
