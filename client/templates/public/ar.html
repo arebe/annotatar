@@ -1,0 +1,32 @@
+<template name="ar">
+  <div style="display:table;">
+  <div style="display:table-cell;vertical-align:middle;">
+    <div style="margin-left:auto;margin-right:auto;">
+
+  <div id="ar">
+    <video id="video" width="800" height="500" autoplay></video>
+    <canvas width="800" height="500"></canvas>
+  </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="ar_buttons" class="btn-group-vertical" role="group">
+  <div class="btn-group">
+    <a href="#" download="annotatar_cap.png" id="captureLink"><button id="captureBtn" type="button"  class="btn btn-default outline" title="Screen capture"><i class="fa fa-camera-retro fa-lg"></i></button></a>
+  </div>
+  <div class="btn-group">
+    <a href="#"><button id="downloadBtn" type="button"  class="btn btn-default outline" title="Download CSV"><i class="fa fa-download fa-lg"></i></button></a>
+  </div>
+  <div class="btn-group">
+    <a id="tweetUrl" href="https://twitter.com/home?status=%23annotatAR"><button id="tweetBtn" type="button"  class="btn btn-default outline" title="Share on Twitter"><i class="fa fa-twitter fa-lg"></i></button></a>
+  </div>
+  <div class="btn-group">
+    <a href="/"><button id="tweetBtn" type="button"  class="btn btn-default outline" title="Share on Twitter"><i class="fa fa-home fa-lg"></i></button></a>
+  </div>
+  </div>
+  <div id="hashtag" class="outline"></div>
+  <!-- <div id="dynamsg"></div> -->
+  <!-- <div id="doEvent"></div> -->
+</template>

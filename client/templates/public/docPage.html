@@ -1,0 +1,74 @@
+<body></body>
+
+<template name="docPage">
+  <h1>Welcome to the documentation page for annotatAR</h1>
+  <hr>
+  {{> gallery}}
+  <article id="explanation">
+  	<h2>lo-fi augmented reality for the mobile web</h2>
+  	<p> annotatAR provides a look at the ghostly voices of Twitter during events that co-occur in the related sites of the "outernet" or "real world" as well as the networked universe of a virtual settlement on a Twittter hashtag.</p>
+
+  	<p>When annotatAR is deployed at a mutli-sited event, the hashtag is paired with geocoordinates. When someone visits the site in the outernet and loads <a href="/ar">url</a> on their mobile device, they will see the voices from the Twitter settlement overlaid on their subjective reality.</p>
+
+  	<p>Currently the site is available for devices and browsers that support WebRTC and HTML5 canvas technology, with mobile deployment on Firefox for Android.</p>
+  </article>
+  <article id="deployments">
+  	<h2>current annotatAR deployments</h2>
+    {{> map}}
+  </article>
+  <article>
+    <a href="https://twitter.com/home?status=%23annotatAR"><button id="tweetBtn" type="button"  class="btn btn-default outline" title="Share on Twitter"><i class="fa fa-twitter fa-lg"></i></button></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=annotatar.xyz"><button id="fbBtn" type="button"  class="btn btn-default outline" title="Share on Facebook"><i class="fa fa-facebook fa-lg"></i></button></a>
+    <a href="https://plus.google.com/share?url=annotatar.xyz"><button id="googBtn" type="button"  class="btn btn-default outline" title="Share on G+"><i class="fa fa-google fa-lg"></i></button></a>
+  </article>
+</template>
+
+<template name="map">
+  <div id="map">
+    {{> googleMap name="map" options=mapOptions}}
+  </div>
+</template>
+
+<template name="gallery">
+<div class="gallery-container">
+  <img src="screencaps/annotatar_yaminyc_20150912_08.png" class="gallery img-rounded pull-xs-left img-fluid easy-modal-open" href="#modal1" width="250px" alt="Internet Yami-Ichi NYC">
+  <img src="screencaps/annotatar_cap_01.png" class="gallery img-rounded pull-xs-left img-fluid easy-modal-open" href="#modal2" width="250px" alt="Invisble Monument launch">  
+  <img src="screencaps/invisible_screenshot_20150930_01.png" class="gallery img-rounded pull-xs-left img-fluid easy-modal-open" width="250px" href="#modal3" alt="Invisble Monument launch">
+
+  <img src="screencaps/annotatar_cap_times1.png" class="gallery img-rounded pull-xs-left img-fluid easy-modal-open" width="250px" href="#modal4" alt="RiseUpOctober Times Square">
+  <img src="screencaps/annotatar_cap_times2.jpg" class="gallery img-rounded pull-xs-left img-fluid easy-modal-open" width="250px" href="#modal5" alt="RiseUpOctober Times Square">
+  <img src="screencaps/annotatar_screenshot_times_01.png" class="gallery img-rounded pull-xs-left img-fluid easy-modal-open" width="250px" href="#modal6" alt="RiseUpOctober Times Square">
+</div>
+<!-- hidden modals -->
+  <div class="easy-modal" id="modal1">
+    <span class="btn_x easy-modal-close">X</span>
+    <img class="centered" src="screencaps/annotatar_yaminyc_20150912_08.png" alt="" width="900px">
+    <p>#yaminyc - The Internet Yami-Ichi, New York City</p>
+  </div>
+  <div class="easy-modal" id="modal2">
+    <span class="btn_x easy-modal-close">X</span>
+    <img class="centered" src="screencaps/annotatar_cap_01.png" alt="" width="900px">
+    <p>#luncheononthegrass - Invisible Monument launch, Boston</p>
+  </div>
+  <div class="easy-modal" id="modal3">
+    <span class="btn_x easy-modal-close">X</span>
+    <img class="centered" src="screencaps/invisible_screenshot_20150930_01.png" alt="" width="900px">
+    <p>#luncheononthegrass - Invisible Monument launch, Boston</p>
+  </div>
+  <div class="easy-modal" id="modal4">
+    <span class="btn_x easy-modal-close">X</span>
+    <img class="centered" src="screencaps/annotatar_cap_times1.png" alt="" width="900px">
+    <p>#riseupoctober - Times Square, New York City</p>
+  </div>
+  <div class="easy-modal" id="modal5">
+    <span class="btn_x easy-modal-close">X</span>
+    <img class="centered" src="screencaps/annotatar_cap_times2.jpg" alt="" width="900px">
+    <p>#riseupoctober - Times Square, New York City</p>
+  </div>
+  <div class="easy-modal" id="modal6">
+    <span class="btn_x easy-modal-close">X</span>
+    <img class="centered" src="screencaps/annotatar_screenshot_times_01.png" alt="" width="900px">
+    <p>#riseupoctober - Times Square, New York City</p>
+  </div>
+</template>
+

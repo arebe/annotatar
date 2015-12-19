@@ -1,0 +1,233 @@
+/* CSS declarations go here */
+
+body {
+  font-family: sans-serif;
+  background-color: #315481;
+  background-image: linear-gradient(135deg, #000, #3264FF 98%);
+  background-attachment: fixed;
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: 0;
+  margin: 0;
+
+  font-size: 14px;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 100%;
+  background: white;
+}
+
+header {
+  background: #d2edf4;
+  background-image: linear-gradient(to bottom, #d0edf5, #e1e5f0 100%);
+  padding: 20px 15px 15px 15px;
+  position: relative;
+}
+
+
+h1 {
+  font-size: 1.5em;
+  margin: 0;
+  margin-bottom: 10px;
+  display: inline-block;
+  margin-right: 1em;
+}
+
+
+ul {
+  margin: 0;
+  padding: 0;
+  background: white;
+}
+
+
+li {
+  position: relative;
+  list-style: none;
+  padding: 15px;
+  border-bottom: #eee solid 1px;
+}
+
+
+/* stuff for mainNav template */
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+    padding-left: 250px;
+}
+
+
+#wrapper.toggled  {
+    width: 250px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -250px;
+}
+
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 250px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}
+
+/* my stylez */
+
+#dynamsg p{
+  color: #333;
+  padding-left: 2em;
+  padding-top: 0.5em;
+  background-color: #0a1433;
+  background-image: linear-gradient(to bottom, #0a1433, #e6e7ea 50%);
+}
+
+#doEvent p{
+  color: #333;
+  padding-left: 2em;
+  padding-top: 0.5em;
+  background-color: #0a1433;
+  background-image: linear-gradient(to bottom, #0a1433, #e6e7ea 50%);
+}
+
+canvas {
+  font-family: 'Permanent Marker', cursive;
+  width: 100% !important;
+  height: auto !important;
+}
+
+video {
+  width: 100% !important;
+  height: auto !important;
+}
+
+#map {
+    height: 800px;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 0;
+    position: relative;
+}
+
+#ar_buttons {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 2;
+}
+
+.btn.outline, div.outline {
+    background: rgba(10,10,10, 0.7);
+    padding: 8px 10px;
+    border: 3px solid #888;
+    color: #888;
+}
+
+.btn.outline:hover, .btn.outline:focus, .btn.outline:active, .btn.outline.active, .open > .dropdown-toggle.btn-primary {
+    color: #eee;
+    border-color: #eee;
+}
+.btn.outline:active, .btn.outline.active {
+    border-color: #007299;
+    color: #007299;
+    box-shadow: none;
+}
+
+#hashtag {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 2;
+}
+
+div.outline {
+    background: rgba(10,10,10, 0.7);
+    padding: 4px 6px;
+    padding-bottom: -3px;
+    border: 3px solid;
+    border-color: #007299;
+    color: #007299;
+    box-shadow: none;
+}
+
+.btn_x {
+  top: 13px;
+  left: 13px;
+  -webkit-border-radius: 19;
+  -moz-border-radius: 19;
+  border-radius: 19px;
+  font-family: Arial;
+  color: #888;
+  font-size: 20px;
+  padding: 2px 10px 2px 10px;
+  text-decoration: none;
+  z-index: 2;
+  position: absolute;
+  border: solid #888 3px;
+  background: rgba(10,10,10, 0.7);
+}
+
+.btn_x:hover {
+  color: #eee;
+  border: solid #eee 3px;
+  text-decoration: none;
+}
+
+.gallery-container{
+  width: auto;
+  text-align: center;
+}
+
+.gallery{
+  margin: 5px;
+}
+
+.easy-modal p{
+  color: #fff;
+  background: #000;
+  text-align: center;
+}
